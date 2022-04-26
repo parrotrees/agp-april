@@ -1,4 +1,4 @@
-* -- code to remove zero based ratings for Shopify App -- */
+/* -- code to remove zero based ratings for Shopify App -- */
 .spr-badge[data-rating="0.0"] {
     visibility:hidden; display: none;
 }
@@ -18,7 +18,9 @@
 	font-weight: 600;
 	/* color: #ff7f32; */
 }
-
+/* - end - */
+button.quantity-selector__button {
+    display: none;
 }
 .form__submit.button.button--primary {
 	text-transform: uppercase;
@@ -377,11 +379,6 @@ ol ol, ol ul, ul ol, ul ul{
   width:2em;
 }
 
-.template-product a.product-meta__vendor.link.link--accented::after {
-    white-space: break-spaces;
-    content: "\A";
-}
-
 .template-product .product-meta__vendor{
 padding-right:25px;
 }
@@ -399,24 +396,6 @@ padding-right:25px;
     color: #67c116 !important;
 }
 
-.pg__option-sub.flex {
-    display: none;
+.product-form__option .product-form__selected-value {display: none;
 }
 
-.mini-cart__item--content strong.right.price span.money.was_price {
-display: none!important;
-}
-
-.mini-cart__item--content span.was_price {
-display: none!important;
-}
-
-.shop-button , .continue-shopping  {
-    background: #3285C8 !important;
-
-
-}
-.shop-button:hover , .continue-shopping:hover {
-    background: #3285C8 !important;
-  
-  
