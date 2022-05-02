@@ -32,7 +32,7 @@
     "heading_font": "montserrat_n6",
     "text_font": "montserrat_n3",
     "underline_links": true,
-    "currency_code_enabled": true,
+    "currency_code_enabled": false,
     "animation_image_zoom": true,
     "search_mode": "product,page",
     "show_vendor": true,
