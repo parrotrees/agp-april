@@ -1,10 +1,17 @@
 {
+  "404": {
+    "general": {
+      "title": "Pagina non trovata",
+      "content": "La pagina che stai cercando non può essere trovata.",
+      "search": "Ricerca nel negozio...",
+      "continue_shopping": "Clicca qui per continuare gli acquisti"
+    }
+  },
   "general": {
     "meta": {
       "tags": "Taggato \"{{ tags }}\"",
       "page": "Pagina {{ page }}"
     },
-
     "accessibility": {
       "skip_to_content": "Vai al contenuto",
       "close": "Chiudi",
@@ -13,7 +20,6 @@
       "new_window": "Apri in una nuova finestra.",
       "star_reviews_info": "{{ rating_value }} su {{ rating_max }} stelle"
     },
-
     "password": {
       "enter_password": "Entra usando la password",
       "password_input": "Password",
@@ -26,20 +32,17 @@
       "login_link": "Accedi qui",
       "follow_us": "Seguici"
     },
-
     "pagination": {
       "previous_page": "Precedente",
       "next_page": "Successivo",
       "go_to_page": "Vai alla pagina {{page}}",
       "page_count": "Pagina {{current_page}} \/ {{pages}}"
     },
-
     "breadcrumb": {
       "title": "Sei qui",
       "home": "Home",
       "account": "Il mio account"
     },
-
     "social": {
       "follow_label": "Seguici su {{social_media}}",
       "facebook_share": "Condividi su Facebook",
@@ -47,14 +50,12 @@
       "twitter_tweet": "Twitta su Twitter",
       "email_share": "Condividi via email"
     },
-
     "popup": {
       "success": "Confermiamo la tua accettazione alla nostra newsletter!",
       "email_placeholder": "La tua email",
       "subscribe": "Richiedi"
     }
   },
-
   "header": {
     "general": {
       "country": "Paese",
@@ -64,7 +65,6 @@
       "welcome": "Ciao {{first_name}}",
       "cart": "Carrello"
     },
-
     "navigation": {
       "menu": "Menù",
       "open_menu": "Apri il menù",
@@ -72,7 +72,6 @@
       "need_help": "Bisogno d'aiuto?",
       "follow_us": "Seguici"
     },
-
     "search": {
       "open_search": "Apri la ricerca",
       "close_search": "Chiudi",
@@ -89,7 +88,6 @@
       "blog_posts_and_pages": "Pagine e messaggi sul blog"
     }
   },
-
   "footer": {
     "general": {
       "country": "Paese",
@@ -97,19 +95,16 @@
       "follow_us": "Seguici",
       "we_accept": "Accettiamo"
     },
-
     "newsletter": {
       "success": "Sei stato registrato alla nostra newsletter!",
       "input": "Il tuo indirizzo email",
       "submit": "Richiedi"
     },
-
     "cookie_bar": {
       "accept": "Accetta",
       "decline": "Rifiuta"
     }
   },
-
   "search": {
     "general": {
       "title": "Cerca",
@@ -134,16 +129,6 @@
       }
     }
   },
-
-  "404": {
-    "general": {
-      "title": "Pagina non trovata",
-      "content": "La pagina che stai cercando non può essere trovata.",
-      "search": "Ricerca nel negozio...",
-      "continue_shopping": "Clicca qui per continuare gli acquisti"
-    }
-  },
-
   "home_page": {
     "onboarding": {
       "vendor_title": "Marca",
@@ -158,14 +143,12 @@
       "instagram_likes": "28 like",
       "instagram_caption": "Esempio di disdascalia."
     },
-
     "newsletter": {
       "success": "Sei stato registrato alla nostra newsletter!",
       "input": "Il tuo indirizzo email",
       "submit": "Invia"
     }
   },
-
   "collection": {
     "general": {
       "all_collections": "Tutte le categorie",
@@ -195,7 +178,6 @@
       },
       "page_size": "{{page_size}} per page"
     },
-
     "filter": {
       "title": "Filtro",
       "price_filter_from": "Da",
@@ -207,17 +189,14 @@
       "clear": "Pulisci",
       "view_results": "Guarda i risultati"
     },
-
     "sorting": {
       "title": "Ordina per"
     },
-
     "layout": {
       "title": "Visualizza",
       "grid": "Visualizza come griglia",
       "list": "Visualizza come lista"
     },
-
     "product": {
       "from_price_html": "A partire da {{price_min}}",
       "add_to_cart": "Aggiungi al carrello",
@@ -238,7 +217,6 @@
       }
     }
   },
-
   "customer": {
     "general": {
       "my_account": "Il mio account",
@@ -248,7 +226,6 @@
       "no_orders": "Ancora nessun ordine",
       "no_orders_button": "Completa il tuo primo ordine"
     },
-
     "login": {
       "login": "Accedi al mio account",
       "description": "Inserisci email e password:",
@@ -260,7 +237,6 @@
       "lost_password": "Password dimentica?",
       "recover_password": "Recupera la password"
     },
-
     "order": {
       "order": "Ordine",
       "order_number": "Ordine {{order_number}}",
@@ -293,7 +269,6 @@
       "no_billing_address": "Per questo ordine non è stato fornito nessun indirizzo di fatturazione.",
       "no_shipping_address": "Per questo ordine non è stato fornito nessun indirizzo di spedizione."
     },
-
     "activate_account": {
       "activate_account": "Attiva l'account",
       "description": "Inserisci una password per creare il tuo account:",
@@ -302,7 +277,6 @@
       "submit": "Conferma",
       "decline": "Rifiuta"
     },
-
     "recover_password": {
       "recover_password": "Recupero password",
       "description": "Inserisci il tuo indirizzo email:",
@@ -312,7 +286,6 @@
       "remembered_your_password": "Ti sei ricordato la tua password?",
       "back_to_login": "Torna al login"
     },
-
     "reset_password": {
       "reset_password": "Reset password",
       "description": "Inserisci una nuova password:",
@@ -320,7 +293,6 @@
       "password_confirmation": "Conferma password",
       "submit": "Invia"
     },
-
     "addresses": {
       "no_addresses": "Non hai ancora fornito nessun indirizzo",
       "no_addresses_button": "Aggiungi il tuo primo indirizzo",
@@ -343,7 +315,6 @@
       "phone": "Telefono",
       "set_default": "Imposta come indirizzo predefinito"
     },
-
     "register": {
       "create_account": "Crea il mio account",
       "description": "Completa le informazioni qui sotto:",
@@ -356,7 +327,6 @@
       "login": "Accedi qui"
     }
   },
-
   "cart": {
     "general": {
       "title": "Il mio carrello",
@@ -379,18 +349,15 @@
       "total": "Totale",
       "checkout": "Checkout"
     },
-
     "items": {
       "decrease_quantity": "Diminuisci di 1",
       "increase_quantity": "Aumenta di 1",
       "no_more_stock": "Le scorte del prodotto sono terminate",
       "remove": "Rimuovi"
     },
-
     "gift_wrap": {
       "price_html": "Solo {{price}}"
     },
-
     "shipping_estimator": {
       "title": "Stima dei costi di spedizione",
       "country": "Stato",
@@ -403,7 +370,6 @@
       "errors": "Ci sono degli errori:"
     }
   },
-
   "product": {
     "general": {
       "previous_product": "Precedente",
@@ -432,11 +398,9 @@
         "other": "{{ count }} recensioni"
       }
     },
-
     "labels": {
       "sold_out": "Esaurito"
     },
-
     "form": {
       "variant": "Variante",
       "price": "Prezzo",
@@ -462,7 +426,6 @@
       "added_short": "Aggiunto!"
     }
   },
-
   "store_availability": {
     "general": {
       "view_store_info": "Informazioni sul negozio",
@@ -473,7 +436,6 @@
       "pick_up_unavailable_at": "Prelevamento non disponibile presso {{ location_name }}"
     }
   },
-
   "gift_card": {
     "issued": {
       "subtext": "Ecco la tua carta regalo!",
@@ -487,7 +449,6 @@
       "add_to_apple_wallet": "Aggiungi al portafoglio Apple"
     }
   },
-
   "blog": {
     "general": {
       "empty": "Questo blog non contiene articoli",
@@ -495,7 +456,6 @@
       "categories": "categorie",
       "all_tag": "Tutti"
     },
-
     "article": {
       "tags": "Tags:",
       "written_by": "{{author}}",
@@ -508,7 +468,6 @@
         "other": "{{count}} commenti"
       }
     },
-
     "comments": {
       "leave_comment": "Lascia un commento",
       "name": "Nome",
@@ -520,7 +479,6 @@
       "success_moderated": "Il tuo commento è stato inviato. Verrà reso visibile una volta che sarà stato verificato dal proprietario!"
     }
   },
-
   "contact": {
     "form": {
       "name": "Il tuo nome",
@@ -530,10 +488,54 @@
       "successfully_sent": "Il tuo messaggio è stato inviato con successo."
     }
   },
-
   "date_formats": {
     "month_day_year": "%d %B %Y",
     "short_month_day_year": "%d %b %Y",
     "month_day_year_time": "%d %B %Y alle %H:%M%P"
+  },
+  "pagefly": {
+    "products": {
+      "product": {
+        "regular_price": "Regular price",
+        "sold_out": "Sold out",
+        "unavailable": "Unavailable",
+        "on_sale": "Sale",
+        "quantity": "Quantity",
+        "add_to_cart": "Add to cart",
+        "back_to_collection": "Back to {{ title }}",
+        "view_details": "View details"
+      }
+    },
+    "article": {
+      "tags": "Tags:",
+      "all_topics": "All topics",
+      "by_author": "by {{ author }}",
+      "posted_in": "Posted in",
+      "read_more": "Read more",
+      "back_to_blog": "Back to {{ title }}"
+    },
+    "comments": {
+      "title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "post": "Post comment",
+      "moderated": "Please note, comments must be approved before they are published",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "success": "Your comment was posted successfully! Thank you!",
+      "comments_with_count": {
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
+      }
+    },
+    "password_page": {
+      "login_form_message": "Enter store using password:",
+      "login_form_password_label": "Password",
+      "login_form_password_placeholder": "Your password",
+      "login_form_submit": "Enter",
+      "signup_form_email_label": "Email",
+      "signup_form_success": "We will send you an email right before we open!",
+      "password_link": "Enter using password"
+    }
   }
 }
