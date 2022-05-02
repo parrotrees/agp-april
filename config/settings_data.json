@@ -80,19 +80,19 @@
       "header": {
         "type": "header",
         "blocks": {
-          "9d9460ee-93e5-44fb-98ba-d49948e4e2f0": {
+          "ca303913-2dbf-4d1e-87d7-ad5f7cd90e56": {
             "type": "mega_menu",
             "settings": {
               "menu_item": "Shop",
-              "image_1_heading": "CARRY PACKS & TRAYS",
+              "image_1_heading": "",
               "image_1_text": "",
               "image_1_link": "shopify:\/\/collections\/carry_packs",
-              "image_2_heading": "",
-              "image_2_text": "",
+              "image_2_heading": "Your image",
+              "image_2_text": "Tell your story",
               "image_2_link": ""
             }
           },
-          "3ad93230-84b0-481a-a29f-2aa49379bd3c": {
+          "a43683a3-8602-4835-8fff-c6019180e31d": {
             "type": "mega_menu",
             "settings": {
               "menu_item": "",
@@ -104,7 +104,7 @@
               "image_2_link": ""
             }
           },
-          "e3a68c41-cae7-40d2-a0b5-2a96dcf4d914": {
+          "00f3a3f0-47e2-4c21-8e97-d8a9be5a721c": {
             "type": "mega_menu",
             "settings": {
               "menu_item": "",
@@ -118,9 +118,9 @@
           }
         },
         "block_order": [
-          "9d9460ee-93e5-44fb-98ba-d49948e4e2f0",
-          "3ad93230-84b0-481a-a29f-2aa49379bd3c",
-          "e3a68c41-cae7-40d2-a0b5-2a96dcf4d914"
+          "ca303913-2dbf-4d1e-87d7-ad5f7cd90e56",
+          "a43683a3-8602-4835-8fff-c6019180e31d",
+          "00f3a3f0-47e2-4c21-8e97-d8a9be5a721c"
         ],
         "settings": {
           "enable_sticky_header": true,
@@ -128,17 +128,17 @@
           "logo_max_width": 140,
           "mobile_logo_max_width": 100,
           "show_locale_selector": true,
-          "show_country_selector": false,
+          "show_country_selector": true,
           "navigation_menu": "main-menu",
-          "navigation_mobile_menu": "",
+          "navigation_mobile_menu": "main-menu",
           "desktop_navigation_layout": "inline",
           "desktop_navigation_open_trigger": "hover",
-          "show_navigation_social_media": true,
-          "navigation_phone_number": "Call us 000-000-0000",
-          "navigation_email": "info@yourwebsite.com",
+          "show_navigation_social_media": false,
+          "navigation_phone_number": "",
+          "navigation_email": "sales@agp.net.au",
           "show_condensed_search": true,
           "show_search_filter": true,
-          "search_menu": "",
+          "search_menu": "agp-1",
           "show_search_menu_title": true
         }
       },
