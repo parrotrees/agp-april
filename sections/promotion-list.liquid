@@ -23,7 +23,7 @@
                 {%- endif -%}
 
                 {%- if block.settings.title != blank -%}
-                  <p class="promo-block__content">{{ block.settings.content | escape | newline_to_br }}</p>
+                  <p class="promo-block__content">{{ block.settings.content }}</p>
                 {%- endif -%}
 
                 {%- if block.settings.button_text != blank -%}
