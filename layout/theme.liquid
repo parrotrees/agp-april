@@ -1,5 +1,21 @@
 <!doctype html>
 
+  <!-- Google Tag Manager -->
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  
+  })(window,document,'script','dataLayer','GTM-W8LR4KT');</script>
+  
+  
+      
+      <!-- End Google Tag Manager -->
+
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
     <meta charset="utf-8">
@@ -22,6 +38,11 @@
 
     <link rel="canonical" href="{{ canonical_url }}">
 
+    {% if collection.url == '/collections/hamilton-collapsible-cases'%}
+  
+    <link rel="canonical" href="https://www.agp.net.au/collections/magnetic_closure_boxes">
+    {% endif %}
+
     {%- if settings.favicon -%}
       <link rel="shortcut icon" href="{{ settings.favicon | img_url: '96x96' }}" type="image/png">
     {%- endif -%}
@@ -39,7 +60,13 @@
     {% render 'social-meta-tags' %}
     {% render 'css-variables' %}
 
+    {% include 'buddha-megamenu' %}
     {{ content_for_header }}
+    <link rel="stylesheet" href="{{ 'pk-theme.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}">
 
     <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
 
