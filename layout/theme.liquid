@@ -17,7 +17,7 @@
       <!-- End Google Tag Manager -->
 
 <html class="no-js" lang="{{ request.locale.iso_code }}">
-  <head>
+  <head>{% render 'pagefly-head' %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="theme-color" content="{{ settings.accent_color }}">
@@ -60,7 +60,7 @@
     {% render 'social-meta-tags' %}
     {% render 'css-variables' %}
 
-    {% include 'buddha-megamenu' %}
+    
     {{ content_for_header }}
     <link rel="stylesheet" href="{{ 'pk-theme.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}">

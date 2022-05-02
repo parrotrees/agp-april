@@ -4,6 +4,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 {% endcomment %}
 <!doctype html>
 
+<<<<<<< HEAD
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>{% render 'pagefly-head' %}
 
@@ -30,6 +31,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=5.0">
     <meta name="theme-color" content="{{ settings.accent_color }}">
     
+=======
+  <!-- Google Tag Manager -->
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  
+  })(window,document,'script','dataLayer','GTM-W8LR4KT');</script>
+  
+  
+      
+      <!-- End Google Tag Manager -->
+
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>{% render 'pagefly-head' %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="{{ settings.accent_color }}">
+
+>>>>>>> f0ef377233f1bf025741ccd083edd31c20417876
     {%- capture seo_page_title -%}
       {%- if request.page_type == 'search' and search.terms != blank -%}
         {{ search.terms | split: ' AND ' | last | split: 'product_type:' | last }} - {{ shop.name }}
@@ -45,6 +70,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {%- endif -%}
 
     <link rel="canonical" href="{{ canonical_url }}">
+<<<<<<< HEAD
     
   {% if product.url == '/products/hamper-box-rectangle-magnetic-closure-large-matt-white'%}
   
@@ -61,15 +87,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="canonical" href="https://boxfox.com.au/collections/magnetic-closure-boxes">
 {% endif %}
     
+=======
+
+    {% if collection.url == '/collections/hamilton-collapsible-cases'%}
+  
+    <link rel="canonical" href="https://www.agp.net.au/collections/magnetic_closure_boxes">
+    {% endif %}
+
+>>>>>>> f0ef377233f1bf025741ccd083edd31c20417876
     {%- if settings.favicon -%}
       <link rel="shortcut icon" href="{{ settings.favicon | img_url: '96x96' }}" type="image/png">
     {%- endif -%}
 
     {%- comment -%}Few prefech to increase performance on commonly used third-parties{%- endcomment -%}
     <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
+<<<<<<< HEAD
     <link rel="preload" as="script" href="{{ 'theme.min.js' | asset_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com">
     <link rel="preconnect" href="https://fonts.shopifycdn.com">
+=======
+    <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com">
+    <link rel="preconnect" href="https://fonts.shopifycdn.com">
+    <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+>>>>>>> f0ef377233f1bf025741ccd083edd31c20417876
     <link rel="dns-prefetch" href="https://ajax.googleapis.com">
     <link rel="dns-prefetch" href="https://maps.googleapis.com">
     <link rel="dns-prefetch" href="https://maps.gstatic.com">
@@ -77,6 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% render 'social-meta-tags' %}
     {% render 'css-variables' %}
 
+<<<<<<< HEAD
     {% include 'buddha-megamenu' %}
   {{ content_for_header }}
     <link rel="stylesheet" href="{{ 'pk-theme.css' | asset_url }}">
@@ -92,6 +134,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {% render 'microdata-schema' %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+=======
+    
+    {{ content_for_header }}
+    <link rel="stylesheet" href="{{ 'pk-theme.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}">
+
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+
+    {% render 'microdata-schema' %}
+
+>>>>>>> f0ef377233f1bf025741ccd083edd31c20417876
     <script>
       // This allows to expose several variables to the global scope, to be used in scripts
       window.theme = {
@@ -99,7 +155,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         cartCount: {{ cart.item_count | json }},
         moneyFormat: {{ shop.money_format | json }},
         moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }},
+<<<<<<< HEAD
         showDiscount: {% if settings.show_discount %}true{% else %}false{% endif %},
+=======
+        currencyCodeEnabled: {{ settings.currency_code_enabled | json }},
+        showDiscount: {{ settings.show_discount | json }},
+>>>>>>> f0ef377233f1bf025741ccd083edd31c20417876
         discountMode: {{ settings.discount_mode | json }},
         searchMode: {{ settings.search_mode | json }},
         searchUnavailableProducts: {{ settings.search_unavailable_products | json }},
@@ -149,6 +210,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
       <script src="{{ 'customer_area.js' | shopify_asset_url }}" defer></script>
     {%- endif -%}
+<<<<<<< HEAD
    
     <script src="{{ 'theme.min.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
@@ -163,6 +225,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
      <script src="{{ 'pk-theme.js' | asset_url }}" defer></script>  -->
     
    
+=======
+
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+    <script src="{{ 'custom.js' | asset_url }}" defer></script>
+
+>>>>>>> f0ef377233f1bf025741ccd083edd31c20417876
     {%- if request.page_type != 'cart' -%}
       <script>
         (function () {
@@ -177,6 +245,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         })();
       </script>
     {%- endif -%}
+<<<<<<< HEAD
   {% include 'mincart' %}  {% include 'qikify-navigator' %}
   {% include 'qikify-smartmenu' %}
    
@@ -204,3 +273,9 @@ if (variant) {
 <!-- // END SWATCHES  -->
 
   
+=======
+  </head>
+
+  <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport"><div class="pagefly-container">{{ content_for_layout }}</div></body>
+</html>
+>>>>>>> f0ef377233f1bf025741ccd083edd31c20417876
