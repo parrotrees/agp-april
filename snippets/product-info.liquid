@@ -6,6 +6,34 @@
     <div id="product-zoom-{{ section.id }}" class="product__zoom-wrapper"></div>
   {%- endif -%}
 
+    {% comment %}
+    ------------------------------------------------------------------------------
+    PRODUCT FORM
+    ------------------------------------------------------------------------------
+    {% endcomment %}
+
+    <div class="mm-metafields">
+  
+      <h3>File</h3>
+      {{ product.metafields["global"]["Qty-1"] }}
+      <h3>HTML</h3>
+      {{ product.metafields["global"]["Qty-2"] }}
+      <h3>Image</h3>
+      {{ product.metafields["global"]["Qty-3"] }}
+      <h3>String</h3>
+      {{ product.metafields["global"]["Qty-4"] }}
+      <h3>Integer</h3>
+      {{ product.metafields["global"]["Qty-5"] }}
+      <h3>Integer</h3>
+      {{ product.metafields["global"]["Qty-6"] }}
+      <h3>Integer</h3>
+      {{ product.metafields["global"]["Qty-7"] }}
+      <h3>Integer</h3>
+      {{ product.metafields["global"]["Qty-8"] }}
+      
+    </div> 
+
+
   <div class="card__section">
     {%- form 'product', product, id: product_form_id, class: 'product-form' -%}
       {%- for block in section.blocks -%}
