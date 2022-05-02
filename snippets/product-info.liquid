@@ -174,12 +174,6 @@
         {%- endcase -%}
       {%- endfor -%}
 
-      <span class="price">
-        <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-        {{- selected_variant.price | money -}}  <span class="gst">Excl GST</span>
-      </span>
- 
-
       {%- assign product_meta_block = section.blocks | where: 'type', 'product_meta' | first -%}
 
       {%- if product_meta_block != blank and product_meta_block.settings.show_share_buttons -%}

@@ -82,9 +82,9 @@
                 {%- capture price_max -%}{{ product.price_max | money }}{%- endcapture -%}
               {%- endif -%}
 
-              <span class="price price--highlight">
+              <span class="price">
                 <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
+                {{- selected_variant.price | money -}}  <span class="gst">Excl GST</span>
               </span>
 
               <span class="price price--compare">
