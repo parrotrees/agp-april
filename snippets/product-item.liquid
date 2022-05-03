@@ -82,9 +82,9 @@
                 {%- capture price_max -%}{{ product.price_max | money }}{%- endcapture -%}
               {%- endif -%}
 
-              <span class="price">
+              <span class="price price--highlight">
                 <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                {{- selected_variant.price | money -}}  <span class="gst">Excl GST</span>
+                {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
               </span>
 
               <span class="price price--compare">
@@ -125,7 +125,22 @@
               {%- capture price_max -%}{{ product.price_max | money }}{%- endcapture -%}
             {%- endif -%}
 
-            
+            <span class="price">
+              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+              {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
+            </span>
+          {%- else -%}
+            <span class="price">
+              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+              {%- if settings.currency_code_enabled -%}
+                {{- product.price | money_with_currency -}}
+              {%- else -%}
+                {{- product.price | money -}}
+              {%- endif -%}
+            </span>
+          {%- endif -%}
+        </div>
+
         {%- if product.selected_or_first_available_variant.unit_price_measurement -%}
           <div class="product-item__price-info">
             <div class="unit-price-measurement">
