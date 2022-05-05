@@ -12518,7 +12518,86 @@ p.product-sku {
   }
 }
 
+/**
+ * --------------------------------------------------------------------
+ * QUANTITY SELECTOR
+ * --------------------------------------------------------------------
+ */
 
+ .quantity-selector {
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 15px));
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(var(--border-color-rgb), 0.2);
+  vertical-align: middle;
+}
+
+.quantity-selector svg:hover {
+  opacity: 1;
+}
+
+.quantity-selector .icon--minus {
+  width: 10px;
+  height: 2px;
+}
+
+.quantity-selector .icon--plus {
+  width: 10px;
+  height: 10px;
+}
+
+.quantity-selector__button {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  color: rgba(var(--text-color-rgb), 0.6);
+  height: 100%;
+  transition: color 0.2s ease-in-out;
+  touch-action: manipulation;
+}
+
+.quantity-selector__button:not([disabled]):hover {
+  color: var(--heading-color);
+}
+
+.quantity-selector__value {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  padding: 0 5px;
+  min-width: 32px;
+  text-align: center;
+  border: none;
+  background: transparent;
+}
+
+.quantity-selector__value:focus {
+  outline: none;
+}
+
+/* The "product" variation is a bigger selector used on product pages only */
+
+.quantity-selector--product {
+  height: 44px;
+}
+
+.quantity-selector--product .quantity-selector__button {
+  padding: 0 16px;
+}
+
+.quantity-selector--product .quantity-selector__value {
+  height: 100%;
+  min-width: 64px;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  box-shadow: 0 1px rgba(var(--border-color-rgb), 0.4) inset;
+  color: var(--heading-color);
+}
+
+/**
 
 /**
  * --------------------------------------------------------------------
