@@ -9,7 +9,7 @@
             "show_vendor": true,
             "show_sku": true,
             "show_reviews_badge": false,
-            "show_share_buttons": true
+            "show_share_buttons": false
           }
         },
         "variant_selector": {
