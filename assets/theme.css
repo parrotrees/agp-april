@@ -14020,6 +14020,63 @@ shopify-payment-terms {
     flex: 0 1 33%;
     padding: 0 0 0 3px;
 }
+.flex-grid{
+  display:flex;
+  flex-wrap:wrap;
+  flex:1 1 100%
+}
+
+[data-center-text=true] .flex-grid{
+    justify-content:center
+}
+
+.flex-grid--center{
+  align-items:center;
+}
+
+.flex-grid--gutters{
+  margin-top:-15px;
+  margin-left:-15px;
+}
+
+.flex-grid__item{
+  flex:0 1 100%;
+  display:flex;
+  align-items:stretch
+}
+
+.flex-grid--gutters .flex-grid__item{
+    padding-top:15px;
+    padding-left:15px
+}
+
+.flex-grid__item>*{
+    flex:1 1 100%;
+  }
+
+.flex-grid__item--stretch{
+  flex:1 1 100%
+}
+
+.flex-grid__item--stretch:first-child{
+    min-width:250px;
+  }
+
+@media only screen and (min-width:769px){
+  .flex-grid__item--33{
+    flex-basis:33.33%;
+  }
+
+  .flex-grid__item--50{
+    flex-basis:50%;
+  }
+}
+
+@media only screen and (max-width:768px){
+  .flex-grid__item--mobile-second{
+    order:2;
+  }
+}
 /**
  * --------------------------------------------------------------------
  * CUSTOM COLOURS FOR HEADER CONTENT
