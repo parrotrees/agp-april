@@ -2977,7 +2977,12 @@ img.lazyload[data-sizes=auto] {
   margin-top: 5px;
 }
 
-
+.mini-cart__quantity-remove {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 13px));
+  line-height: 1;
+}
 
 .mini-cart__recap {
   padding: 15px 20px 20px 20px;
@@ -8612,7 +8617,10 @@ p.product-sku {
   white-space: nowrap; /* Fix for Japanese kanji */
 }
 
-
+.product-form__info-item--quantity > * {
+  padding-top: 6px;
+  vertical-align: middle;
+}
 
 .product-form__info-content {
   display: table-cell;
@@ -12512,16 +12520,6 @@ p.product-sku {
 
 
 
-
-
-/* The "product" variation is a bigger selector used on product pages only */
-
-
-
-
-
-
-
 /**
  * --------------------------------------------------------------------
  * SHIPPING ESTIMATOR
@@ -13499,6 +13497,13 @@ p.product-sku {
     display: none;
 }
   
+  
+
+  
+
+
+
+
   
 .collection-grid-item__title {
     margin-top: 20px;
