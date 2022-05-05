@@ -13885,6 +13885,141 @@ shopify-payment-terms {
 .collection-grid-item {
   margin-bottom: 100px !important;
 } 
+.flex-grid__item.flex-grid__item--33.type-sale_collection .promo-grid__content{
+  padding: 20px 5px !important;
+}
+.promo-grid.promo-grid--space-top.promo-grid--space-bottom .type-sale_collection {
+	flex-grow: 0;
+}
+.flex-grid__item.flex-grid__item--33.type-simple .promo-grid__text p {
+	color: #fff;
+	background: #00000026;
+}
+.flex-grid__item.flex-grid__item--33.type-simple:hover .promo-grid__text p {
+	background: #e8531ecf;
+}
+.flex-grid__item.flex-grid__item--33.type-advanced .rte--block.rte--strong {
+	color: #fff;
+}
+.flex-grid__item.type-sale_collection .rte--block.rte--strong {
+	font-size: 25px !important;
+}
+.type-advanced .promo-grid__content:not(.promo-grid__content--boxed):not(.promo-grid__content--sale)::after, .type-simple .promo-grid__content:not(.promo-grid__content--boxed):not(.promo-grid__content--sale)::after {
+	background: radial-gradient(rgba(0, 0, 0, 0.05) 0%, transparent 60%) !important;
+	background: radial-gradient(rgba(0,0,0,var(--colorImageOverlayTextShadow)) 0%, transparent 60%);
+	margin: -100px -200px -100px -200px;
+	z-index: 1;
+}
+.promo-grid__text .rte--block.rte--strong {
+/* 	font-family: 'Fjalla One', sans-serif; */
+	letter-spacing: 1px;
+}
+.flex-grid__item.flex-grid__item--33 .rte--block.rte--strong {
+  color:#000;
+}
+.promo-grid__text .btn {
+	letter-spacing: 3px;
+	border-radius: 0 !important;
+}
+.mega-menu__link {
+	text-align: left !important;
+  padding:2px 0px ;
+}
+.promo-grid__text p {
+	margin: 0;
+	padding: 4px 15px 5px;
+	font-size: 18px !important;
+	letter-spacing: 1px;
+}
+.grid__image-ratio {
+  height: 300px;
+}
+.grid {
+  font-size: inherit;
+}
+.promo-grid__content.promo-grid__content--boxed.promo-grid__content--framed {
+	background: #ffffffd6;
+	border: 5px solid #ffffffc7;
+	padding: 20px 0px;
+	width: 100% !important;
+}
+.grid-overflow-wrapper.featured1  .grid__item.grid__item--view-all.text-center.small--one-half.medium-up--one-quarter.medium-up--hide {
+	width: 100%;
+	flex: 0 0 95%;
+	margin-top: 30px;
+}
+    .grid-overflow-wrapper.featured1 .grid__item:first-child {
+	margin-left: 0;
+}
+.grid {
+    margin: 0px;
+}
+  .grid__image-ratio {
+    height: 150px;
+}
+}
+@media only screen and (max-width: 576px){
+.grid-overflow-wrapper .grid__item {
+	width: 100% !important;
+	flex: 0 0 95% !important;
+	display: inline-block;
+	float: none;
+	white-space: normal;
+}
+}
+.collection-item__title svg {
+    display: none;
+}
+@media screen and (min-width: 641px){
+.collection-item__title {
+    transform: inherit;
+}
+}
+@media screen and (min-width: 1000px){
+.nav-bar {
+    text-align:center;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+.flex-grid__item.type-advanced {
+    flex: 0 1 33%;
+    padding: 0 0 0 3px!important;
+}
+ .flex-grid__item.flex-grid__item--50.type-advanced {
+     flex: 0 1 50%;
+    padding: 0 0px 0 5px !important;
+
+}
+  .flex-grid__item.flex-grid__item--33.type-image {
+    flex: 0 1 33%;
+}
+.flex-grid__item.flex-grid__item--33.type-sale_collection {
+    flex: 0 1 33%;
+    padding: 10px 0 0 2px;
+}
+ .flex-grid.flex-grid--gutters {
+    margin-top: -20px;
+    margin-left: -10px;
+}
+  .type-advanced .promo-grid__content {
+    padding: 0.5em;
+}
+  .promo-grid__text .btn {
+    letter-spacing: 1px;
+    border-radius: 0!important;
+    font-size: 12px;
+}
+  .flex-grid__item.type-sale_collection .rte--block.rte--strong {
+    font-size: 20px!important;
+}
+  .flex-grid__item.type-sale_collection  .promo-grid__container--tint.vertical-center.horizontal-left .rte--block.rte--em {
+    font-size: 11px !important;
+}
+  .flex-grid__item.flex-grid__item--33.type-simple {
+    flex: 0 1 33%;
+    padding: 0 0 0 3px;
+}
 /**
  * --------------------------------------------------------------------
  * CUSTOM COLOURS FOR HEADER CONTENT
