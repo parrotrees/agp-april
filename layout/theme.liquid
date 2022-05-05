@@ -39,9 +39,13 @@
     {% render 'social-meta-tags' %}
     {% render 'css-variables' %}
 
+    {% include 'buddha-megamenu' %}
     {{ content_for_header }}
-
-    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+      <link rel="stylesheet" href="{{ 'pk-theme.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}">
+      <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+      <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
+      <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}">
 
     {% render 'microdata-schema' %}
 
@@ -107,7 +111,18 @@
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
 
-    {%- if request.page_type != 'cart' -%}
+    <script src="{{ 'bootstrap.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'popper.min.js' | asset_url }}" defer></script>
+
+   
+
+ <!--    <script src="{{ 'pk-vendor-scripts-v9.js' | asset_url | split: '?' | first}}" ></script>
+<script src="{{ 'pk-theme.min.js' | asset_url }}" ></script>
+  
+     <script src="{{ 'pk-theme.js' | asset_url }}" defer></script>  -->
+    
+   
+     {%- if request.page_type != 'cart' -%}
       <script>
         (function () {
           window.onpageshow = function() {
@@ -121,7 +136,14 @@
         })();
       </script>
     {%- endif -%}
-  </head>
+  {% include 'mincart' %}  {% include 'qikify-navigator' %}
+  {% include 'qikify-smartmenu' %}
+   
+ 
+{% include 'pagefly-header' %}
+ 
+{{ 'scqb-tmp-2017210342.js' | asset_url | script_tag }}
+</head> 
 
   <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport">
     {%- comment -%}Common SVG definitions that we are re-using in several places{%- endcomment -%}
@@ -150,6 +172,13 @@
 
     {% section 'static-text-with-icons' %}
     {% section 'footer' %}
+
+  </div>
+    </div>
+      <ul hidden>
+      <li id="a11y-new-window-message">{{ 'general.accessibility.new_window' | t }}</li>
+       </ul>
+        {% render 'sc-quantity-break' %}
 
     <ul hidden>
       <li id="a11y-new-window-message">{{ 'general.accessibility.new_window' | t }}</li>

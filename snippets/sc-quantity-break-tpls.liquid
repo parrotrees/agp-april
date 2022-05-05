@@ -1,0 +1,293 @@
+<script type="text/template" id="tpl_sc_qb_tbl_style_2017210342">
+<style type="text/css">
+    #div-sc-qb-2017210342 .tbl-qb-grid,.div-sc-qb-2017210342 .tbl-qb-grid{
+        border: 1px solid #<%=sc_qb_settings.grid_border_color%> !important;
+        margin: <%=sc_qb_settings.grid_margin%>px !important;
+    }
+    #div-sc-qb-2017210342 .tbl-qb-grid thead tr,.div-sc-qb-2017210342 .tbl-qb-grid thead tr{
+        background: #<%=sc_qb_settings.grid_header_bg%> !important;
+    }
+    
+    #div-sc-qb-2017210342 .tbl-qb-grid tbody tr,.div-sc-qb-2017210342 .tbl-qb-grid tbody tr, #div-sc-qb-2017210342 .tbl-qb-grid tbody tr td,.div-sc-qb-2017210342 .tbl-qb-grid tbody tr td{
+        background: #<%=sc_qb_settings.grid_primary_bg%> !important;
+    }
+    #div-sc-qb-2017210342 .tbl-qb-grid tbody tr:nth-child(even),.div-sc-qb-2017210342 .tbl-qb-grid tbody tr:nth-child(even), #div-sc-qb-2017210342 .tbl-qb-grid tbody tr:nth-child(even) td,.div-sc-qb-2017210342 .tbl-qb-grid tbody tr:nth-child(even) td{
+        background: #<%=sc_qb_settings.grid_alternate_bg%> !important;
+    }
+    #div-sc-qb-2017210342 .tbl-qb-grid th,#div-sc-qb-2017210342 .tbl-qb-grid td,.div-sc-qb-2017210342 .tbl-qb-grid th,.div-sc-qb-2017210342 .tbl-qb-grid td
+    {
+    	font-size: <%=sc_qb_settings.grid_font_size%>px !important;
+        padding: <%=sc_qb_settings.grid_cell_padding%>px !important;
+        border: none;
+    }
+    #div-sc-qb-2017210342 .tbl-qb-grid td,.div-sc-qb-2017210342 .tbl-qb-grid td
+    {
+    	color: #<%=sc_qb_settings.grid_standard_font_color%> !important;
+    }
+    #div-sc-qb-2017210342 .tbl-qb-grid th,.div-sc-qb-2017210342 .tbl-qb-grid th
+    {
+    	<% if(sc_qb_settings.grid_font_bold=='1'){ %>
+        font-weight: bold !important;
+        <% } else{ %>
+        font-weight: normal !important;
+        <% } %>
+        color: #<%=sc_qb_settings.grid_header_font_color%> !important;
+        background: #<%=sc_qb_settings.grid_header_bg%> !important;
+    }
+    
+</style>
+</script>
+
+<script type="text/template" id="tpl_detailed_price_grid_2017210342">
+<table class="tbl-qb-grid">
+    <thead>
+        <tr>
+            <th><%=sc_qb_settings.qty_text%></th>
+            <th><%=sc_qb_settings.price_text%></th>
+            <th>Incl. GST</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% for (i=0;i<qb_price_tiers.length;i++) { %>
+            <tr data-qty="<%= qb_price_tiers[i].quantity %>" data-price="<%= qb_price_tiers[i].price %>">
+                <td><%=sc_qb_settings.buy_qty_text%> <%= qb_price_tiers[i].quantity %></td>
+                <td><%= sc_gqbreak_app_global.price_with_current_currency(qb_price_tiers[i].price) %> <%=sc_qb_settings.price_each_text%></td>
+                <td><%= SC_Shopify.formatMoney(qb_price_tiers[i].price*110,money_format) %> <%=sc_qb_settings.price_each_text%></td>
+            </tr>
+            
+        <% } %>
+        
+    </tbody>
+    
+    
+</table>
+</script>
+
+<script type="text/template" id="tpl_basic_price_grid_2017210342">
+<table class="tbl-qb-grid">
+    <thead>
+        <tr>
+            <th><%=sc_qb_settings.qty_text%></th>
+            <th><%=sc_qb_settings.price_text%></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% for (i=0;i<qb_price_tiers.length;i++) { %>
+            <tr data-qty="<%= qb_price_tiers[i].quantity %>" data-price="<%= qb_price_tiers[i].price %>">
+                <td><%= qb_price_tiers[i].quantity %></td>
+                <td><%= sc_gqbreak_app_global.price_with_current_currency(qb_price_tiers[i].price) %></td>
+                
+            </tr>
+        <% } %>
+    </tbody>
+    
+    
+</table>
+</script>
+
+<script type="text/template" id="tpl_detailed_quantity_range_price_grid_2017210342">
+<table class="tbl-qb-grid">
+    <thead>
+        <tr>
+            <th><%=sc_qb_settings.min_qty_text%></th>
+            <th><%=sc_qb_settings.max_qty_text%></th>
+            <th><%=sc_qb_settings.price_text%></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% for (i=0;i<qb_price_tiers.length;i++) { %>
+            <tr data-qty="<%= qb_price_tiers[i].quantity %>" data-price="<%= qb_price_tiers[i].price %>">
+                <td><%= qb_price_tiers[i].quantity %></td>
+                <% if(i==(qb_price_tiers.length-1)){ %>
+                <td><%= sc_qb_settings.unlimited_qty_text %></td>
+                <% }else{ %>
+                <td><%= qb_price_tiers[i+1].quantity-1 %></td>
+                <% } %>
+                <td><%= sc_gqbreak_app_global.price_with_current_currency(qb_price_tiers[i].price) %></td>
+                
+            </tr>
+        <% } %>
+    </tbody>
+    
+    
+</table>
+</script>
+
+<script type="text/template" id="tpl_detailed_discount_percent_grid_2017210342">
+<table class="tbl-qb-grid">
+    <thead>
+        <tr>
+            <th><%=sc_qb_settings.qty_text%></th>
+            <th><%=sc_qb_settings.price_text%></th>
+            <th><%=sc_qb_settings.percent_discount_text%></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% for (i=0;i<qb_price_tiers.length;i++) { %>
+            <tr data-qty="<%= qb_price_tiers[i].quantity %>" data-price="<%= qb_price_tiers[i].price %>">
+                <td><%=sc_qb_settings.buy_qty_text%> <%= qb_price_tiers[i].quantity %></td>
+                <td><%= sc_gqbreak_app_global.price_with_current_currency(qb_price_tiers[i].price) %> <%=sc_qb_settings.price_each_text%></td>
+                <td>
+                <% if(parseFloat(qb_price_tiers[i].percent_discount).toFixed(2)-parseInt(qb_price_tiers[i].percent_discount)!=0){ %>
+                <%= parseFloat(qb_price_tiers[i].percent_discount).toFixed(2) %>% 
+                <% }else{ %>
+                <%= qb_price_tiers[i].percent_discount %>% 
+                <% } %>
+                <%=sc_qb_settings.percent_off_text%></td>
+            </tr>
+            
+        <% } %>
+        
+    </tbody>
+    
+    
+</table>
+</script>
+
+<script type="text/template" id="tpl_basic_discount_percent_grid_2017210342">
+<table class="tbl-qb-grid">
+    <thead>
+        <tr>
+            <th><%=sc_qb_settings.qty_text%></th>
+            <th><%=sc_qb_settings.percent_discount_text%></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% for (i=0;i<qb_price_tiers.length;i++) { %>
+            <tr data-qty="<%= qb_price_tiers[i].quantity %>" data-price="<%= qb_price_tiers[i].price %>">
+                <td><%=sc_qb_settings.buy_qty_text%> <%= qb_price_tiers[i].quantity %></td>
+                <td>
+                <% if(parseFloat(qb_price_tiers[i].percent_discount).toFixed(2)-parseInt(qb_price_tiers[i].percent_discount)!=0){ %>
+                <%= parseFloat(qb_price_tiers[i].percent_discount).toFixed(2) %>% 
+                <% }else{ %>
+                <%= qb_price_tiers[i].percent_discount %>% 
+                <% } %>
+                <%=sc_qb_settings.percent_off_text%></td>
+            </tr>
+            
+        <% } %>
+        
+    </tbody>
+    
+    
+</table>
+</script>
+
+<script type="text/template" id="tpl_basic_quantity_range_price_grid_2017210342">
+<table class="tbl-qb-grid">
+    <thead>
+        <tr>
+            <th><%=sc_qb_settings.qty_text%></th>
+            <th><%=sc_qb_settings.price_text%></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% for (i=0;i<qb_price_tiers.length;i++) { %>
+            <tr data-qty="<%= qb_price_tiers[i].quantity %>" data-price="<%= qb_price_tiers[i].price %>">
+                <td><%= qb_price_tiers[i].quantity %> -
+                <% if(i==(qb_price_tiers.length-1)){ %>
+                <%= sc_qb_settings.unlimited_qty_text %>
+                <% }else{ %>
+                <%= qb_price_tiers[i+1].quantity-1 %>
+                <% } %>
+                </td>
+                <td><%= sc_gqbreak_app_global.price_with_current_currency(qb_price_tiers[i].price) %></td>
+                
+            </tr>
+        <% } %>
+    </tbody>
+    
+    
+</table>
+</script>
+
+<script type="text/template" id="tpl_detailed_discount_amount_grid_2017210342">
+<table class="tbl-qb-grid">
+    <thead>
+        <tr>
+            <th><%=sc_qb_settings.qty_text%></th>
+            <th><%=sc_qb_settings.price_text%></th>
+            <th><%=sc_qb_settings.percent_discount_text%></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% for (i=0;i<qb_price_tiers.length;i++) { %>
+            <tr data-qty="<%= qb_price_tiers[i].quantity %>" data-price="<%= qb_price_tiers[i].price %>">
+                <td><%=sc_qb_settings.buy_qty_text%> <%= qb_price_tiers[i].quantity %></td>
+                <td><%= sc_gqbreak_app_global.price_with_current_currency(qb_price_tiers[i].price) %> <%=sc_qb_settings.price_each_text%></td>
+                <td><%= sc_gqbreak_app_global.price_with_current_currency(qb_price_tiers[i].discount_amount) %> <%=sc_qb_settings.percent_off_text%> <%=sc_qb_settings.price_each_text%></td>
+            </tr>
+            
+        <% } %>
+        
+    </tbody>
+    
+    
+</table>
+</script>
+
+<script type="text/template" id="tpl_basic_discount_amount_grid_2017210342">
+<table class="tbl-qb-grid">
+    <thead>
+        <tr>
+            <th><%=sc_qb_settings.qty_text%></th>
+            <th><%=sc_qb_settings.percent_discount_text%></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% for (i=0;i<qb_price_tiers.length;i++) { %>
+            <tr data-qty="<%= qb_price_tiers[i].quantity %>" data-price="<%= qb_price_tiers[i].price %>">
+                <td><%=sc_qb_settings.buy_qty_text%> <%= qb_price_tiers[i].quantity %></td>
+                <td><%= sc_gqbreak_app_global.price_with_current_currency(qb_price_tiers[i].discount_amount) %> <%=sc_qb_settings.percent_off_text%> <%=sc_qb_settings.price_each_text%></td>
+            </tr>
+            
+        <% } %>
+        
+    </tbody>
+    
+    
+</table>
+</script>
+
+<script type="text/template" id="tpl_basic_quantity_range_discount_percent_grid_2017210342">
+<table class="tbl-qb-grid">
+    <thead>
+        <tr>
+            <th><%=sc_qb_settings.qty_text%></th>
+            <th><%=sc_qb_settings.percent_discount_text%></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% for (i=0;i<qb_price_tiers.length;i++) { %>
+            <tr data-qty="<%= qb_price_tiers[i].quantity %>" data-price="<%= qb_price_tiers[i].price %>">
+                <td><%= qb_price_tiers[i].quantity %> -
+                <% if(i==(qb_price_tiers.length-1)){ %>
+                <%= sc_qb_settings.unlimited_qty_text %>
+                <% }else{ %>
+                <%= qb_price_tiers[i+1].quantity-1 %>
+                <% } %>
+                </td>
+                <td>
+                <% if(parseFloat(qb_price_tiers[i].percent_discount).toFixed(2)-parseInt(qb_price_tiers[i].percent_discount)!=0){ %>
+                <%= parseFloat(qb_price_tiers[i].percent_discount).toFixed(2) %>% 
+                <% }else{ %>
+                <%= qb_price_tiers[i].percent_discount %>% 
+                <% } %>
+                <%=sc_qb_settings.percent_off_text%></td>
+                
+            </tr>
+        <% } %>
+    </tbody>
+    
+    
+</table>
+</script>
