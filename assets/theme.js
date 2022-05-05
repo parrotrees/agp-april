@@ -41,140 +41,6 @@
     return Constructor;
   }
 
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function");
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) _setPrototypeOf(subClass, superClass);
-  }
-
-  function _getPrototypeOf(o) {
-    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-      return o.__proto__ || Object.getPrototypeOf(o);
-    };
-    return _getPrototypeOf(o);
-  }
-
-  function _setPrototypeOf(o, p) {
-    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-      o.__proto__ = p;
-      return o;
-    };
-
-    return _setPrototypeOf(o, p);
-  }
-
-  function _isNativeReflectConstruct() {
-    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-    if (Reflect.construct.sham) return false;
-    if (typeof Proxy === "function") return true;
-
-    try {
-      Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
-
-  function _construct(Parent, args, Class) {
-    if (_isNativeReflectConstruct()) {
-      _construct = Reflect.construct;
-    } else {
-      _construct = function _construct(Parent, args, Class) {
-        var a = [null];
-        a.push.apply(a, args);
-        var Constructor = Function.bind.apply(Parent, a);
-        var instance = new Constructor();
-        if (Class) _setPrototypeOf(instance, Class.prototype);
-        return instance;
-      };
-    }
-
-    return _construct.apply(null, arguments);
-  }
-
-  function _isNativeFunction(fn) {
-    return Function.toString.call(fn).indexOf("[native code]") !== -1;
-  }
-
-  function _wrapNativeSuper(Class) {
-    var _cache = typeof Map === "function" ? new Map() : undefined;
-
-    _wrapNativeSuper = function _wrapNativeSuper(Class) {
-      if (Class === null || !_isNativeFunction(Class)) return Class;
-
-      if (typeof Class !== "function") {
-        throw new TypeError("Super expression must either be null or a function");
-      }
-
-      if (typeof _cache !== "undefined") {
-        if (_cache.has(Class)) return _cache.get(Class);
-
-        _cache.set(Class, Wrapper);
-      }
-
-      function Wrapper() {
-        return _construct(Class, arguments, _getPrototypeOf(this).constructor);
-      }
-
-      Wrapper.prototype = Object.create(Class.prototype, {
-        constructor: {
-          value: Wrapper,
-          enumerable: false,
-          writable: true,
-          configurable: true
-        }
-      });
-      return _setPrototypeOf(Wrapper, Class);
-    };
-
-    return _wrapNativeSuper(Class);
-  }
-
-  function _assertThisInitialized(self) {
-    if (self === void 0) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return self;
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (call && (typeof call === "object" || typeof call === "function")) {
-      return call;
-    }
-
-    return _assertThisInitialized(self);
-  }
-
-  function _createSuper(Derived) {
-    var hasNativeReflectConstruct = _isNativeReflectConstruct();
-
-    return function _createSuperInternal() {
-      var Super = _getPrototypeOf(Derived),
-          result;
-
-      if (hasNativeReflectConstruct) {
-        var NewTarget = _getPrototypeOf(this).constructor;
-
-        result = Reflect.construct(Super, arguments, NewTarget);
-      } else {
-        result = Super.apply(this, arguments);
-      }
-
-      return _possibleConstructorReturn(this, result);
-    };
-  }
-
   function _unsupportedIterableToArray(o, minLen) {
     if (!o) return;
     if (typeof o === "string") return _arrayLikeToArray(o, minLen);
@@ -1519,6 +1385,232 @@
     return DesktopNavigation;
   }();
 
+  var fastdom = createCommonjsModule(function (module) {
+    !function (win) {
+      /**
+       * Mini logger
+       *
+       * @return {Function}
+       */
+
+      var debug =  function () {};
+      /**
+       * Normalized rAF
+       *
+       * @type {Function}
+       */
+
+      var raf = win.requestAnimationFrame || win.webkitRequestAnimationFrame || win.mozRequestAnimationFrame || win.msRequestAnimationFrame || function (cb) {
+        return setTimeout(cb, 16);
+      };
+      /**
+       * Initialize a `FastDom`.
+       *
+       * @constructor
+       */
+
+
+      function FastDom() {
+        var self = this;
+        self.reads = [];
+        self.writes = [];
+        self.raf = raf.bind(win); // test hook
+      }
+
+      FastDom.prototype = {
+        constructor: FastDom,
+
+        /**
+         * Adds a job to the read batch and
+         * schedules a new frame if need be.
+         *
+         * @param  {Function} fn
+         * @param  {Object} ctx the context to be bound to `fn` (optional).
+         * @public
+         */
+        measure: function measure(fn, ctx) {
+          var task = !ctx ? fn : fn.bind(ctx);
+          this.reads.push(task);
+          scheduleFlush(this);
+          return task;
+        },
+
+        /**
+         * Adds a job to the
+         * write batch and schedules
+         * a new frame if need be.
+         *
+         * @param  {Function} fn
+         * @param  {Object} ctx the context to be bound to `fn` (optional).
+         * @public
+         */
+        mutate: function mutate(fn, ctx) {
+          var task = !ctx ? fn : fn.bind(ctx);
+          this.writes.push(task);
+          scheduleFlush(this);
+          return task;
+        },
+
+        /**
+         * Clears a scheduled 'read' or 'write' task.
+         *
+         * @param {Object} task
+         * @return {Boolean} success
+         * @public
+         */
+        clear: function clear(task) {
+          return remove(this.reads, task) || remove(this.writes, task);
+        },
+
+        /**
+         * Extend this FastDom with some
+         * custom functionality.
+         *
+         * Because fastdom must *always* be a
+         * singleton, we're actually extending
+         * the fastdom instance. This means tasks
+         * scheduled by an extension still enter
+         * fastdom's global task queue.
+         *
+         * The 'super' instance can be accessed
+         * from `this.fastdom`.
+         *
+         * @example
+         *
+         * var myFastdom = fastdom.extend({
+         *   initialize: function() {
+         *     // runs on creation
+         *   },
+         *
+         *   // override a method
+         *   measure: function(fn) {
+         *     // do extra stuff ...
+         *
+         *     // then call the original
+         *     return this.fastdom.measure(fn);
+         *   },
+         *
+         *   ...
+         * });
+         *
+         * @param  {Object} props  properties to mixin
+         * @return {FastDom}
+         */
+        extend: function extend(props) {
+          if (_typeof(props) != 'object') throw new Error('expected object');
+          var child = Object.create(this);
+          mixin(child, props);
+          child.fastdom = this; // run optional creation hook
+
+          if (child.initialize) child.initialize();
+          return child;
+        },
+        // override this with a function
+        // to prevent Errors in console
+        // when tasks throw
+        "catch": null
+      };
+      /**
+       * Schedules a new read/write
+       * batch if one isn't pending.
+       *
+       * @private
+       */
+
+      function scheduleFlush(fastdom) {
+        if (!fastdom.scheduled) {
+          fastdom.scheduled = true;
+          fastdom.raf(flush.bind(null, fastdom));
+        }
+      }
+      /**
+       * Runs queued `read` and `write` tasks.
+       *
+       * Errors are caught and thrown by default.
+       * If a `.catch` function has been defined
+       * it is called instead.
+       *
+       * @private
+       */
+
+
+      function flush(fastdom) {
+        var writes = fastdom.writes;
+        var reads = fastdom.reads;
+        var error;
+
+        try {
+          debug('flushing reads', reads.length);
+          runTasks(reads);
+          debug('flushing writes', writes.length);
+          runTasks(writes);
+        } catch (e) {
+          error = e;
+        }
+
+        fastdom.scheduled = false; // If the batch errored we may still have tasks queued
+
+        if (reads.length || writes.length) scheduleFlush(fastdom);
+
+        if (error) {
+          debug('task errored', error.message);
+          if (fastdom["catch"]) fastdom["catch"](error);else throw error;
+        }
+      }
+      /**
+       * We run this inside a try catch
+       * so that if any jobs error, we
+       * are able to recover and continue
+       * to flush the batch until it's empty.
+       *
+       * @private
+       */
+
+
+      function runTasks(tasks) {
+        var task;
+
+        while (task = tasks.shift()) {
+          task();
+        }
+      }
+      /**
+       * Remove an item from an Array.
+       *
+       * @param  {Array} array
+       * @param  {*} item
+       * @return {Boolean}
+       */
+
+
+      function remove(array, item) {
+        var index = array.indexOf(item);
+        return !!~index && !!array.splice(index, 1);
+      }
+      /**
+       * Mixin own properties of source
+       * object into the target.
+       *
+       * @param  {Object} target
+       * @param  {Object} source
+       */
+
+
+      function mixin(target, source) {
+        for (var key in source) {
+          if (source.hasOwnProperty(key)) target[key] = source[key];
+        }
+      } // There should never be more than
+      // one instance of `FastDom` in an app
+
+
+      var exports = win.fastdom = win.fastdom || new FastDom(); // jshint ignore:line
+      // Expose to CJS & AMD
+
+      module.exports = exports;
+    }(typeof window !== 'undefined' ? window : commonjsGlobal);
+  });
+
   var CollectionFilterDrawer = /*#__PURE__*/function () {
     function CollectionFilterDrawer(options) {
       _classCallCheck(this, CollectionFilterDrawer);
@@ -1577,6 +1669,45 @@
       key: "_computeDrawerHeight",
       value: function _computeDrawerHeight() {
         document.getElementById('mobile-collection-filters').querySelector('.collection-drawer').style.maxHeight = "".concat(window.innerHeight, "px");
+      }
+      /**
+       * This method is called by the collection section whenever the filters have changed, so we can update them
+       */
+
+    }, {
+      key: "_filtersHaveChanged",
+      value: function _filtersHaveChanged(newFilters) {
+        var _this = this;
+
+        if (!this.element) {
+          return;
+        }
+
+        fastdom.mutate(function () {
+          // First, we update the filters count
+          var filterCountElement = _this.element.querySelector('.collection-drawer__filter-count');
+
+          filterCountElement.innerText = "(".concat(newFilters.length, ")");
+          filterCountElement.style.display = newFilters.length === 0 ? 'none' : 'inline'; // Then we hide/display the clear tag button
+
+          _this.element.querySelector('[data-action="clear-tags"]').style.display = newFilters.length === 0 ? 'none' : 'block'; // Finally, we have to toggle on/off the active filter
+
+          if (_this.options['filterType'] === 'group') {
+            _this.element.querySelectorAll('.collection__filter-item-active').forEach(function (item) {
+              // We check if this item has an active tag
+              var parentList = item.closest('.collection__filter-group'); // We find if there is associated active data-tag
+
+              var activeDataTag = parentList.querySelector('.is-selected[data-tag]');
+
+              if (activeDataTag) {
+                item.style.display = 'block';
+                item.innerText = activeDataTag.getAttribute('data-tag-user');
+              } else {
+                item.style.display = 'none';
+              }
+            });
+          }
+        });
       }
     }, {
       key: "_detectOutsideClick",
@@ -1824,7 +1955,6 @@
 
         if (window.theme.pageType !== 'cart' && window.theme.cartType !== 'page') {
           this.delegateElement.on('click', '[data-action="toggle-mini-cart"]', this._toggleMiniCart.bind(this));
-          this.delegateElement.on('keyup', this._checkMiniCartClose.bind(this));
           this.delegateRoot.on('click', this._onWindowClick.bind(this));
           window.addEventListener('resize', this._calculateMiniCartHeightListener);
         }
@@ -1883,17 +2013,6 @@
         this.miniCartElement.setAttribute('aria-hidden', 'true');
         this.isMiniCartOpen = false;
         document.body.classList.remove('no-mobile-scroll');
-      }
-    }, {
-      key: "_checkMiniCartClose",
-      value: function _checkMiniCartClose(event) {
-        if (!this.isMiniCartOpen) {
-          return;
-        }
-
-        if (event.key === 'Escape') {
-          this._closeMiniCart();
-        }
       }
     }, {
       key: "_calculateMiniCartHeight",
@@ -1999,24 +2118,19 @@
         var url = '';
 
         if (window.theme.pageType !== 'cart') {
-          url = "".concat(window.routes.cartUrl, "?section_id=mini-cart");
+          url = "".concat(window.routes.cartUrl, "?view=mini-cart&timestamp=").concat(Date.now());
         } else {
-          var cartSection = document.querySelector('[data-section-type="cart"]');
-          url = "".concat(window.routes.cartUrl, "?section_id=").concat(cartSection.getAttribute('data-section-id'));
+          url = "".concat(window.routes.cartUrl, "?timestamp=").concat(Date.now());
         }
 
         return fetch(url, {
           credentials: 'same-origin',
-          method: 'GET',
-          headers: {
-            'Cache-Control': 'no-cache'
-          }
+          method: 'GET'
         }).then(function (content) {
           content.text().then(function (html) {
             // We extract the data-item-count from the returned element
             var myDiv = document.createElement('div');
             myDiv.innerHTML = html;
-            myDiv = myDiv.firstElementChild;
 
             if (myDiv.firstElementChild && myDiv.firstElementChild.hasAttribute('data-item-count')) {
               _this2.itemCount = parseInt(myDiv.firstElementChild.getAttribute('data-item-count'));
@@ -2063,6 +2177,12 @@
                     top: 0,
                     behavior: 'smooth'
                   });
+                } // Reload the Shopify Review badges
+
+
+                if (window.SPR) {
+                  window.SPR.initDomEls();
+                  window.SPR.loadBadges();
                 }
 
                 _this2.element.dispatchEvent(new CustomEvent('cart:rerendered', {
@@ -2412,232 +2532,6 @@
 
     return NewsletterPopup;
   }();
-
-  var fastdom = createCommonjsModule(function (module) {
-    !function (win) {
-      /**
-       * Mini logger
-       *
-       * @return {Function}
-       */
-
-      var debug =  function () {};
-      /**
-       * Normalized rAF
-       *
-       * @type {Function}
-       */
-
-      var raf = win.requestAnimationFrame || win.webkitRequestAnimationFrame || win.mozRequestAnimationFrame || win.msRequestAnimationFrame || function (cb) {
-        return setTimeout(cb, 16);
-      };
-      /**
-       * Initialize a `FastDom`.
-       *
-       * @constructor
-       */
-
-
-      function FastDom() {
-        var self = this;
-        self.reads = [];
-        self.writes = [];
-        self.raf = raf.bind(win); // test hook
-      }
-
-      FastDom.prototype = {
-        constructor: FastDom,
-
-        /**
-         * Adds a job to the read batch and
-         * schedules a new frame if need be.
-         *
-         * @param  {Function} fn
-         * @param  {Object} ctx the context to be bound to `fn` (optional).
-         * @public
-         */
-        measure: function measure(fn, ctx) {
-          var task = !ctx ? fn : fn.bind(ctx);
-          this.reads.push(task);
-          scheduleFlush(this);
-          return task;
-        },
-
-        /**
-         * Adds a job to the
-         * write batch and schedules
-         * a new frame if need be.
-         *
-         * @param  {Function} fn
-         * @param  {Object} ctx the context to be bound to `fn` (optional).
-         * @public
-         */
-        mutate: function mutate(fn, ctx) {
-          var task = !ctx ? fn : fn.bind(ctx);
-          this.writes.push(task);
-          scheduleFlush(this);
-          return task;
-        },
-
-        /**
-         * Clears a scheduled 'read' or 'write' task.
-         *
-         * @param {Object} task
-         * @return {Boolean} success
-         * @public
-         */
-        clear: function clear(task) {
-          return remove(this.reads, task) || remove(this.writes, task);
-        },
-
-        /**
-         * Extend this FastDom with some
-         * custom functionality.
-         *
-         * Because fastdom must *always* be a
-         * singleton, we're actually extending
-         * the fastdom instance. This means tasks
-         * scheduled by an extension still enter
-         * fastdom's global task queue.
-         *
-         * The 'super' instance can be accessed
-         * from `this.fastdom`.
-         *
-         * @example
-         *
-         * var myFastdom = fastdom.extend({
-         *   initialize: function() {
-         *     // runs on creation
-         *   },
-         *
-         *   // override a method
-         *   measure: function(fn) {
-         *     // do extra stuff ...
-         *
-         *     // then call the original
-         *     return this.fastdom.measure(fn);
-         *   },
-         *
-         *   ...
-         * });
-         *
-         * @param  {Object} props  properties to mixin
-         * @return {FastDom}
-         */
-        extend: function extend(props) {
-          if (_typeof(props) != 'object') throw new Error('expected object');
-          var child = Object.create(this);
-          mixin(child, props);
-          child.fastdom = this; // run optional creation hook
-
-          if (child.initialize) child.initialize();
-          return child;
-        },
-        // override this with a function
-        // to prevent Errors in console
-        // when tasks throw
-        "catch": null
-      };
-      /**
-       * Schedules a new read/write
-       * batch if one isn't pending.
-       *
-       * @private
-       */
-
-      function scheduleFlush(fastdom) {
-        if (!fastdom.scheduled) {
-          fastdom.scheduled = true;
-          fastdom.raf(flush.bind(null, fastdom));
-        }
-      }
-      /**
-       * Runs queued `read` and `write` tasks.
-       *
-       * Errors are caught and thrown by default.
-       * If a `.catch` function has been defined
-       * it is called instead.
-       *
-       * @private
-       */
-
-
-      function flush(fastdom) {
-        var writes = fastdom.writes;
-        var reads = fastdom.reads;
-        var error;
-
-        try {
-          debug('flushing reads', reads.length);
-          runTasks(reads);
-          debug('flushing writes', writes.length);
-          runTasks(writes);
-        } catch (e) {
-          error = e;
-        }
-
-        fastdom.scheduled = false; // If the batch errored we may still have tasks queued
-
-        if (reads.length || writes.length) scheduleFlush(fastdom);
-
-        if (error) {
-          debug('task errored', error.message);
-          if (fastdom["catch"]) fastdom["catch"](error);else throw error;
-        }
-      }
-      /**
-       * We run this inside a try catch
-       * so that if any jobs error, we
-       * are able to recover and continue
-       * to flush the batch until it's empty.
-       *
-       * @private
-       */
-
-
-      function runTasks(tasks) {
-        var task;
-
-        while (task = tasks.shift()) {
-          task();
-        }
-      }
-      /**
-       * Remove an item from an Array.
-       *
-       * @param  {Array} array
-       * @param  {*} item
-       * @return {Boolean}
-       */
-
-
-      function remove(array, item) {
-        var index = array.indexOf(item);
-        return !!~index && !!array.splice(index, 1);
-      }
-      /**
-       * Mixin own properties of source
-       * object into the target.
-       *
-       * @param  {Object} target
-       * @param  {Object} source
-       */
-
-
-      function mixin(target, source) {
-        for (var key in source) {
-          if (source.hasOwnProperty(key)) target[key] = source[key];
-        }
-      } // There should never be more than
-      // one instance of `FastDom` in an app
-
-
-      var exports = win.fastdom = win.fastdom || new FastDom(); // jshint ignore:line
-      // Expose to CJS & AMD
-
-      module.exports = exports;
-    }(typeof window !== 'undefined' ? window : commonjsGlobal);
-  });
 
   var OverflowScroller = /*#__PURE__*/function () {
     function OverflowScroller(element, options) {
@@ -3060,21 +2954,11 @@
    * "updateWithVariant" must be called whenever the variant is changed.
    */
   var StoreAvailability = /*#__PURE__*/function () {
-    function StoreAvailability(element) {
+    function StoreAvailability(element, productTitle) {
       _classCallCheck(this, StoreAvailability);
 
       this.element = element;
-
-      if (!this.element) {
-        return;
-      } // We move the modal outside
-
-
-      var modal = this.element.querySelector('.store-availabilities-modal');
-
-      if (modal) {
-        document.body.appendChild(modal);
-      }
+      this.productTitle = productTitle;
     }
 
     _createClass(StoreAvailability, [{
@@ -3109,15 +2993,15 @@
 
         return fetch("".concat(window.routes.rootUrlWithoutSlash, "/variants/").concat(id, "?section_id=store-availability")).then(function (response) {
           return response.text().then(function (content) {
-            var fakeDiv = document.createElement('div');
-            fakeDiv.innerHTML = content;
-            fakeDiv.innerHTML = fakeDiv.firstElementChild.innerHTML;
+            _this.element.innerHTML = content;
+            _this.element.innerHTML = _this.element.firstElementChild.innerHTML; // The product title is not rendered so we have to render it manually
 
-            if (fakeDiv.firstElementChild.getAttribute('data-count') === '0') {
-              return; // Nothing to show
-            }
+            var productTitle = _this.element.querySelector('.store-availabilities-modal__product-title');
 
-            _this.element.innerHTML = fakeDiv.innerHTML; // In order for our modal system to work we have to append the modal to the body instead
+            if (productTitle) {
+              productTitle.textContent = _this.productTitle;
+            } // In order for our modal system to work we have to append the modal to the body instead
+
 
             var availabilityModal = document.getElementById("StoreAvailabilityModal-".concat(id));
             document.body.appendChild(availabilityModal);
@@ -3156,8 +3040,10 @@
             _this.option3 = variant['option3'];
           }
         });
-        this.storeAvailability = new StoreAvailability(this.element.querySelector('.product-meta__store-availability-container'));
       }
+
+      this.storeAvailability = new StoreAvailability(this.element.querySelector('.product-meta__store-availability-container'), this.productData ? this.productData['title'] : '');
+      this.storeAvailability.updateWithVariant(this.currentVariant);
 
       this._updateSelectors(this.currentVariant); // We update the selectors on initial load to disable the sold out variants
 
@@ -3224,10 +3110,6 @@
             variant: newVariant,
             previousVariant: previousVariant
           }
-        })); // Allow system monitoring the name attribute to work
-
-        this.masterSelector.dispatchEvent(new Event('change', {
-          bubbles: true
         }));
       }
       /**
@@ -3237,8 +3119,7 @@
     }, {
       key: "_updateProductPrices",
       value: function _updateProductPrices(newVariant, previousVariant) {
-        var productPrices = this.element.querySelector('.price-list'),
-            currencyFormat = window.theme.currencyCodeEnabled ? window.theme.moneyWithCurrencyFormat : window.theme.moneyFormat;
+        var productPrices = this.element.querySelector('.price-list');
 
         if (!productPrices) {
           return; // Sometimes merchant remove element from the code without taking care of JS... so let's be defensive
@@ -3254,10 +3135,10 @@
           productPrices.innerHTML = '';
 
           if (newVariant['compare_at_price'] > newVariant['price']) {
-            productPrices.innerHTML += "<span class=\"price price--highlight\"><span class=\"visually-hidden\">".concat(window.languages.productSalePrice, "</span>").concat(Currency.formatMoney(newVariant['price'], currencyFormat), "</span>");
-            productPrices.innerHTML += "<span class=\"price price--compare\"><span class=\"visually-hidden\">".concat(window.languages.productRegularPrice, "</span>").concat(Currency.formatMoney(newVariant['compare_at_price'], currencyFormat), "</span>");
+            productPrices.innerHTML += "<span class=\"price price--highlight\"><span class=\"visually-hidden\">".concat(window.languages.productSalePrice, "</span>").concat(Currency.formatMoney(newVariant['price'], window.theme.moneyFormat), "</span>");
+            productPrices.innerHTML += "<span class=\"price price--compare\"><span class=\"visually-hidden\">".concat(window.languages.productRegularPrice, "</span>").concat(Currency.formatMoney(newVariant['compare_at_price'], window.theme.moneyFormat), "</span>");
           } else {
-            productPrices.innerHTML += "<span class=\"price\"><span class=\"visually-hidden\">".concat(window.languages.productSalePrice, "</span>").concat(Currency.formatMoney(newVariant['price'], currencyFormat), "</span>");
+            productPrices.innerHTML += "<span class=\"price\"><span class=\"visually-hidden\">".concat(window.languages.productSalePrice, "</span>").concat(Currency.formatMoney(newVariant['price'], window.theme.moneyFormat), "</span>");
           }
 
           productPrices.style.display = '';
@@ -3807,12 +3688,7 @@
             break;
 
           case 'external_video':
-            if (this.element.getAttribute('data-media-host') === 'youtube') {
-              this.player.playVideo();
-            } else {
-              this.player.player();
-            } // If we're using YouTube, we have to focus the parent div (as it's not possible to directly focus an iframe)
-
+            this.player.playVideo(); // If we're using YouTube, we have to focus the parent div (as it's not possible to directly focus an iframe)
 
             this.element.focus();
             break;
@@ -3827,12 +3703,7 @@
             break;
 
           case 'external_video':
-            if (this.element.getAttribute('data-media-host') === 'youtube') {
-              this.player.pauseVideo();
-            } else {
-              this.player.pause();
-            }
-
+            this.player.pauseVideo();
             break;
         }
       }
@@ -3870,8 +3741,6 @@
       value: function _setupExternalVideo() {
         if (this.element.getAttribute('data-media-host') === 'youtube') {
           this._loadYouTubeScript().then(this._setupYouTubePlayer.bind(this));
-        } else if (this.element.getAttribute('data-media-host') === 'vimeo') {
-          this._loadVimeoScript().then(this._setupVimeoPlayer.bind(this));
         }
       }
     }, {
@@ -3905,30 +3774,6 @@
           script.onerror = reject;
           script.async = true;
           script.src = '//www.youtube.com/iframe_api';
-        });
-      }
-    }, {
-      key: "_setupVimeoPlayer",
-      value: function _setupVimeoPlayer() {
-        var _this3 = this;
-
-        var playerLoadingInterval = setInterval(function () {
-          if (window.Vimeo !== undefined && window.Vimeo.Player !== undefined) {
-            _this3.player = new Vimeo.Player(_this3.element.querySelector('iframe'));
-            clearInterval(playerLoadingInterval);
-          }
-        }, 50);
-      }
-    }, {
-      key: "_loadVimeoScript",
-      value: function _loadVimeoScript() {
-        return new Promise(function (resolve, reject) {
-          var script = document.createElement('script');
-          document.body.appendChild(script);
-          script.onload = resolve;
-          script.onerror = reject;
-          script.async = true;
-          script.src = '//player.vimeo.com/api/player.js';
         });
       }
     }]);
@@ -12455,8 +12300,6 @@
     }, {
       key: "_attachListeners",
       value: function _attachListeners() {
-        var _this = this;
-
         this.delegateElement.on('model:played', this._disableDrag.bind(this));
         this.delegateElement.on('video:played', this._disableDrag.bind(this));
         this.delegateElement.on('model:paused', this._enableDrag.bind(this));
@@ -12467,15 +12310,6 @@
           this.delegateElement.on('click', '.product-gallery__image', this._openMobileZoom.bind(this));
           this.delegateElement.on('click', '.pswp__button', this._doPswpAction.bind(this));
         }
-
-        var lastWidth = window.innerWidth;
-        window.addEventListener('resize', function () {
-          if (window.innerWidth !== lastWidth && _this.flickityInstance) {
-            _this.flickityInstance.resize();
-
-            lastWidth = window.innerWidth;
-          }
-        });
       }
       /**
        * This method must be called whenever the variant is changed
@@ -12484,29 +12318,29 @@
     }, {
       key: "variantHasChanged",
       value: function variantHasChanged(newVariant) {
-        var _this2 = this;
+        var _this = this;
 
         // We may have selected a variant that will cause the set of images to change completely. To do that we need to iterate through all images,
         // check for the attribute "data-group-name" and verify if some images need to be filtered or not
         var shouldReload = false;
         fastdom.mutate(function () {
-          _this2.productGalleryCellsElements.forEach(function (cell, imageIndex) {
+          _this.productGalleryCellsElements.forEach(function (cell, imageIndex) {
             if (cell.hasAttribute('data-group-name')) {
               // If it has an attribute, we get the group name, and match it against the option
               var groupName = cell.getAttribute('data-group-name');
 
-              _this2.options['productOptions'].forEach(function (option, optionIndex) {
+              _this.options['productOptions'].forEach(function (option, optionIndex) {
                 if (option.toLowerCase() === groupName) {
                   // groupName from attribute is already lowercased in Liquid
                   // Now we compare the value: if it's the same or that the image is part of the variant we keep it, otherwise we filter it
                   if (newVariant["option".concat(optionIndex + 1)].toLowerCase() === cell.getAttribute('data-group-value') || newVariant['featured_media'] && newVariant['featured_media']['id'] === parseInt(cell.getAttribute('data-media-id'))) {
                     cell.classList.remove('is-filtered');
 
-                    _this2.productThumbnailsCellsElements[imageIndex].classList.remove('is-filtered');
+                    _this.productThumbnailsCellsElements[imageIndex].classList.remove('is-filtered');
                   } else {
                     cell.classList.add('is-filtered');
 
-                    _this2.productThumbnailsCellsElements[imageIndex].classList.add('is-filtered');
+                    _this.productThumbnailsCellsElements[imageIndex].classList.add('is-filtered');
                   }
                 }
               });
@@ -12516,28 +12350,28 @@
           });
 
           if (shouldReload) {
-            _this2.flickityInstance.deactivate();
+            _this.flickityInstance.deactivate();
 
-            _this2.flickityInstance.activate();
+            _this.flickityInstance.activate();
           }
 
           if (Responsive.matchesBreakpoint('lap-and-up')) {
-            var slides = _this2.element.querySelectorAll('.product-gallery__carousel-item');
+            var slides = _this.element.querySelectorAll('.product-gallery__carousel-item');
 
             slides.forEach(function (slide) {
               slide.classList.remove('product-gallery__carousel-item--hidden');
             });
           }
 
-          if (_this2.flickityInstance && newVariant && newVariant['featured_media']) {
-            _this2.flickityInstance.selectCell("[data-media-id=\"".concat(newVariant['featured_media']['id'], "\"]"));
+          if (newVariant && newVariant['featured_media']) {
+            _this.flickityInstance.selectCell("[data-media-id=\"".concat(newVariant['featured_media']['id'], "\"]"));
           }
         });
       }
     }, {
       key: "_createCarousel",
       value: function _createCarousel() {
-        var _this3 = this;
+        var _this2 = this;
 
         this.productGalleryElement = this.element.querySelector('.product-gallery__carousel');
         this.productGalleryCellsElements = this.productGalleryElement ? this.productGalleryElement.querySelectorAll('.product-gallery__carousel-item') : [];
@@ -12548,11 +12382,11 @@
             switch (item.getAttribute('data-media-type')) {
               case 'external_video':
               case 'video':
-                _this3.media[item.getAttribute('data-media-id')] = new ProductVideo(item, _this3.options['enableVideoLooping']);
+                _this2.media[item.getAttribute('data-media-id')] = new ProductVideo(item, _this2.options['enableVideoLooping']);
                 break;
 
               case 'model':
-                _this3.media[item.getAttribute('data-media-id')] = new ProductModel(item);
+                _this2.media[item.getAttribute('data-media-id')] = new ProductModel(item);
                 break;
             }
           });
@@ -12564,7 +12398,7 @@
             });
             var initialIndex = 0;
             filteredCells.forEach(function (item, index) {
-              if (item.getAttribute('data-media-id') === _this3.productGalleryElement.getAttribute('data-initial-media-id')) {
+              if (item.getAttribute('data-media-id') === _this2.productGalleryElement.getAttribute('data-initial-media-id')) {
                 initialIndex = index;
               }
             }); // For some reason (and I have spent hours trying to understand), Flickity set a zero height at start, before
@@ -12578,7 +12412,6 @@
               accessibility: false,
               prevNextButtons: false,
               pageDots: false,
-              resize: false,
               adaptiveHeight: true,
               draggable: !Responsive.matchesBreakpoint('supports-hover'),
               fade: this.options['galleryTransitionEffect'] === 'fade',
@@ -12589,7 +12422,7 @@
                   // Remove the pre-set height (that was used to pre-allocate the space) so that it can react properly to
                   // changes of height.
                   setTimeout(function () {
-                    _this3.productGalleryElement.style.height = null;
+                    _this2.productGalleryElement.style.height = null;
                   }, 1000);
                 }
               }
@@ -12620,7 +12453,7 @@
     }, {
       key: "_createZoom",
       value: function _createZoom() {
-        var _this4 = this;
+        var _this3 = this;
 
         if (!this.options['enableImageZoom']) {
           return;
@@ -12631,10 +12464,10 @@
           this.driftObjects = [];
           var zoomWrapper = this.element.querySelector('.product__zoom-wrapper');
           this.element.querySelectorAll('.product-gallery__image').forEach(function (image) {
-            _this4.driftObjects.push(new Drift(image, {
-              containInline: _this4.options['zoomEffect'] === 'outside',
-              inlinePane: window.innerWidth < 1024 ? true : _this4.options['zoomEffect'] !== 'outside',
-              hoverBoundingBox: _this4.options['zoomEffect'] === 'outside',
+            _this3.driftObjects.push(new Drift(image, {
+              containInline: _this3.options['zoomEffect'] === 'outside',
+              inlinePane: window.innerWidth < 1024 ? true : _this3.options['zoomEffect'] !== 'outside',
+              hoverBoundingBox: _this3.options['zoomEffect'] === 'outside',
               handleTouch: false,
               inlineOffsetY: window.innerWidth < 1024 ? -85 : 0,
               paneContainer: zoomWrapper
@@ -12645,7 +12478,7 @@
     }, {
       key: "_openMobileZoom",
       value: function _openMobileZoom() {
-        var _this5 = this;
+        var _this4 = this;
 
         // On mobile, we use instead PhotoSwipe
         var pswpElement = this.element.querySelector('.pswp');
@@ -12672,7 +12505,6 @@
         });
         var prevNextElement = pswpElement.querySelector('.pswp__prev-next');
         prevNextElement.style.display = items.length > 1 ? 'flex' : 'none'; // Initializes and opens PhotoSwipe
-        // Initializes and opens PhotoSwipe
 
         this.photoSwipeInstance = new photoswipe(pswpElement, false, items, {
           index: defaultIndex,
@@ -12684,28 +12516,16 @@
           maxSpreadZoom: 1,
           showAnimationDuration: false,
           allowPanToNext: false
-        }); // We need to patch PhotoSwipe update size to solve iOS 15 issue
-
-        var originalUpdateSize = this.photoSwipeInstance.updateSize,
-            lastWidth = null;
-
-        this.photoSwipeInstance.updateSize = function () {
-          if (lastWidth === null || lastWidth !== window.innerWidth) {
-            originalUpdateSize(this, arguments);
-          }
-
-          lastWidth = window.innerWidth;
-        };
-
+        });
         this.photoSwipeInstance.listen('destroy', function () {
-          _this5.photoSwipeInstance = null;
+          _this4.photoSwipeInstance = null;
         });
         this.photoSwipeInstance.listen('beforeChange', function () {
-          var currentItem = _this5.element.querySelector('.pswp__pagination-current'),
-              paginationCount = _this5.element.querySelector('.pswp__pagination-count');
+          var currentItem = _this4.element.querySelector('.pswp__pagination-current'),
+              paginationCount = _this4.element.querySelector('.pswp__pagination-count');
 
-          currentItem.textContent = _this5.photoSwipeInstance.getCurrentIndex() + 1;
-          paginationCount.textContent = _this5.photoSwipeInstance.options.getNumItemsFn();
+          currentItem.textContent = _this4.photoSwipeInstance.getCurrentIndex() + 1;
+          paginationCount.textContent = _this4.photoSwipeInstance.options.getNumItemsFn();
         });
         this.photoSwipeInstance.init();
       }
@@ -12735,7 +12555,7 @@
     }, {
       key: "_onGallerySlideChanged",
       value: function _onGallerySlideChanged() {
-        var _this6 = this;
+        var _this5 = this;
 
         var animate = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
         var previousNavElement = null,
@@ -12745,7 +12565,7 @@
             previousNavElement = item;
           }
 
-          if (item.getAttribute('data-media-id') === _this6.flickityInstance.selectedElement.getAttribute('data-media-id')) {
+          if (item.getAttribute('data-media-id') === _this5.flickityInstance.selectedElement.getAttribute('data-media-id')) {
             newNavElement = item;
           }
         });
@@ -13053,7 +12873,7 @@
 
             var listRatesHtml = '';
             shippingRates.forEach(function (item) {
-              listRatesHtml += "<li>".concat(item['name'], ": ").concat(Currency.formatMoney(parseInt(item['price'] * 100), window.theme.moneyFormat), "</li>");
+              listRatesHtml += "<li>".concat(item['name'], ": ").concat(Currency.formatMoney(item['price'], window.theme.moneyFormat), "</li>");
             });
             resultsElement.innerHTML += "<ul>".concat(listRatesHtml, "</ul>");
           }
@@ -13339,6 +13159,11 @@
 
       this.element = element;
 
+      if (Shopify.designMode && window.SPR) {
+        window.SPR.initDomEls();
+        window.SPR.loadBadges();
+      }
+
       if (window.theme.pageType === 'blog') {
         this._fixItemsPerRow();
       }
@@ -13476,6 +13301,7 @@
 
         if (Shopify.designMode && window.SPR) {
           window.SPR.initDomEls();
+          window.SPR.loadBadges();
           window.SPR.loadProducts();
         }
 
@@ -13486,8 +13312,13 @@
         }; // If loaded by quick view, we need to do various initialization stuff
 
 
-        if (this.options['isQuickView'] && this.options['showPaymentButton'] && window.Shopify.PaymentButton) {
-          Shopify.PaymentButton.init();
+        if (this.options['isQuickView'] && window.SPR) {
+          window.SPR.initDomEls();
+          window.SPR.loadBadges();
+
+          if (this.options['showPaymentButton'] && window.Shopify.PaymentButton) {
+            Shopify.PaymentButton.init();
+          }
         }
       }
       /**
@@ -13686,8 +13517,6 @@
 
   var CollectionListSection = /*#__PURE__*/function () {
     function CollectionListSection(element) {
-      var _this = this;
-
       _classCallCheck(this, CollectionListSection);
 
       this.element = element;
@@ -13697,18 +13526,9 @@
         prevNextButtons: true,
         draggable: !window.matchMedia('(-moz-touch-enabled: 0), (hover: hover)').matches,
         pageDots: false,
-        resize: false,
         cellAlign: collectionListElement.childElementCount < 6 ? 'center' : 'left',
         contain: true,
         groupCells: true
-      });
-      var lastWidth = window.innerWidth;
-      window.addEventListener('resize', function () {
-        if (window.innerWidth !== lastWidth) {
-          _this.flickityInstance.resize();
-
-          lastWidth = window.innerWidth;
-        }
       });
     }
 
@@ -13731,14 +13551,20 @@
 
   var CollectionSection = /*#__PURE__*/function () {
     function CollectionSection(element) {
-      var _this = this;
-
       _classCallCheck(this, CollectionSection);
 
       this.element = element;
       this.delegateElement = new Delegate(this.element);
       this.options = JSON.parse(this.element.getAttribute('data-section-settings'));
+      this.collectionFilterTagElements = this.element.querySelectorAll('[data-tag]');
       this.currentUrl = new URL(window.location.href);
+      this.currentTags = this.options['currentTags'];
+
+      if (Shopify.designMode && window.SPR) {
+        window.SPR.initDomEls();
+        window.SPR.loadBadges();
+      }
+
       this.mobileFilterDrawer = new CollectionFilterDrawer(this.options);
       this.displayByValuePicker = new ValuePicker('display-by-selector', {
         onValueSelect: this._showingCountChanged.bind(this)
@@ -13751,12 +13577,6 @@
       if (window.theme.pageType === 'search' && window.theme.searchMode !== 'product') {
         this._loadContentResults();
       }
-
-      window.addEventListener('popstate', function () {
-        _this.currentUrl = new URL(window.location.href);
-
-        _this._reload(false);
-      });
 
       this._attachListeners();
     }
@@ -13783,14 +13603,23 @@
     }, {
       key: "_attachListeners",
       value: function _attachListeners() {
+        var _this = this;
+
         this.delegateElement.on('click', '[data-action="change-layout"]', this._changeLayout.bind(this));
         this.delegateElement.on('change', '#mobile-sort-by, #desktop-sort-by', this._sortByChanged.bind(this));
         this.delegateElement.on('change', '#showing-count', this._showingCountChanged.bind(this));
         this.delegateElement.on('click', '.pagination [data-page]', this._paginationPageChanged.bind(this));
+        this.delegateElement.on('click', '[data-action="toggle-tag"]', this._tagToggled.bind(this));
+        this.delegateElement.on('click', '[data-action="clear-tags"]', this._clearTags.bind(this));
         this.delegateElement.on('click', '[data-secondary-action="open-quick-view"]', this._openQuickView.bind(this));
         this.delegateElement.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
-        this.delegateElement.on('change', '[name^="filter."]', this._onFilterChanged.bind(this));
-        this.delegateElement.on('click', '[data-action="clear-filters"]', this._onFiltersCleared.bind(this));
+        window.addEventListener('popstate', function (event) {
+          if (event.state.path) {
+            _this.currentUrl = new URL(event.state.path);
+
+            _this._reload(false);
+          }
+        });
       }
     }, {
       key: "_openQuickView",
@@ -13924,21 +13753,103 @@
 
         this._reload(true);
       }
+      /**
+       * When a new tag is selected
+       */
+
     }, {
-      key: "_onFilterChanged",
-      value: function _onFilterChanged(event, target) {
-        var formData = new FormData(target.closest('form'));
-        var searchParamsAsString = new URLSearchParams(formData).toString();
-        this.currentUrl = new URL("".concat(window.location.pathname, "?").concat(searchParamsAsString), window.location.origin);
+      key: "_tagToggled",
+      value: function _tagToggled(event, target) {
+        var _this4 = this;
+
+        var newTag = target.getAttribute('data-tag'),
+            hadTags = this.currentTags.length > 0;
+
+        if (this.currentTags.includes(newTag)) {
+          this.currentTags = this.currentTags.filter(function (value) {
+            return value !== newTag;
+          });
+        } else {
+          if (this.options['filterType'] === 'tag') {
+            this.currentTags = [newTag]; // When using tag mode, we only allow one tag at maximum
+          } else {
+            // In the group mode, we need to make sure to remove the other tags that are matching the given group
+            var tagGroup = newTag.split('_')[0];
+            this.currentTags.forEach(function (existingTag) {
+              if (existingTag.split('_')[0] === tagGroup) {
+                _this4.currentTags = _this4.currentTags.filter(function (value) {
+                  return value !== existingTag;
+                });
+              }
+            });
+            this.currentTags.push(newTag);
+          }
+        }
+
+        this.currentUrl.searchParams["delete"]('page');
+
+        this._updateTagUrl(hadTags); // Finally, we can reload!
+
 
         this._reload(true);
       }
     }, {
-      key: "_onFiltersCleared",
-      value: function _onFiltersCleared(event, target) {
-        this.currentUrl = new URL(target.getAttribute('data-url'), window.location.origin);
+      key: "_clearTags",
+      value: function _clearTags() {
+        var hadTags = this.currentTags.length > 0;
+        this.currentTags = [];
+        this.currentUrl.searchParams["delete"]('page');
 
-        this._reload(true);
+        this._updateTagUrl(hadTags); // Finally, we can reload!
+
+
+        this._reload(true).then(function () {
+          document.dispatchEvent(new CustomEvent('collection-filter:close'));
+        });
+      }
+    }, {
+      key: "_updateTagUrl",
+      value: function _updateTagUrl(hadTags) {
+        var _this5 = this;
+
+        // Then, we update the DOM
+        fastdom.mutate(function () {
+          _this5.collectionFilterTagElements.forEach(function (tagElement) {
+            if (_this5.currentTags.includes(tagElement.getAttribute('data-tag'))) {
+              tagElement.classList.add('is-selected');
+
+              if (tagElement.tagName === 'INPUT') {
+                tagElement.checked = true;
+              }
+            } else {
+              tagElement.classList.remove('is-selected');
+
+              if (tagElement.tagName === 'INPUT') {
+                tagElement.checked = false;
+              }
+            }
+          });
+        }); // Then, update the URL. When the collection is automatic (such as vendors and types collections), tags must be added
+        // within a constraint query parameter, otherwise they must be appended to the path
+
+        if (this.options['isAutomatic']) {
+          if (this.currentTags.length === 0) {
+            this.currentUrl.searchParams["delete"]('constraint');
+          } else {
+            this.currentUrl.searchParams.set('constraint', this.currentTags.join('+'));
+          }
+        } else {
+          var tagPath = this.currentTags.join('+'),
+              currentPathName = this.currentUrl.pathname.substr(-1) === '/' ? this.currentUrl.pathname.substr(0, this.currentUrl.pathname.length - 1) : this.currentUrl.pathname;
+
+          if (hadTags) {
+            var pathParts = currentPathName.split('/');
+            pathParts.pop();
+            this.currentUrl.pathname = "".concat(pathParts.join('/'), "/").concat(tagPath);
+          } else {
+            this.currentUrl.pathname = "".concat(currentPathName, "/").concat(tagPath);
+          }
+        }
       }
       /**
        * Reload all products from the current URL
@@ -13949,20 +13860,19 @@
     }, {
       key: "_reload",
       value: function _reload(pushState) {
-        var _this4 = this;
+        var _this6 = this;
 
-        if (this.abortController) {
-          this.abortController.abort();
-        } // Then, we replace the URL
-
-
+        // Then, we replace the URL
         if (pushState) {
           window.history.pushState({
             path: this.currentUrl.toString()
           }, '', this.currentUrl.toString());
         }
 
-        document.dispatchEvent(new CustomEvent('theme:loading:start')); // We scroll to the top
+        document.dispatchEvent(new CustomEvent('theme:loading:start')); // We notify the mobile collection drawer that it has changed
+
+        this.mobileFilterDrawer._filtersHaveChanged(this.currentTags); // We scroll to the top
+
 
         var computedStyles = window.getComputedStyle(document.documentElement); // To load the content we use the newly introduced "Sections API", which also to get data much more efficiently
 
@@ -13974,78 +13884,44 @@
           sectionUrl = "".concat(this.currentUrl.pathname, "?section_id=").concat(this.element.getAttribute('data-section-id'));
         }
 
-        try {
-          this.abortController = new AbortController();
-          return fetch(sectionUrl, {
-            credentials: 'same-origin',
-            method: 'GET',
-            signal: this.abortController.signal
-          }).then(function (response) {
-            response.text().then(function (content) {
-              var tempElement = document.createElement('div');
-              tempElement.innerHTML = content;
-              _this4.element.querySelector('.collection__dynamic-part').innerHTML = tempElement.querySelector('.collection__dynamic-part').innerHTML;
+        return fetch(sectionUrl, {
+          credentials: 'same-origin',
+          method: 'GET'
+        }).then(function (response) {
+          response.text().then(function (content) {
+            var tempElement = document.createElement('div');
+            tempElement.innerHTML = content;
+            _this6.element.querySelector('.collection__dynamic-part').innerHTML = tempElement.querySelector('.collection__dynamic-part').innerHTML;
 
-              var desktopFilters = _this4.element.querySelector('#desktop-filters-form'),
-                  mobileFilters = _this4.element.querySelector('#mobile-collection-filters'),
-                  previousMobileScrollTop = 0;
-
-              if (mobileFilters) {
-                previousMobileScrollTop = mobileFilters.querySelector('.collection-drawer__inner').scrollTop;
-              } // A given collection may not have any filters
+            var activeFilters = _this6.element.querySelector('.collection__active-filters'); // A given collection may not have any filters
 
 
-              if (desktopFilters) {
-                Array.from(_this4.element.querySelectorAll('.collection__filter-group-name[aria-controls]')).forEach(function (groupName) {
-                  // Get the corresponding group from new filters
-                  var newGroup = tempElement.querySelector("[aria-controls=\"".concat(groupName.getAttribute('aria-controls'), "\"]"));
-
-                  if (groupName.getAttribute('aria-expanded') === 'true') {
-                    newGroup.setAttribute('aria-expanded', 'true');
-                    newGroup.nextElementSibling.setAttribute('aria-hidden', 'false');
-                    newGroup.nextElementSibling.style.height = 'auto';
-                    newGroup.nextElementSibling.style.overflow = 'visible';
-                  } else {
-                    newGroup.setAttribute('aria-expanded', 'false');
-                    newGroup.nextElementSibling.setAttribute('aria-hidden', 'true');
-                    newGroup.nextElementSibling.style = '';
-                  }
-                });
-                desktopFilters.innerHTML = tempElement.querySelector('#desktop-filters-form').innerHTML;
-                mobileFilters.innerHTML = tempElement.querySelector('#mobile-collection-filters').innerHTML;
-                mobileFilters.querySelector('.collection-drawer__inner').scrollTop = previousMobileScrollTop;
-
-                _this4.mobileFilterDrawer._computeDrawerHeight();
-              } // Reload the swatches
+            if (activeFilters) {
+              activeFilters.innerHTML = tempElement.querySelector('.collection__active-filters').innerHTML;
+            } // Reload the Shopify Review badges
 
 
-              _this4.productItemColorSwatch.recalculateSwatches();
-
-              var elementOffset = _this4.element.querySelector('.collection').getBoundingClientRect().top - 25 - parseInt(computedStyles.getPropertyValue('--header-is-sticky')) * parseInt(computedStyles.getPropertyValue('--header-height'));
-
-              if (elementOffset < 0) {
-                window.scrollBy({
-                  top: elementOffset,
-                  behavior: 'smooth'
-                });
-              } // Reload the product count
+            if (window.SPR) {
+              window.SPR.initDomEls();
+              window.SPR.loadBadges();
+            } // Reload the swatches
 
 
-              var countJson = JSON.parse(tempElement.querySelector('[data-collection-products-count]').innerHTML);
+            _this6.productItemColorSwatch.recalculateSwatches();
 
-              var showingProductsCount = _this4.element.querySelector('.collection__products-count-showing');
+            var elementOffset = _this6.element.querySelector('.collection').getBoundingClientRect().top - 25 - parseInt(computedStyles.getPropertyValue('--header-is-sticky')) * parseInt(computedStyles.getPropertyValue('--header-height'));
 
-              if (showingProductsCount) {
-                showingProductsCount.innerHTML = countJson['showingCount'];
-              }
+            if (elementOffset < 0) {
+              window.scrollBy({
+                top: elementOffset,
+                behavior: 'smooth'
+              });
+            } // Finally, we scroll to the element
 
-              _this4.element.querySelector('.collection__products-count-total').innerHTML = countJson['productsCount']; // Finally, we scroll to the element
 
-              document.dispatchEvent(new CustomEvent('theme:loading:end'));
-            });
+            document.dispatchEvent(new CustomEvent('theme:loading:end'));
           });
-        } catch (e) {// Ignore the exception
-        }
+        });
       }
       /**
        * ---------------------------------------------------------------------------------------------------
@@ -14056,20 +13932,17 @@
     }, {
       key: "_loadContentResults",
       value: function _loadContentResults() {
-        var _this5 = this;
+        var _this7 = this;
 
         var currentUrl = new URL(window.location.href);
-        fetch("".concat(window.routes.searchUrl, "?section_id=search-content&q=").concat(currentUrl.searchParams.get('q'), "&type=").concat(window.theme.searchMode.replace('product,', '')), {
+        fetch("".concat(window.routes.searchUrl, "?view=content&q=").concat(currentUrl.searchParams.get('q'), "&type=").concat(window.theme.searchMode.replace('product,', '')), {
           credentials: 'same-origin'
         }).then(function (response) {
           response.text().then(function (content) {
-            var linkSearchResults = _this5.element.querySelector('.link-search-results'),
-                fakeDiv = document.createElement('div');
-
-            fakeDiv.innerHTML = content;
+            var linkSearchResults = _this7.element.querySelector('.link-search-results');
 
             if (linkSearchResults && content.trim() !== '') {
-              linkSearchResults.innerHTML = fakeDiv.firstElementChild.innerHTML;
+              linkSearchResults.innerHTML = content;
               linkSearchResults.style.display = 'block';
             }
           });
@@ -14084,7 +13957,7 @@
     }, {
       key: "_addToCart",
       value: function _addToCart(event, target) {
-        var _this6 = this;
+        var _this8 = this;
 
         if (window.theme.cartType === 'page') {
           return; // When using a cart type of page, we just simply redirect to the cart page
@@ -14112,7 +13985,7 @@
 
           if (response.ok) {
             // We simply trigger an event so the mini-cart can re-render
-            _this6.element.dispatchEvent(new CustomEvent('product:added', {
+            _this8.element.dispatchEvent(new CustomEvent('product:added', {
               bubbles: true,
               detail: {
                 button: target,
@@ -14133,8 +14006,6 @@
 
   var FeaturedCollectionSection = /*#__PURE__*/function () {
     function FeaturedCollectionSection(element) {
-      var _this = this;
-
       _classCallCheck(this, FeaturedCollectionSection);
 
       this.element = element;
@@ -14147,19 +14018,15 @@
           pageDots: false,
           prevNextButtons: true,
           contain: true,
-          resize: false,
           groupCells: true,
           cellAlign: 'left',
           draggable: !window.matchMedia('(-moz-touch-enabled: 0), (hover: hover)').matches
         });
-        var lastWidth = window.innerWidth;
-        window.addEventListener('resize', function () {
-          if (window.innerWidth !== lastWidth) {
-            _this.flickityInstance.resize();
+      }
 
-            lastWidth = window.innerWidth;
-          }
-        });
+      if (Shopify.designMode && window.SPR) {
+        window.SPR.initDomEls();
+        window.SPR.loadBadges();
       }
 
       this.productItemColorSwatch = new ProductItemColorSwatch(this.element);
@@ -14187,7 +14054,7 @@
     }, {
       key: "_attachListeners",
       value: function _attachListeners() {
-        var _this2 = this;
+        var _this = this;
 
         this._fixSafariListener = this._fixSafari.bind(this);
         window.addEventListener('resize', this._fixSafariListener);
@@ -14197,10 +14064,10 @@
 
         if (window.ResizeObserver && this.flickityInstance) {
           this.resizeObserver = new ResizeObserver(function () {
-            _this2.flickityInstance.resize();
+            _this.flickityInstance.resize();
           });
           this.element.querySelectorAll('.product-item').forEach(function (item) {
-            _this2.resizeObserver.observe(item);
+            _this.resizeObserver.observe(item);
           });
         }
       }
@@ -14270,7 +14137,7 @@
     }, {
       key: "_addToCart",
       value: function _addToCart(event, target) {
-        var _this3 = this;
+        var _this2 = this;
 
         if (window.theme.cartType === 'page') {
           return; // When using a cart type of page, we just simply redirect to the cart page
@@ -14298,7 +14165,7 @@
 
           if (response.ok) {
             // We simply trigger an event so the mini-cart can re-render
-            _this3.element.dispatchEvent(new CustomEvent('product:added', {
+            _this2.element.dispatchEvent(new CustomEvent('product:added', {
               bubbles: true,
               detail: {
                 button: target,
@@ -14378,11 +14245,7 @@
       this.cookieBarElement = this.element.querySelector('.cookie-bar');
 
       if (this.cookieBarElement) {
-        window.Shopify.loadFeatures([{
-          name: 'consent-tracking-api',
-          version: '0.1',
-          onLoad: this._setupCookieBar.bind(this)
-        }]);
+        this._setupCookieBar();
       }
 
       this._setupCollapsibles();
@@ -14418,7 +14281,6 @@
         this._setupCollapsiblesListener = this._setupCollapsibles.bind(this);
         window.addEventListener('resize', this._setupCollapsiblesListener);
         this.domDelegate.on('click', '[data-action="accept-terms"]', this._acceptCookieBarTerms.bind(this));
-        this.domDelegate.on('click', '[data-action="decline-terms"]', this._declineCookieBarTerms.bind(this));
       }
       /**
        * On mobile, some block items are collapsed, so we must slightly edit their HTML
@@ -14441,31 +14303,23 @@
     }, {
       key: "_setupCookieBar",
       value: function _setupCookieBar() {
-        // We check if we should make it visible   
+        // We check if we should make it visible
         try {
-          if (window.Shopify.customerPrivacy.shouldShowGDPRBanner()) {
+          if (localStorage.getItem('cookieWasAccepted') === null) {
             this.cookieBarElement.setAttribute('aria-hidden', 'false');
           }
-        } catch (e) {// Adblockers may prevent the customerPrivacy API from being loaded, so we catch errors here.
+        } catch (exception) {// Some browser may throw an exception when trying to access the local storage in private mode for instance, so we just ignore it
         }
       }
     }, {
       key: "_acceptCookieBarTerms",
       value: function _acceptCookieBarTerms() {
-        var _this = this;
+        // We close the cookie bar and we set a value in local storage to not show it again
+        this.cookieBarElement.setAttribute('aria-hidden', 'true');
 
-        window.Shopify.customerPrivacy.setTrackingConsent(true, function () {
-          return _this.cookieBarElement.setAttribute('aria-hidden', 'true');
-        });
-      }
-    }, {
-      key: "_declineCookieBarTerms",
-      value: function _declineCookieBarTerms() {
-        var _this2 = this;
-
-        window.Shopify.customerPrivacy.setTrackingConsent(false, function () {
-          return _this2.cookieBarElement.setAttribute('aria-hidden', 'true');
-        });
+        try {
+          localStorage.setItem('cookieWasAccepted', 'true');
+        } catch (exception) {}
       }
     }]);
 
@@ -14501,7 +14355,7 @@
         this.delegateElement.on('click', '[data-action="clear-input"]', this._clearInput.bind(this));
         this.delegateElement.on('click', '[data-action="unfix-search"]', this._unfixMobileSearch.bind(this));
         this.delegateElement.on('focusin', '[name="q"]', this._onInputFocus.bind(this));
-        document.addEventListener('click', this._onFocusOut.bind(this));
+        this.delegateElement.on('focusout', this._onFocusOut.bind(this));
         this.delegateElement.on('keydown', '[name="q"]', this._handleTab.bind(this));
         this.delegateElement.on('input', '[name="q"]', this._debounce(this._doSearch.bind(this), 250));
         this.delegateElement.on('change', '#search-product-type', this._productTypeChanged.bind(this));
@@ -14592,32 +14446,22 @@
     }, {
       key: "_onFocusOut",
       value: function _onFocusOut(event) {
-        var _this = this;
-
         // On phone, nothing happens on focus out
         if (Responsive.matchesBreakpoint('phone')) {
           return;
         }
 
-        if (Responsive.matchesBreakpoint('phone') || event.target.classList.contains('search-bar__input') || event.target.closest('.search-bar__inner')) {
-          return;
-        }
+        this.element.classList.remove('is-fixed');
+        document.body.classList.remove('no-mobile-scroll'); // event.relatedTarget allows to get the new element that get focus. If it's outside the div that contains the search, we close it
 
-        setTimeout(function () {
-          _this.element.classList.remove('is-fixed');
-
-          document.body.classList.remove('no-mobile-scroll');
-
-          if (!_this.element.contains(event.relatedTarget)) {
-            if (_this.searchMenuElement) {
-              _this.searchMenuElement.setAttribute('aria-hidden', 'true');
-            }
-
-            _this.searchResultsElement.setAttribute('aria-hidden', 'true');
-
-            _this.searchBarElement.classList.remove('is-expanded');
+        if (!this.element.contains(event.relatedTarget)) {
+          if (this.searchMenuElement) {
+            this.searchMenuElement.setAttribute('aria-hidden', 'true');
           }
-        }, 150);
+
+          this.searchResultsElement.setAttribute('aria-hidden', 'true');
+          this.searchBarElement.classList.remove('is-expanded');
+        }
       }
       /**
        * This allows to slightly improve the accessibility and user experience by directly focusing on the first search results (if any)
@@ -14645,7 +14489,7 @@
     }, {
       key: "_doSearch",
       value: function _doSearch() {
-        var _this2 = this;
+        var _this = this;
 
         // Unfortunately, fetch does not support as of today cancelling a request. As a consequence what we do is that we manually
         // keep track of sent requests, and only use the results of the last one
@@ -14672,26 +14516,22 @@
             credentials: 'same-origin'
           },
               productQuery = "".concat(this.productTypeFilter !== '' ? "product_type:".concat(this.productTypeFilter, " AND ") : '').concat(encodeURIComponent(this.lastInputValue)),
-              queries = [fetch("".concat(window.routes.searchUrl, "?section_id=search-ajax&q=").concat(productQuery, "&options[prefix]=last&options[unavailable_products]=").concat(window.theme.searchUnavailableProducts, "&type=product"), queryOptions)];
+              queries = [fetch("".concat(window.routes.searchUrl, "?view=ajax&q=").concat(productQuery, "&options[prefix]=last&options[unavailable_products]=").concat(window.theme.searchUnavailableProducts, "&type=product"), queryOptions)];
 
           if (window.theme.searchMode !== 'product') {
-            queries.push(fetch("".concat(window.routes.searchUrl, "?section_id=search-ajax&q=").concat(encodeURIComponent(this.lastInputValue), "&options[prefix]=last&type=").concat(window.theme.searchMode.replace('product,', '')), queryOptions));
+            queries.push(fetch("".concat(window.routes.searchUrl, "?view=ajax&q=").concat(encodeURIComponent(this.lastInputValue), "&options[prefix]=last&type=").concat(window.theme.searchMode.replace('product,', '')), queryOptions));
           }
 
           Promise.all(queries).then(function (responses) {
             // If we receive the result for a query that is not the last one, we simply do not process the result
-            if (_this2.lastInputValue !== currentInput) {
+            if (_this.lastInputValue !== currentInput) {
               return;
             }
 
             Promise.all(responses.map(function (response) {
-              return response.text().then(function (responseAsText) {
-                var div = document.createElement('div');
-                div.innerHTML = responseAsText;
-                return div.querySelector('.search-ajax').innerHTML;
-              });
+              return response.text();
             })).then(function (contents) {
-              _this2.searchBarElement.classList.remove('is-loading');
+              _this.searchBarElement.classList.remove('is-loading');
 
               var searchContent = document.createElement('div');
               searchContent.innerHTML = contents.join('').trim(); // If there is a "view all" button, we move it at the end of the results
@@ -14702,7 +14542,7 @@
                 searchContent.insertAdjacentElement('beforeend', viewAll);
               }
 
-              _this2.searchBarElement.querySelector('.search-bar__results-inner').innerHTML = searchContent.innerHTML;
+              _this.searchBarElement.querySelector('.search-bar__results-inner').innerHTML = searchContent.innerHTML;
             });
           });
         }
@@ -14728,6 +14568,7 @@
     }, {
       key: "_onFormSubmit",
       value: function _onFormSubmit(event) {
+        // To prevent for the value to temporarily shows the "*", we clone the input as a hidden field
         var cloneNode = this.inputElement.cloneNode();
         cloneNode.setAttribute('type', 'hidden');
         cloneNode.value = '';
@@ -14753,7 +14594,7 @@
     }, {
       key: "_debounce",
       value: function _debounce(fn, delay) {
-        var _this3 = this;
+        var _this2 = this;
 
         var timer = null;
         return function () {
@@ -14763,7 +14604,7 @@
 
           clearTimeout(timer);
           timer = setTimeout(function () {
-            fn.apply(_this3, args);
+            fn.apply(_this2, args);
           }, delay);
         };
       }
@@ -15269,7 +15110,7 @@
       value: function _loadRecommendations() {
         var _this = this;
 
-        var url = "".concat(window.routes.productRecommendationsUrl, "?section_id=").concat(this.element.getAttribute('data-section-id'), "&product_id=").concat(this.options['productId'], "&limit=").concat(this.options['recommendationsCount']);
+        var url = "".concat(window.routes.productRecommendationsUrl, "?section_id=product-recommendations&product_id=").concat(this.options['productId'], "&limit=").concat(this.options['recommendationsCount']);
         return fetch(url).then(function (response) {
           return response.text().then(function (content) {
             var container = document.createElement('div');
@@ -15291,19 +15132,15 @@
             pageDots: false,
             prevNextButtons: true,
             contain: true,
-            resize: false,
             groupCells: true,
             cellAlign: 'left',
             draggable: !window.matchMedia('(-moz-touch-enabled: 0), (hover: hover)').matches
           });
-          var lastWidth = window.innerWidth;
-          window.addEventListener('resize', function () {
-            if (window.innerWidth !== lastWidth) {
-              _this2.flickityInstance.resize();
+        }
 
-              lastWidth = window.innerWidth;
-            }
-          });
+        if (window.SPR) {
+          window.SPR.initDomEls();
+          window.SPR.loadBadges();
         } // If the browser supports ResizeObserver we use it to detect when the size of the items in the carousel change,
         // and if that's the case we force Flickity to resize
 
@@ -15412,6 +15249,11 @@
       this.element = element;
       this.delegateElement = new Delegate(this.element);
       this.options = JSON.parse(this.element.getAttribute('data-section-settings'));
+
+      if (this.options['currentProductId']) {
+        this._saveCurrentProduct();
+      }
+
       this.productItemColorSwatch = new ProductItemColorSwatch(this.element);
 
       this._fetchProducts();
@@ -15439,6 +15281,26 @@
         this.delegateElement.on('click', '[data-secondary-action="open-quick-view"]', this._openQuickView.bind(this));
       }
       /**
+       * When we are on a product page, we need to save the current product ID into local storage
+       */
+
+    }, {
+      key: "_saveCurrentProduct",
+      value: function _saveCurrentProduct() {
+        var items = JSON.parse(localStorage.getItem('recentlyViewedProducts') || '[]'),
+            currentProductId = this.options['currentProductId']; // We check if the current product already exists, and if it does not, we add it at the start
+
+        if (!items.includes(currentProductId)) {
+          items.unshift(currentProductId);
+        } // Then, we save the current product into the local storage, by keeping only the 18 most recent
+
+
+        try {
+          localStorage.setItem('recentlyViewedProducts', JSON.stringify(items.slice(0, 18)));
+        } catch (error) {// Do nothing, this may happen in Safari in incognito mode
+        }
+      }
+      /**
        * In order to get the products to display, we hit the search template with the given IDs.
        */
 
@@ -15453,7 +15315,8 @@
           return;
         }
 
-        fetch("".concat(window.routes.searchUrl, "?section_id=").concat(this.element.getAttribute('data-section-id'), "&type=product&q=").concat(queryString), {
+        var template = window.theme.pageType === 'index' ? 'recently-viewed-products' : 'static-recently-viewed-products';
+        fetch("".concat(window.routes.searchUrl, "?view=").concat(template, "&type=product&q=").concat(queryString), {
           credentials: 'same-origin',
           method: 'GET'
         }).then(function (response) {
@@ -15465,7 +15328,12 @@
 
             _this.element.parentNode.style.display = 'block';
 
-            _this.productItemColorSwatch.recalculateSwatches(); // Create the slideshow
+            _this.productItemColorSwatch.recalculateSwatches();
+
+            if (window.SPR) {
+              window.SPR.initDomEls();
+              window.SPR.loadBadges();
+            } // Create the slideshow
 
 
             _this.flickityInstance = new js(_this.element.querySelector('.product-list'), {
@@ -15473,18 +15341,9 @@
               pageDots: false,
               prevNextButtons: true,
               contain: true,
-              resize: false,
               groupCells: true,
               cellAlign: 'left',
               draggable: !window.matchMedia('(-moz-touch-enabled: 0), (hover: hover)').matches
-            });
-            var lastWidth = window.innerWidth;
-            window.addEventListener('resize', function () {
-              if (window.innerWidth !== lastWidth) {
-                _this.flickityInstance.resize();
-
-                lastWidth = window.innerWidth;
-              }
             }); // If the browser supports ResizeObserver we use it to detect when the size of the items in the carousel change,
             // and if that's the case we force Flickity to resize
 
@@ -15764,8 +15623,6 @@
 
   var SlideshowSection = /*#__PURE__*/function () {
     function SlideshowSection(element) {
-      var _this = this;
-
       _classCallCheck(this, SlideshowSection);
 
       this.element = element;
@@ -15775,20 +15632,11 @@
         prevNextButtons: this.options['prevNextButtons'],
         wrapAround: true,
         dragThreshold: 12,
-        resize: false,
         draggable: '>1',
         fade: this.options['transitionEffect'] === 'fade',
         setGallerySize: this.options['setGallerySize'],
         adaptiveHeight: this.options['adaptiveHeight'],
         autoPlay: this.options['autoPlay'] ? this.options['cycleSpeed'] : false
-      });
-      var lastWidth = window.innerWidth;
-      window.addEventListener('resize', function () {
-        if (window.innerWidth !== lastWidth) {
-          _this.flickityInstance.resize();
-
-          lastWidth = window.innerWidth;
-        }
       });
     }
 
@@ -15819,8 +15667,6 @@
 
   var TextWithIconsSection = /*#__PURE__*/function () {
     function TextWithIconsSection(element) {
-      var _this = this;
-
       _classCallCheck(this, TextWithIconsSection);
 
       this.flickityInstance = new js(element.querySelector('.text-with-icons'), {
@@ -15828,16 +15674,7 @@
         prevNextButtons: false,
         wrapAround: true,
         autoPlay: 5000,
-        resize: false,
         watchCSS: true
-      });
-      var lastWidth = window.innerWidth;
-      window.addEventListener('resize', function () {
-        if (window.innerWidth !== lastWidth) {
-          _this.flickityInstance.resize();
-
-          lastWidth = window.innerWidth;
-        }
       });
     }
 
@@ -18361,88 +18198,6 @@
     });
   });
 
-  var PriceRange = /*#__PURE__*/function (_HTMLElement) {
-    _inherits(PriceRange, _HTMLElement);
-
-    var _super = _createSuper(PriceRange);
-
-    function PriceRange() {
-      _classCallCheck(this, PriceRange);
-
-      return _super.apply(this, arguments);
-    }
-
-    _createClass(PriceRange, [{
-      key: "connectedCallback",
-      value: function connectedCallback() {
-        var _this = this;
-
-        this.rangeLowerBound = this.querySelector('.price-range__range-group input:first-child');
-        this.rangeHigherBound = this.querySelector('.price-range__range-group input:last-child');
-        this.textInputLowerBound = this.querySelector('.price-range__input:first-child input');
-        this.textInputHigherBound = this.querySelector('.price-range__input:last-child input'); // Select whole text on focus for text field to improve user experience
-
-        this.textInputLowerBound.addEventListener('focus', function () {
-          return _this.textInputLowerBound.select();
-        });
-        this.textInputHigherBound.addEventListener('focus', function () {
-          return _this.textInputHigherBound.select();
-        }); // Keep in sync the range with the text input fields
-
-        this.textInputLowerBound.addEventListener('change', function (event) {
-          event.target.value = Math.max(Math.min(parseInt(event.target.value), parseInt(_this.textInputHigherBound.value || event.target.max) - 1), event.target.min);
-          _this.rangeLowerBound.value = event.target.value;
-
-          _this.rangeLowerBound.parentElement.style.setProperty('--range-min', "".concat(parseInt(_this.rangeLowerBound.value) / parseInt(_this.rangeLowerBound.max) * 100, "%"));
-        });
-        this.textInputHigherBound.addEventListener('change', function (event) {
-          event.target.value = Math.min(Math.max(parseInt(event.target.value), parseInt(_this.textInputLowerBound.value || event.target.min) + 1), event.target.max);
-          _this.rangeHigherBound.value = event.target.value;
-
-          _this.rangeHigherBound.parentElement.style.setProperty('--range-max', "".concat(parseInt(_this.rangeHigherBound.value) / parseInt(_this.rangeHigherBound.max) * 100, "%"));
-        });
-        this.rangeLowerBound.addEventListener('change', function (event) {
-          _this.textInputLowerBound.value = event.target.value;
-
-          _this.textInputLowerBound.dispatchEvent(new Event('change', {
-            bubbles: true
-          }));
-        });
-        this.rangeHigherBound.addEventListener('change', function (event) {
-          _this.textInputHigherBound.value = event.target.value;
-
-          _this.textInputHigherBound.dispatchEvent(new Event('change', {
-            bubbles: true
-          }));
-        }); // We also have to bound the two range sliders
-
-        this.rangeLowerBound.addEventListener('input', function (event) {
-          _this.dispatchEvent(new CustomEvent('collection:abort-loading', {
-            bubbles: true
-          }));
-
-          event.target.value = Math.min(parseInt(event.target.value), parseInt(_this.textInputHigherBound.value || event.target.max) - 1); // Bound the value
-
-          event.target.parentElement.style.setProperty('--range-min', "".concat(parseInt(event.target.value) / parseInt(event.target.max) * 100, "%"));
-          _this.textInputLowerBound.value = event.target.value;
-        });
-        this.rangeHigherBound.addEventListener('input', function (event) {
-          _this.dispatchEvent(new CustomEvent('collection:abort-loading', {
-            bubbles: true
-          }));
-
-          event.target.value = Math.max(parseInt(event.target.value), parseInt(_this.textInputLowerBound.value || event.target.min) + 1); // Bound the value
-
-          event.target.parentElement.style.setProperty('--range-max', "".concat(parseInt(event.target.value) / parseInt(event.target.max) * 100, "%"));
-          _this.textInputHigherBound.value = event.target.value;
-        });
-      }
-    }]);
-
-    return PriceRange;
-  }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
-  window.customElements.define('price-range', PriceRange);
-
   (function () {
     var bootTheme = function bootTheme() {
       // Some polyfills not provided yet by polyfills.io
@@ -18713,10 +18468,10 @@
         fastdom.mutate(function () {
           for (var i = 0, linksLength = links.length; i < linksLength; i++) {
             if (links[i].hostname !== window.location.hostname) {
-              links[i].target = '_blank';
-              links[i].relList.add('noopener');
-              links[i].setAttribute('aria-describedby', 'a11y-new-window-message');
-            }
+          links[i].target = '_blank';
+          links[i].relList.add('noopener');
+          links[i].setAttribute('aria-describedby', 'a11y-new-window-message');
+        }
           }
         });
       })();
