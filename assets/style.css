@@ -396,6 +396,10 @@ padding-right:25px;
     color: #67c116 !important;
 }
 
-.product-form__option .product-form__selected-value {display: none;
-}
 
+.product-form__option .product-form__selected-value {display: none;}
+
+.shop-button , .continue-shopping  {
+    background: #3285C8 !important;
+
+}
