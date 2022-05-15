@@ -145,30 +145,7 @@ font-size: 1rem;
 	background: #1c1c1c4d;
 	padding: 30px 20px;
 } */
-.slideshow__title.heading.h1 {
-	font-size: 55px !important; 
-	letter-spacing: 3px;
-	line-height: 75px;
-	font-weight: 500 !important;
-}
-.slideshow__content {
-	/*text-transform: uppercase;
-	letter-spacing: 2px;*/
-	font-size: 17px;
-}
-.slideshow__content-wrapper {
-	padding-top: 0;
-}
-.slideshow__content-wrapper .button {
-	font-size: 17px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-}
-.faq__question.heading.h4 {
-	font-size: 16px;
-	margin: 0;
-	letter-spacing: 2px;
-}
+
 .grid__image-ratio {
     height: 300px;
 }
@@ -185,9 +162,6 @@ font-size: 1rem;
 
 .footer__link-item{
 	padding:0px;
-}
-.social-media__item svg{
-opacity: 1;
 }
 
 @media only screen and (min-width: 769px){
@@ -217,23 +191,7 @@ stroke: #fff;
 	padding: 20px 0px;
 	width: 100% !important;
 }
-  .slider_showw {
-	padding: 20px 15px;
-}
-.slideshow__title.heading.h1 {
-	font-size: 40px !important;
-	letter-spacing: 2px;
-	line-height: 45px;
-}
-.slideshow__content {
-	letter-spacing: 3px;
-	font-size: 15px;
-}
-.slideshow__content-wrapper .button {
-	font-size: 15px;
-	letter-spacing: 2px;
-	padding: 0 20px;
-} 
+
 }
 
 @media only screen and (max-width: 768px){
@@ -362,30 +320,4 @@ stroke: #fff;
 .collection-item:not(.collection-item--below):after {
     background: rgba(232, 83, 30, 0.2) !important;
     opacity: 0.4 !important;
-}
-.product-form__info-list {
-    display: flex;
-  align-items:center;
-}
-
-.cart-recap__note{
-	display:none;
-}
-.product-form .pk-right .btn.btn-default.product-form--atc-button.shopify-payment-button__button.shopify-payment-button__button--unbranded {
-    padding: 0px 25px!important;
-    width: 100%;
-}
-
-#div-sc-qb-2017210342 {
-	width: calc(50% - 16px);
-	order: 1;
-}
-.shopify-payment-button {
-	order: 3;
-}
-.pk-right {
-	order: 4;
-}
-#accepts_marketing_checkbox label {
-	letter-spacing: 0.1em;
 }
