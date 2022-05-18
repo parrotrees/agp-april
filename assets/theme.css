@@ -61,7 +61,6 @@ audio:not([controls]) {
   display: none;
   height: 0;
 }
-
 /**
  * Text-level semantic
  */
@@ -12524,7 +12523,7 @@ p.product-sku {
  * --------------------------------------------------------------------
  */
 
- .quantity-selector {
+.quantity-selector {
   display: inline-flex;
   align-items: center;
   height: 38px;
@@ -12596,7 +12595,6 @@ p.product-sku {
   box-shadow: 0 1px rgba(var(--border-color-rgb), 0.4) inset;
   color: var(--heading-color);
 }
-
 
 /**
  * --------------------------------------------------------------------
