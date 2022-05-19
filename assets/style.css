@@ -1,0 +1,222 @@
+/* -- code to remove zero based ratings for Shopify App -- */
+.spr-badge[data-rating="0.0"] {
+    visibility:hidden; display: none;
+}
+.product-meta__sku {
+	color: #000;
+}
+.product-meta__vendor {
+	color: #000 !important;
+  text-transform: capitalize;
+}
+.social-media__item a {
+	color: #b0b2b3;
+}
+.gst {
+	margin-left: 10px;
+	font-size: 14px;
+	font-weight: 600;
+	/* color: #ff7f32; */
+}
+/* - end - */
+a:hover {
+	color: #e8531e;
+	text-decoration: none;
+}
+.news-sec {
+	margin: 0 !important;
+	padding: 40px 0 !important;
+}
+.news-sec .heading.h3 {
+	color: #eee;
+}
+.index-rich-text .index-section {
+  padding:0 !important;
+}
+.section {
+	margin: 30px 0 !important;
+}
+.background-media-text.bg-imgg .h3 {
+  	font-size: 25px;
+font-weight: 600;
+}
+.background-media-text.bg-imgg .rte p {
+  text-align: justify;
+}
+.promo-grid__content.promo-grid__content--boxed.promo-grid__content--framed {
+	background: #ffffffd6;
+	border: 5px solid #ffffffc7;
+	padding: 20px 5px;
+}
+.collection-list.collction .flickity-viewport {
+  height: 280px !important;
+}
+.collection-list.collction .collection-item {
+	padding: 30px 20px;
+}
+.featured1 .grid-product__image-mask {
+	border: 1px solid #d9d9d9;
+	box-shadow: 0 0 15px #ededed;
+	padding: 50px 15px;
+}
+
+.featured1 .grid-product__price {
+	font-size: 22px;
+	color: #e8531e;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+.index-section {
+	margin: 30px 0 !important;
+}
+.about_page.py-5 .feature-row__text {
+	text-align: left !important;
+}
+.about_page.py-5 .inner h1 {
+	font-size: 30px;
+	margin-bottom: 15px;
+	letter-spacing: 1px;
+	color: #eb5719;
+	display: inline-block;
+	border-bottom: 2px solid #ff6128;
+	line-height: 60px;
+	font-weight: 600;
+	
+}
+.about_page.py-5 .rte p {
+  text-align: justify;
+letter-spacing: 0.5px;
+font-size: 15px;
+}
+.page__title.heading.h1 {
+  font-size: 30px;
+	letter-spacing: 1px;
+	color: #eb5719;
+	display: inline-block;
+	border-bottom: 2px solid #ff6128;
+	line-height: 60px;
+	font-weight: 600;
+
+}
+.container--narrow {
+	max-width: 1220px;
+}
+.page__content.rte .itemss p {
+	text-align: justify;
+	letter-spacing: 0.5px;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-size: revert;
+    font-weight: revert;
+}
+.inner{
+position:relative;
+  width:100%;
+  display:block;
+}
+.pk-block{
+	position:relative;
+}
+
+.background-media-text {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    background: var(--shopify-editor-setting-color_large_image_bg);
+    background-size: cover;
+}
+.background-media-text__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.background-media-text__inner {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+.background-media-text__aligner {
+    margin: 60px;
+}
+.animation-cropper {
+    overflow: hidden;
+    display: inline-flex;
+}
+.background-media-text__text {
+    text-align: left;
+    font-size: 1.1em;
+    background: #fff;
+    background:#fff;
+    padding: 30px;
+    width: 380px;
+}
+.h5, .h6, h5, h6 {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.75em;
+    margin-bottom: 10px;
+}
+[data-type_header_capitalize=true] .h1, [data-type_header_capitalize=true] .h2, [data-type_header_capitalize=true] .h3, [data-type_header_capitalize=true] h1, [data-type_header_capitalize=true] h2, [data-type_header_capitalize=true] h3 {
+    text-transform: uppercase;
+}
+  .background-media-text--left .animation-cropper {
+    float: left;
+}
+  .background-media-text--right .animation-cropper {
+    float: right;
+}
+}
+@media only screen and (max-width: 768px){
+  button.shopify-payment-button__button.shopify-payment-button__button--unbranded._2ogcW-Q9I-rgsSkNbRiJzA._2EiMjnumZ6FVtlC7RViKtj._2-dUletcCZ2ZL1aaH0GXxT {
+    margin-bottom: 15px;
+}
+ .collection__description.expandable-content .rte img {
+	margin: 1em 0;
+	height: 65px;
+}
+.background-media-text__inner {
+    position: relative;
+}
+  .background-media-text__container, .background-media-text__video {
+    position: relative;
+    height: 240px;
+}
+  .background-media-text__aligner {
+    margin: -6px 6px 6px;
+}
+ .background-media-text__container img {
+    height: 100%;
+}
+  .background-media-text__text {
+    text-align: left;
+    font-size: 1.1em;
+    background: #fff;
+    background: #fff;
+    padding: 10px;
+    width: 100%;
+} 
+  
+}
+.collection__description.expandable-content.expandable-content--expandable .rte h2 {
+	margin: 0 0 0px !important;
+}
+ol ol, ol ul, ul ol, ul ul{
+	margin:0px;
+}
+@media only screen and (min-width:641px){
+.collection__description.expandable-content.expandable-content--expandable .rte img {
+	margin: 1.2em 0;
+}
+
+  
+}
+
+
+
+
+
+
