@@ -224,31 +224,6 @@
         "show_collection_title": true
       }
     },
-    "newsletter": {
-      "type": "newsletter",
-      "disabled": true,
-      "settings": {
-        "title": "Newsletter",
-        "content": "<p>A short sentence describing what someone will receive by subscribing<\/p>",
-        "background": "#1e2d7d",
-        "text": "#ffffff"
-      }
-    },
-    "blog-posts": {
-      "type": "blog-posts",
-      "disabled": true,
-      "settings": {
-        "blog": "",
-        "blog_posts_count": 3,
-        "title": "Blog posts",
-        "link_title": "View all",
-        "show_category": true,
-        "show_author": true,
-        "show_date": true,
-        "show_excerpt": false,
-        "stack_mobile": false
-      }
-    },
     "16529212497ba5c00c": {
       "type": "custom-grid",
       "disabled": true,
@@ -423,6 +398,7 @@
     },
     "1652922020f7cd652c": {
       "type": "custom-grid",
+      "disabled": true,
       "blocks": {
         "1652922020beca01c9-0": {
           "type": "advanced",
@@ -512,8 +488,6 @@
     "featured-collection",
     "featured-product",
     "collection-list",
-    "newsletter",
-    "blog-posts",
     "16529212497ba5c00c",
     "165292176308226db5",
     "1652922020f7cd652c"
