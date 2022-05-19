@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "..\\assets"
+		},
+		{
+			"path": "..\\config"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\locales"
+		},
+		{
+			"path": "..\\sections"
+		},
+		{
+			"path": "..\\snippets"
+		},
+		{
+			"path": "..\\templates"
+		}
+	]
+}

@@ -1,17 +1,10 @@
 {
-  "404": {
-    "general": {
-      "title": "Side ikke funnet",
-      "content": "Siden du leter etter finnes ikke.",
-      "search": "Søk i butikken...",
-      "continue_shopping": "Klikk her for å fortsette å handle."
-    }
-  },
   "general": {
     "meta": {
       "tags": "Merket \"{{tags}}\"",
       "page": "Side {{ page }}"
     },
+
     "accessibility": {
       "skip_to_content": "Hopp til innholdet",
       "close": "Lukk",
@@ -20,6 +13,7 @@
       "new_window": "Åpne I et nytt vindu.",
       "star_reviews_info": "{{ rating_value }} av {{ rating_max }} stjerner"
     },
+
     "password": {
       "enter_password": "Skriv inn passordet",
       "password_input": "Passord ",
@@ -32,17 +26,20 @@
       "login_link": "Logg inn her",
       "follow_us": "Følg oss"
     },
+
     "pagination": {
       "previous_page": "Forrige",
       "next_page": "Neste",
       "go_to_page": "Naviger til side {{page}}",
       "page_count": "Side {{current_page}} \/ {{pages}}"
     },
+
     "breadcrumb": {
       "title": "Brødsmuletekst",
       "home": "Hjem",
       "account": "Min konto"
     },
+
     "social": {
       "follow_label": "Følg oss på {{social_media}}",
       "facebook_share": "Del på Facebook",
@@ -50,21 +47,24 @@
       "twitter_tweet": "Tweet på Twitter",
       "email_share": "Del via e-post"
     },
+
     "popup": {
       "success": "Du har blitt registrert på vårt nyhetsbrev!",
       "email_placeholder": "Din e-post ",
       "subscribe": "Meld deg på"
     }
   },
+
   "header": {
     "general": {
-      "country": "Land\/region",
+      "country": "Land/region",
       "language": "Språk",
       "account": "Min konto",
-      "login": "Logg inn \/ Registrer deg",
+      "login": "Logg inn / Registrer deg",
       "welcome": "Hei {{first_name}}",
       "cart": "Handlevogn "
     },
+
     "navigation": {
       "menu": "Meny",
       "open_menu": "Åpne meny",
@@ -72,6 +72,7 @@
       "need_help": "Trenger du hjelp?",
       "follow_us": "Følg oss"
     },
+
     "search": {
       "open_search": "Åpne søk",
       "close_search": "Lukk",
@@ -88,23 +89,27 @@
       "blog_posts_and_pages": "Sider & Blogg innlegg"
     }
   },
+
   "footer": {
     "general": {
-      "country": "Land\/region",
+      "country": "Land/region",
       "language": "Språk",
       "follow_us": "Følg oss",
       "we_accept": "Vi aksepterer "
     },
+
     "newsletter": {
       "success": "Du har abonnert på vårt nyhetsbrev!",
       "input": "Din e-post",
       "submit": "Abonner"
     },
+
     "cookie_bar": {
       "accept": "Aksepter",
       "decline": "Avslå"
     }
   },
+
   "search": {
     "general": {
       "title": "Søk blant 254 produkter",
@@ -129,6 +134,16 @@
       }
     }
   },
+
+  "404": {
+    "general": {
+      "title": "Side ikke funnet",
+      "content": "Siden du leter etter finnes ikke.",
+      "search": "Søk i butikken...",
+      "continue_shopping": "Klikk her for å fortsette å handle."
+    }
+  },
+
   "home_page": {
     "onboarding": {
       "vendor_title": "Merkevare",
@@ -143,12 +158,14 @@
       "instagram_likes": "28 likes",
       "instagram_caption": "Dette er et bildeteksteksempel."
     },
+
     "newsletter": {
       "success": "Du har abonnert på vårt nyhetsbrev!",
       "input": "Din e-post",
       "submit": "Abonner"
     }
   },
+
   "collection": {
     "general": {
       "all_collections": "Alle samlinger",
@@ -178,6 +195,7 @@
         "other": "Viser {{offset}} - {{page_size}} of {{count}} produkter"
       }
     },
+
     "filter": {
       "title": "Filtre",
       "price_filter_from": "Fra",
@@ -189,14 +207,17 @@
       "clear": "Tøm",
       "view_results": "Se resultater"
     },
+
     "sorting": {
       "title": "Sorter etter"
     },
+
     "layout": {
       "title": "Se",
       "grid": "Vis produkter som rutenett",
       "list": "Vis produkter som liste"
     },
+
     "product": {
       "from_price_html": "Fra {{price_min}}",
       "add_to_cart": "Legg til i handlevogn",
@@ -217,6 +238,7 @@
       }
     }
   },
+
   "customer": {
     "general": {
       "my_account": "Min konto",
@@ -226,6 +248,7 @@
       "no_orders": "Ingen bestillinger enda",
       "no_orders_button": "Legg inn din første bestilling"
     },
+
     "login": {
       "login": "Logg inn på kontoen min",
       "description": "Skriv inn din e-post og passord:",
@@ -237,6 +260,7 @@
       "lost_password": "Glemt passord?",
       "recover_password": "Gjenopprett passord"
     },
+
     "order": {
       "order": "Ordre",
       "order_number": "Ordre {{order_number}}",
@@ -269,6 +293,7 @@
       "no_billing_address": "Ingen faktureringsadresse var nødvendig for denne ordren.",
       "no_shipping_address": "Det ble ikke krevet noen leveringsadresse for denne ordren."
     },
+
     "activate_account": {
       "activate_account": "Aktiver konto",
       "description": "Skriv inn et passord for å opprette kontoen din:",
@@ -277,6 +302,7 @@
       "submit": "Aktiver",
       "decline": "Avbryt"
     },
+
     "recover_password": {
       "recover_password": "Gjenopprett passord",
       "description": "Skriv inn din e-post ",
@@ -286,6 +312,7 @@
       "remembered_your_password": "Husket du passordet ditt?",
       "back_to_login": "Tilbake til innlogging"
     },
+
     "reset_password": {
       "reset_password": "Tilbakestill ditt passord",
       "description": "Skriv inn et nytt passord",
@@ -293,6 +320,7 @@
       "password_confirmation": "Gjenta passord",
       "submit": "Gjenopprett passord"
     },
+
     "addresses": {
       "no_addresses": "Ingen adresse enda",
       "no_addresses_button": "Legg til din første adresse",
@@ -315,6 +343,7 @@
       "default_address": "Standard adresse",
       "address_number": "Adresse {{number}}"
     },
+
     "register": {
       "create_account": "Opprett min konto",
       "description": "Vennligst fyll ut informasjonen nedenfor:",
@@ -327,6 +356,7 @@
       "login": "Logg inn her"
     }
   },
+
   "cart": {
     "general": {
       "title": "Min handlevogn ",
@@ -349,15 +379,18 @@
       "total": "Totalt",
       "checkout": "Til kassen"
     },
+
     "items": {
       "decrease_quantity": "Reduser mengden med 1",
       "increase_quantity": "Øker mengden med 1",
       "no_more_stock": "Ikke flere på lager",
       "remove": "Fjern"
     },
+
     "gift_wrap": {
       "price_html": "Kun {{price}}"
     },
+
     "shipping_estimator": {
       "title": "Antatte frakt kostnader",
       "country": "Land",
@@ -370,6 +403,7 @@
       "errors": "Det er noen feil:"
     }
   },
+
   "product": {
     "general": {
       "previous_product": "Forrige",
@@ -398,9 +432,11 @@
         "other": "{{ count }} anmeldelser"
       }
     },
+
     "labels": {
       "sold_out": "Utsolgt"
     },
+
     "form": {
       "variant": "Variant",
       "price": "Pris",
@@ -426,6 +462,7 @@
       "added_short": "Lagt til!"
     }
   },
+
   "store_availability": {
     "general": {
       "view_store_info": "Vis butikkinformasjon",
@@ -436,6 +473,7 @@
       "pick_up_unavailable_at": "Henting er ikke tilgjengelig for øyeblikket hos {{ location_name }}"
     }
   },
+
   "gift_card": {
     "issued": {
       "subtext": "Her er gavekortet ditt!",
@@ -449,6 +487,7 @@
       "add_to_apple_wallet": "Legg til i Apple Wallet"
     }
   },
+
   "blog": {
     "general": {
       "empty": "Denne bloggen har ingen artikler",
@@ -456,6 +495,7 @@
       "categories": "Kategorier ",
       "all_tag": "Alle"
     },
+
     "article": {
       "tags": "Merknader: ",
       "written_by": "{{author}}",
@@ -468,6 +508,7 @@
         "other": "{{count}} kommentarer"
       }
     },
+
     "comments": {
       "leave_comment": "Skriv en kommentar",
       "name": "Navn",
@@ -479,6 +520,7 @@
       "success_moderated": "Kommentaren din er sendt. Det vil være synlig når butikkeieren har akseptert den!"
     }
   },
+
   "contact": {
     "form": {
       "name": "Ditt navn ",
@@ -488,54 +530,10 @@
       "successfully_sent": "Meldingen din har blitt sendt."
     }
   },
+
   "date_formats": {
     "month_day_year": "%B %d, %Y",
     "short_month_day_year": "%b %d, %Y",
     "month_day_year_time": "%B %d, %Y at %H:%M%P"
-  },
-  "pagefly": {
-    "products": {
-      "product": {
-        "regular_price": "Regular price",
-        "sold_out": "Sold out",
-        "unavailable": "Unavailable",
-        "on_sale": "Sale",
-        "quantity": "Quantity",
-        "add_to_cart": "Add to cart",
-        "back_to_collection": "Back to {{ title }}",
-        "view_details": "View details"
-      }
-    },
-    "article": {
-      "tags": "Tags:",
-      "all_topics": "All topics",
-      "by_author": "by {{ author }}",
-      "posted_in": "Posted in",
-      "read_more": "Read more",
-      "back_to_blog": "Back to {{ title }}"
-    },
-    "comments": {
-      "title": "Leave a comment",
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "post": "Post comment",
-      "moderated": "Please note, comments must be approved before they are published",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
-      "success": "Your comment was posted successfully! Thank you!",
-      "comments_with_count": {
-        "one": "{{ count }} comment",
-        "other": "{{ count }} comments"
-      }
-    },
-    "password_page": {
-      "login_form_message": "Enter store using password:",
-      "login_form_password_label": "Password",
-      "login_form_password_placeholder": "Your password",
-      "login_form_submit": "Enter",
-      "signup_form_email_label": "Email",
-      "signup_form_success": "We will send you an email right before we open!",
-      "password_link": "Enter using password"
-    }
   }
 }

@@ -45,11 +45,7 @@
         {%- capture mega_menu_columns -%}
           {%- for link in mega_menu.links -%}
             <div class="mega-menu__column">
-              
-              <a href="{{ link.url }}" class="mega-menu__title heading" aria-label="{{collections[subcollection_handle].title}}"
-                        style="background-image: url();">
-                {% if link.type == "collection_link" and link.object.image %}{{ link.object.image | img_url: 'original' | img_tag }}{% endif %}
-                {{ link.title }}</a>
+              <a href="{{ link.url }}" class="mega-menu__title heading">{{ link.title }}</a>
 
               {%- if link.links.size > 0 -%}
                 <ul class="mega-menu__linklist" role="list">

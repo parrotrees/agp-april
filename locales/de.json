@@ -1,17 +1,10 @@
 {
-  "404": {
-    "general": {
-      "title": "Seite wurde nicht gefunden",
-      "content": "Die Seite nach der Du gesucht hast konnte leider nicht gefunden werden.",
-      "search": "Suche im Shop...",
-      "continue_shopping": "Zum weiter Einkaufen hier klicken"
-    }
-  },
   "general": {
     "meta": {
       "tags": "Getagged \"{{ tags }}\"",
       "page": "Seite {{ page }}"
     },
+
     "accessibility": {
       "skip_to_content": "Direkt zum Inhalt",
       "close": "Schließen",
@@ -20,6 +13,7 @@
       "new_window": "Wird in einem neuen Fenster geöffnet",
       "star_reviews_info": "{{ rating_value }} von {{ rating_max }} Sternen"
     },
+
     "password": {
       "enter_password": "Passwort eingeben",
       "password_input": "Passwort",
@@ -32,17 +26,20 @@
       "login_link": "Einloggen",
       "follow_us": "Folge uns"
     },
+
     "pagination": {
       "previous_page": "Vorherige Seite",
       "next_page": "Nächste Seite",
       "go_to_page": "Gehe zu Seite {{page}}",
-      "page_count": "Seite {{current_page}} \/ {{pages}}"
+      "page_count": "Seite {{current_page}} / {{pages}}"
     },
+
     "breadcrumb": {
       "title": "Pfad",
       "home": "Home",
       "account": "Mein Account"
     },
+
     "social": {
       "follow_label": "Folge uns auf {{social_media}}",
       "facebook_share": "Auf Facebook teilen",
@@ -50,21 +47,24 @@
       "twitter_tweet": "Auf Twitter teilen",
       "email_share": "Per Email teilen"
     },
+
     "popup": {
       "success": "Du hast Dich für unseren Newsletter eingetragen!",
       "email_placeholder": "Deine Email",
       "subscribe": "Abschicken"
     }
   },
+
   "header": {
     "general": {
-      "country": "Land\/Region",
+      "country": "Land/Region",
       "language": "Sprache",
       "account": "Konto",
-      "login": "Einloggen \/ Registrieren",
+      "login": "Einloggen / Registrieren",
       "welcome": "Hallo {{first_name}}",
       "cart": "Warenkorb"
     },
+
     "navigation": {
       "menu": "Menu",
       "open_menu": "Menu öffnen",
@@ -72,6 +72,7 @@
       "need_help": "Du brauchst Hilfe?",
       "follow_us": "Folge uns"
     },
+
     "search": {
       "open_search": "Suche öffnen",
       "close_search": "Schließen",
@@ -88,23 +89,27 @@
       "blog_posts_and_pages": "Seiten & Blog Artikel"
     }
   },
+
   "footer": {
     "general": {
-      "country": "Land\/Region",
+      "country": "Land/Region",
       "language": "Sprache",
       "follow_us": "Folge uns",
       "we_accept": "Wir akzeptieren"
     },
+
     "newsletter": {
       "success": "Du bist jetzt für unseren Newsletter eingetragen!",
       "input": "Deine Email",
       "submit": "Abschicken"
     },
+
     "cookie_bar": {
       "accept": "Akzeptieren",
       "decline": "Verweigern"
     }
   },
+
   "search": {
     "general": {
       "title": "Suche",
@@ -129,6 +134,16 @@
       }
     }
   },
+
+  "404": {
+    "general": {
+      "title": "Seite wurde nicht gefunden",
+      "content": "Die Seite nach der Du gesucht hast konnte leider nicht gefunden werden.",
+      "search": "Suche im Shop...",
+      "continue_shopping": "Zum weiter Einkaufen hier klicken"
+    }
+  },
+
   "home_page": {
     "onboarding": {
       "vendor_title": "Anbietername",
@@ -143,12 +158,14 @@
       "instagram_likes": "28 Likes",
       "instagram_caption": "Dies ist ein Beispiel."
     },
+
     "newsletter": {
       "success": "Du bist für unseren Newsletter registriert!",
       "input": "Deine Email",
       "submit": "Abschicken"
     }
   },
+
   "collection": {
     "general": {
       "all_collections": "Alle Kollektionen",
@@ -178,6 +195,7 @@
       },
       "page_size": "{{page_size}} pro Seite"
     },
+
     "filter": {
       "title": "Filter",
       "price_filter_from": "Von",
@@ -189,14 +207,17 @@
       "clear": "Löschen",
       "view_results": "Ergebnisse anzeigen"
     },
+
     "sorting": {
       "title": "Sortierung"
     },
+
     "layout": {
       "title": "Ansicht",
       "grid": "Zeige Produkte als Kacheln an",
       "list": "Zeige Produkte als Liste an"
     },
+
     "product": {
       "from_price_html": "ab {{price_min}}",
       "add_to_cart": "zum Warenkorb hinzufügen",
@@ -217,6 +238,7 @@
       }
     }
   },
+
   "customer": {
     "general": {
       "my_account": "Mein Account",
@@ -226,6 +248,7 @@
       "no_orders": "Keine Bestellungen",
       "no_orders_button": "Gib Deine erste Bestellung auf"
     },
+
     "login": {
       "login": "Einloggen in meinen Account",
       "description": "Gib Deine Email und Passwort ein:",
@@ -237,6 +260,7 @@
       "lost_password": "Passwort vergessen?",
       "recover_password": "Passwort zurücksetzen"
     },
+
     "order": {
       "order": "Bestellung",
       "order_number": "Bestellnummer {{order_number}}",
@@ -246,12 +270,12 @@
       "fulfillment_status": "Lieferstatus",
       "back_to_account": "Zurück zum Konto",
       "cancelled_at": "Bestellung wurde storniert am {{date}}. Grund: {{reason}}.",
-      "fulfillment_with_url_and_number_html": "Alle Prudukte wurden versandt. Verfolge die Lieferung mit der Sendungsnummer {{tracking_number}} oder <a href=\"{{tracking_url}}\" target=\"_blank\">klicke hier<\/a>.",
-      "fulfillment_with_url_html": "Alle Prudukte wurden versandt. Zum Verfolgen der Lieferung <a href=\"{{tracking_url}}\" target=\"_blank\">klicke hier<\/a>.",
+      "fulfillment_with_url_and_number_html": "Alle Prudukte wurden versandt. Verfolge die Lieferung mit der Sendungsnummer {{tracking_number}} oder <a href=\"{{tracking_url}}\" target=\"_blank\">klicke hier</a>.",
+      "fulfillment_with_url_html": "Alle Prudukte wurden versandt. Zum Verfolgen der Lieferung <a href=\"{{tracking_url}}\" target=\"_blank\">klicke hier</a>.",
       "fulfillment_with_number_html": "Alle Prudukte wurden versandt. Verfolge die Lieferung mit der Sendungsnummer {{tracking_number}}.",
       "fulfillment_html": "Alle Prudukte wurden versandt.",
-      "line_fulfillment_with_url_and_number_html": "Dieses Prudukt wurde versandt. Verfolge die Lieferung mit der Sendungsnummer {{tracking_number}} oder <a href=\"{{tracking_url}}\" target=\"_blank\">klicke hier<\/a>.",
-      "line_fulfillment_with_url_html": "Dieses Prudukt wurde versandt. Zum Verfolgen der Lieferung <a href=\"{{tracking_url}}\" target=\"_blank\">klicke hier<\/a>.",
+      "line_fulfillment_with_url_and_number_html": "Dieses Prudukt wurde versandt. Verfolge die Lieferung mit der Sendungsnummer {{tracking_number}} oder <a href=\"{{tracking_url}}\" target=\"_blank\">klicke hier</a>.",
+      "line_fulfillment_with_url_html": "Dieses Prudukt wurde versandt. Zum Verfolgen der Lieferung <a href=\"{{tracking_url}}\" target=\"_blank\">klicke hier</a>.",
       "line_fulfillment_with_number_html": "Dieses Prudukt wurde versandt. Verfolge die Lieferung mit der Sendungsnummer {{tracking_number}}.",
       "line_fulfillment_html": "Dieses Prudukt wurde versandt.",
       "product": "Produkt",
@@ -269,6 +293,7 @@
       "no_billing_address": "Für die Bestellung wurde keine Rechnungsadresse benötigt.",
       "no_shipping_address": "Für die Bestellung wurde keine Lieferadresse benötigt."
     },
+
     "activate_account": {
       "activate_account": "Konto aktivieren",
       "description": "Gib ein Passwort ein um Dein Konto zu erstellen:",
@@ -277,6 +302,7 @@
       "submit": "Aktivieren",
       "decline": "Ablehnen"
     },
+
     "recover_password": {
       "recover_password": "Passwort wiederherstellen",
       "description": "Gib Deine Email ein:",
@@ -286,6 +312,7 @@
       "remembered_your_password": "Erinnerst Du Dich an Dein Passwort?",
       "back_to_login": "Zurück zum Login"
     },
+
     "reset_password": {
       "reset_password": "Passwort zurücksetzen",
       "description": "Gib ein neues Passwort ein:",
@@ -293,6 +320,7 @@
       "password_confirmation": "Passwort bestätigen",
       "submit": "Passwort zurücksetzen"
     },
+
     "addresses": {
       "no_addresses": "Bisher keine Adressen",
       "no_addresses_button": "Füge Deine Erste Adresse hinzug",
@@ -315,6 +343,7 @@
       "phone": "Telefon",
       "set_default": "Als Standardadresse festlegen"
     },
+
     "register": {
       "create_account": "Konto erstellen",
       "description": "Bitte fülle die Felder aus:",
@@ -327,6 +356,7 @@
       "login": "Hier einloggen"
     }
   },
+
   "cart": {
     "general": {
       "title": "Warenkorb",
@@ -349,15 +379,18 @@
       "total": "Summe",
       "checkout": "Kasse"
     },
+
     "items": {
       "decrease_quantity": "Menge um 1 reduzieren",
       "increase_quantity": "Menge um 1 erhöhen",
       "no_more_stock": "Ware nicht auf Lager",
       "remove": "Entfernen"
     },
+
     "gift_wrap": {
       "price_html": "Nur {{price}}"
     },
+
     "shipping_estimator": {
       "title": "Versandkosten berechnen",
       "country": "Land",
@@ -370,6 +403,7 @@
       "errors": "Es gibt Fehler:"
     }
   },
+
   "product": {
     "general": {
       "previous_product": "Vorheriges",
@@ -398,9 +432,11 @@
         "other": "{{ count }} Bewertungen"
       }
     },
+
     "labels": {
       "sold_out": "Ausverkauft"
     },
+
     "form": {
       "variant": "Variante",
       "price": "Preis",
@@ -426,6 +462,7 @@
       "added_short": "Hinzugefügt!"
     }
   },
+
   "store_availability": {
     "general": {
       "view_store_info": "Shop-Informationen anzeigen",
@@ -436,6 +473,7 @@
       "pick_up_unavailable_at": "Abholung bei {{ location_name }} derzeit nicht verfügbar"
     }
   },
+
   "gift_card": {
     "issued": {
       "subtext": "Hier ist Dein Geschenkgutschein!",
@@ -449,6 +487,7 @@
       "add_to_apple_wallet": "Zu Apple Wallet hinzufügen"
     }
   },
+
   "blog": {
     "general": {
       "empty": "Dieser Blog hat keine Beiträge",
@@ -456,6 +495,7 @@
       "categories": "Kategorien",
       "all_tag": "Alle"
     },
+
     "article": {
       "tags": "Kategorien:",
       "written_by": "{{author}}",
@@ -468,6 +508,7 @@
         "other": "{{count}} Kommentare"
       }
     },
+
     "comments": {
       "leave_comment": "Kommentar hinterlassen",
       "name": "Name",
@@ -479,6 +520,7 @@
       "success_moderated": "Dein Kommentar wurde abgeschickt. Er wird veröffentlicht sobald der Shop Betreiber ihn akzeptiert hat!"
     }
   },
+
   "contact": {
     "form": {
       "name": "Vorname",
@@ -488,54 +530,10 @@
       "successfully_sent": "Deine Nachricht wurde erfolgreich versendet."
     }
   },
+
   "date_formats": {
     "month_day_year": "%B %d, %Y",
     "short_month_day_year": "%b %d, %Y",
     "month_day_year_time": "%B %d, %Y at %H:%M%P"
-  },
-  "pagefly": {
-    "products": {
-      "product": {
-        "regular_price": "Regular price",
-        "sold_out": "Sold out",
-        "unavailable": "Unavailable",
-        "on_sale": "Sale",
-        "quantity": "Quantity",
-        "add_to_cart": "Add to cart",
-        "back_to_collection": "Back to {{ title }}",
-        "view_details": "View details"
-      }
-    },
-    "article": {
-      "tags": "Tags:",
-      "all_topics": "All topics",
-      "by_author": "by {{ author }}",
-      "posted_in": "Posted in",
-      "read_more": "Read more",
-      "back_to_blog": "Back to {{ title }}"
-    },
-    "comments": {
-      "title": "Leave a comment",
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "post": "Post comment",
-      "moderated": "Please note, comments must be approved before they are published",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
-      "success": "Your comment was posted successfully! Thank you!",
-      "comments_with_count": {
-        "one": "{{ count }} comment",
-        "other": "{{ count }} comments"
-      }
-    },
-    "password_page": {
-      "login_form_message": "Enter store using password:",
-      "login_form_password_label": "Password",
-      "login_form_password_placeholder": "Your password",
-      "login_form_submit": "Enter",
-      "signup_form_email_label": "Email",
-      "signup_form_success": "We will send you an email right before we open!",
-      "password_link": "Enter using password"
-    }
   }
 }
