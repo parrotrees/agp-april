@@ -32,6 +32,7 @@
     },
     "featured-collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "",
         "title": "Featured collection",
@@ -41,6 +42,59 @@
         "show_quick_buy": false,
         "link_title": "View all",
         "link_url": ""
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "blocks": {
+        "product-meta": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": true,
+            "show_sku": true,
+            "show_reviews_badge": false,
+            "show_share_buttons": false
+          }
+        },
+        "featured-description": {
+          "type": "featured_description",
+          "settings": {
+          }
+        },
+        "variant-selector": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "block",
+            "color_mode": "color",
+            "show_quantity_selector": true,
+            "show_taxes_included": true,
+            "show_inventory_quantity": true,
+            "low_inventory_threshold": 0
+          }
+        },
+        "buy-buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true
+          }
+        }
+      },
+      "block_order": [
+        "product-meta",
+        "featured-description",
+        "variant-selector",
+        "buy-buttons"
+      ],
+      "settings": {
+        "product": "13-macaron-box-orange",
+        "title": "Featured product",
+        "link_title": "View details",
+        "link_url": "",
+        "image_size": "small",
+        "enable_image_zoom": true,
+        "enable_video_looping": false,
+        "zoom_effect": "outside",
+        "carousel_effect": "fade"
       }
     },
     "collection-list": {
@@ -171,6 +225,7 @@
     },
     "newsletter": {
       "type": "newsletter",
+      "disabled": true,
       "settings": {
         "title": "Newsletter",
         "content": "<p>A short sentence describing what someone will receive by subscribing<\/p>",
@@ -178,61 +233,9 @@
         "text": "#ffffff"
       }
     },
-    "featured-product": {
-      "type": "featured-product",
-      "blocks": {
-        "product-meta": {
-          "type": "product_meta",
-          "settings": {
-            "show_vendor": true,
-            "show_sku": true,
-            "show_reviews_badge": false,
-            "show_share_buttons": false
-          }
-        },
-        "featured-description": {
-          "type": "featured_description",
-          "settings": {
-          }
-        },
-        "variant-selector": {
-          "type": "variant_selector",
-          "settings": {
-            "selector_mode": "block",
-            "color_mode": "color",
-            "show_quantity_selector": true,
-            "show_taxes_included": true,
-            "show_inventory_quantity": true,
-            "low_inventory_threshold": 0
-          }
-        },
-        "buy-buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_payment_button": true
-          }
-        }
-      },
-      "block_order": [
-        "product-meta",
-        "featured-description",
-        "variant-selector",
-        "buy-buttons"
-      ],
-      "settings": {
-        "product": "13-macaron-box-orange",
-        "title": "Featured product",
-        "link_title": "View details",
-        "link_url": "",
-        "image_size": "small",
-        "enable_image_zoom": true,
-        "enable_video_looping": false,
-        "zoom_effect": "outside",
-        "carousel_effect": "fade"
-      }
-    },
     "blog-posts": {
       "type": "blog-posts",
+      "disabled": true,
       "settings": {
         "blog": "",
         "blog_posts_count": 3,
@@ -244,61 +247,14 @@
         "show_excerpt": false,
         "stack_mobile": false
       }
-    },
-    "text-with-icons": {
-      "type": "text-with-icons",
-      "blocks": {
-        "icon-1": {
-          "type": "item",
-          "settings": {
-            "icon": "bi-delivery",
-            "title": "Free delivery worldwide",
-            "content": "<p>Short content about your store<\/p>"
-          }
-        },
-        "icon-2": {
-          "type": "item",
-          "settings": {
-            "icon": "bi-returns",
-            "title": "Satisfied or refunded",
-            "content": "<p>Short content about your store<\/p>"
-          }
-        },
-        "icon-3": {
-          "type": "item",
-          "settings": {
-            "icon": "bi-customer-support",
-            "title": "Top-notch support",
-            "content": "<p>Short content about your store<\/p>"
-          }
-        },
-        "icon-4": {
-          "type": "item",
-          "settings": {
-            "icon": "bi-secure-payment",
-            "title": "Secure payments",
-            "content": "<p>Short content about your store<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "icon-1",
-        "icon-2",
-        "icon-3",
-        "icon-4"
-      ],
-      "settings": {
-        "stack_mobile": false
-      }
     }
   },
   "order": [
     "slideshow",
     "featured-collection",
+    "featured-product",
     "collection-list",
     "newsletter",
-    "featured-product",
-    "blog-posts",
-    "text-with-icons"
+    "blog-posts"
   ]
 }
