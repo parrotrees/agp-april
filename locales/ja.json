@@ -4,7 +4,6 @@
       "tags": "「\"{{ tags }}\"」タグによる絞り込み",
       "page": "{{ page }}ページ目"
     },
-
     "accessibility": {
       "skip_to_content": "コンテンツにスキップする",
       "close": "閉じる",
@@ -13,7 +12,6 @@
       "new_window": "新しいウィンドウで開く",
       "star_reviews_info": "{{ rating_max }}つ星中{{ rating_value }}つ"
     },
-
     "password": {
       "enter_password": "パスワードでログインする",
       "password_input": "パスワード",
@@ -26,20 +24,17 @@
       "login_link": "ログインはこちら",
       "follow_us": "フォローする"
     },
-
     "pagination": {
       "previous_page": "前へ",
       "next_page": "次へ",
       "go_to_page": "{{page}}ページへ",
       "page_count": "{{pages}}ページ中{{current_page}}ページ目"
     },
-
     "breadcrumb": {
       "title": "パンくず",
       "home": "ホーム",
       "account": "マイアカウント"
     },
-
     "social": {
       "follow_label": "{{social_media}}でフォロー",
       "facebook_share": "Facebookで共有",
@@ -47,24 +42,21 @@
       "twitter_tweet": "Twitterでツイート",
       "email_share": "メールで共有する"
     },
-
     "popup": {
       "success": "ニュースレターに登録完了しました。",
       "email_placeholder": "メールアドレス",
       "subscribe": "申し込む"
     }
   },
-
   "header": {
     "general": {
-      "country": "国/地域",
+      "country": "国\/地域",
       "language": "言語",
       "account": "マイアカウント",
       "login": "ログイン・登録",
       "welcome": "ようこそ {{first_name}}",
       "cart": "カート"
     },
-
     "navigation": {
       "menu": "メニュー",
       "open_menu": "メニューをオープン",
@@ -72,7 +64,6 @@
       "need_help": "助けが必要？",
       "follow_us": "フォローする"
     },
-
     "search": {
       "open_search": "開く",
       "close_search": "閉じる",
@@ -89,27 +80,23 @@
       "blog_posts_and_pages": "ページとブログの投稿"
     }
   },
-
   "footer": {
     "general": {
-      "country": "国/地域",
+      "country": "国\/地域",
       "language": "言語",
       "follow_us": "フォローする",
       "we_accept": "を受け入れる"
     },
-
     "newsletter": {
       "success": "ニュースレターにご購読ありがとうございます",
       "input": "メールアドレス",
       "submit": "申し込む"
     },
-
     "cookie_bar": {
       "accept": "許可する",
       "decline": "拒否する"
     }
   },
-
   "search": {
     "general": {
       "title": "検索",
@@ -134,7 +121,6 @@
       }
     }
   },
-
   "404": {
     "general": {
       "title": "ページが見つかりません",
@@ -143,7 +129,6 @@
       "continue_shopping": "ここをクリックして買い物を続ける"
     }
   },
-
   "home_page": {
     "onboarding": {
       "vendor_title": "ブランド名",
@@ -158,14 +143,12 @@
       "instagram_likes": "28ライク",
       "instagram_caption": "これはキャプションの例です。"
     },
-
     "newsletter": {
       "success": "ニュースレターのご購読ありがとうございます！",
       "input": "メールアドレス",
       "submit": "申し込む"
     }
   },
-
   "collection": {
     "general": {
       "all_collections": "すべてのコレクション",
@@ -195,7 +178,6 @@
       },
       "page_size": "{{page_size}} ページあたり"
     },
-
     "filter": {
       "title": "フィルター",
       "price_filter_from": "から",
@@ -207,17 +189,14 @@
       "clear": "消去",
       "view_results": "結果の表示"
     },
-
     "sorting": {
       "title": "並び替え"
     },
-
     "layout": {
       "title": "表示",
       "grid": "製品をグリッドとして表示する",
       "list": "製品をリストとして表示する"
     },
-
     "product": {
       "from_price_html": "{{price_min}}から",
       "add_to_cart": "カートに追加",
@@ -238,7 +217,6 @@
       }
     }
   },
-
   "customer": {
     "general": {
       "my_account": "マイアカウント",
@@ -248,7 +226,6 @@
       "no_orders": "まだ注文はありません",
       "no_orders_button": "最初の注文をする"
     },
-
     "login": {
       "login": "アカウントにログイン",
       "description": "メールとパスワードを入力してください：",
@@ -260,7 +237,6 @@
       "lost_password": "パスワードを忘れた場合",
       "recover_password": "パスワードの回復"
     },
-
     "order": {
       "order": "注文",
       "order_number": "{{order_number}}注文",
@@ -270,12 +246,12 @@
       "fulfillment_status": "履行ステータス",
       "back_to_account": "アカウントに戻る",
       "cancelled_at": "{{date}}注文はキャンセルされました。 理由： {{reason}}。",
-      "fulfillment_with_url_and_number_html": "すべての製品が送信されました。 番号で貨物を追跡する {{tracking_number}} または <a href=\"{{tracking_url}}\" target=\"_blank\">こちらをクリック</a>.",
-      "fulfillment_with_url_html": "すべての製品が送信されました。 <a href=\"{{tracking_url}}\" target=\"_blank\">こちらをクリック</a> で出荷を追跡する。",
+      "fulfillment_with_url_and_number_html": "すべての製品が送信されました。 番号で貨物を追跡する {{tracking_number}} または <a href=\"{{tracking_url}}\" target=\"_blank\">こちらをクリック<\/a>.",
+      "fulfillment_with_url_html": "すべての製品が送信されました。 <a href=\"{{tracking_url}}\" target=\"_blank\">こちらをクリック<\/a> で出荷を追跡する。",
       "fulfillment_with_number_html": "すべての製品が送信されました。 {{tracking_number}}番号で貨物を追跡します。",
       "fulfillment_html": "すべての製品が送信されました。",
-      "line_fulfillment_with_url_and_number_html": "この製品は送信されました。 番号で貨物を追跡する {{tracking_number}} または <a href=\"{{tracking_url}}\" target=\"_blank\">こちらをクリック</a>.",
-      "line_fulfillment_with_url_html": "この製品は送信されました。 貨物を追跡する <a href=\"{{tracking_url}}\" target=\"_blank\">こちらをクリック</a>.",
+      "line_fulfillment_with_url_and_number_html": "この製品は送信されました。 番号で貨物を追跡する {{tracking_number}} または <a href=\"{{tracking_url}}\" target=\"_blank\">こちらをクリック<\/a>.",
+      "line_fulfillment_with_url_html": "この製品は送信されました。 貨物を追跡する <a href=\"{{tracking_url}}\" target=\"_blank\">こちらをクリック<\/a>.",
       "line_fulfillment_with_number_html": "この製品は送信されました。 番号で貨物を追跡する {{tracking_number}}.",
       "line_fulfillment_html": "この製品は送信されました。",
       "product": "製品",
@@ -293,7 +269,6 @@
       "no_billing_address": "この注文には請求先住所は必要ありません。",
       "no_shipping_address": "この注文には配送先住所は必要ありません。"
     },
-
     "activate_account": {
       "activate_account": "アカウントのアクティベーション",
       "description": "パスワードを入力してアカウントを作成します：",
@@ -302,7 +277,6 @@
       "submit": "有効化",
       "decline": "低下"
     },
-
     "recover_password": {
       "recover_password": "パスワードの回復",
       "description": "メールを入力",
@@ -312,7 +286,6 @@
       "remembered_your_password": "パスワードを覚えていますか？",
       "back_to_login": "ログインに戻る"
     },
-
     "reset_password": {
       "reset_password": "パスワードをリセット",
       "description": "新しいパスワードを入力:",
@@ -320,7 +293,6 @@
       "password_confirmation": "パスワードを認証する",
       "submit": "パスワードをリセット"
     },
-
     "addresses": {
       "no_addresses": "住所はまだありません",
       "no_addresses_button": "最初の住所を追加してください",
@@ -343,7 +315,6 @@
       "phone": "電話番号",
       "set_default": "デフォルトの住所として設定"
     },
-
     "register": {
       "create_account": "アカウントを作成",
       "description": "以下の情報を入力してください:",
@@ -356,7 +327,6 @@
       "login": "こちらでログイン"
     }
   },
-
   "cart": {
     "general": {
       "title": "カート",
@@ -379,18 +349,15 @@
       "total": "合計",
       "checkout": "チェックアウト"
     },
-
     "items": {
       "decrease_quantity": "数量を1減らす",
       "increase_quantity": "数量を1増やす",
       "no_more_stock": "在庫なし",
       "remove": "削除する"
     },
-
     "gift_wrap": {
       "price_html": "{{price}}のみ"
     },
-
     "shipping_estimator": {
       "title": "発送予定",
       "country": "国",
@@ -403,7 +370,6 @@
       "errors": "いくつかのエラーがあります："
     }
   },
-
   "product": {
     "general": {
       "previous_product": "前の",
@@ -432,11 +398,9 @@
         "other": "{{ count }}件"
       }
     },
-
     "labels": {
       "sold_out": "完売"
     },
-
     "form": {
       "variant": "バリエーション",
       "price": "価格",
@@ -462,7 +426,6 @@
       "added_short": "追加されました"
     }
   },
-
   "store_availability": {
     "general": {
       "view_store_info": "ストア情報を表示する",
@@ -473,7 +436,6 @@
       "pick_up_unavailable_at": "{{ location_name }}での受取は現在できません"
     }
   },
-
   "gift_card": {
     "issued": {
       "subtext": "こちらがギフトカードです！",
@@ -487,7 +449,6 @@
       "add_to_apple_wallet": "Apple Walletに追加"
     }
   },
-
   "blog": {
     "general": {
       "empty": "このブログには記事がありません",
@@ -495,7 +456,6 @@
       "categories": "カテゴリー",
       "all_tag": "すべて"
     },
-
     "article": {
       "tags": "タグ:",
       "written_by": "{{author}}",
@@ -508,7 +468,6 @@
         "other": "{{count}} コメント"
       }
     },
-
     "comments": {
       "leave_comment": "コメントを残す",
       "name": "名前",
@@ -520,7 +479,6 @@
       "success_moderated": "コメントが送信されました。 店主が承認すると表示されます！"
     }
   },
-
   "contact": {
     "form": {
       "name": "お名前",
@@ -530,7 +488,6 @@
       "successfully_sent": "お問い合わせは正常に送信されました。"
     }
   },
-
   "date_formats": {
     "month_day_year": "%Y年%B%d日",
     "short_month_day_year": "%Y年%B%d日",
