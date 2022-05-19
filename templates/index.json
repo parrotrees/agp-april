@@ -449,22 +449,23 @@
         "1652922020beca01c9-1": {
           "type": "advanced",
           "settings": {
-            "subheading": "Limited time",
-            "heading": "Announce your promotion",
-            "textarea": "Include the smaller details of your promotion in text below the title.",
-            "cta_text1": "Shop This",
-            "cta_link1": "",
-            "cta_text2": "Shop All",
+            "subheading": "",
+            "heading": "Window Boxes",
+            "textarea": "Economical to ship, impressive in presentation and durable enough to protect the valuable contents",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/window_boxes",
+            "cta_text2": "",
             "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_WINDOW_BOXES_735bc672-2955-44c4-b3a4-7614b521e48d.jpg",
             "video_url": "",
-            "width": "50",
-            "height": 500,
-            "text_size": 100,
-            "text_align": "vertical-center horizontal-center",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
             "focal_point": "center",
-            "color_accent": "rgba(0,0,0,0)",
+            "color_accent": "#148394",
             "boxed": false,
-            "framed": false
+            "framed": true
           }
         },
         "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b": {
