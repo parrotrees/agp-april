@@ -6,6 +6,7 @@
         "slide-1": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/AGP_-_STATIC_BANNER_1.png",
             "show_overlay": false,
             "overlay_opacity": 30,
             "text_color": "#ffffff",
