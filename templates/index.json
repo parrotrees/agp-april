@@ -471,22 +471,23 @@
         "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b": {
           "type": "advanced",
           "settings": {
-            "subheading": "Limited time",
-            "heading": "Announce your promotion",
-            "textarea": "Include the smaller details of your promotion in text below the title.",
-            "cta_text1": "Shop This",
-            "cta_link1": "",
-            "cta_text2": "Shop All",
+            "subheading": "",
+            "heading": "Donut Boxes",
+            "textarea": "Impress with AGP's unique range of standout display boxes for your irresistible bespoke donuts.",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/donut_boxes",
+            "cta_text2": "",
             "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_DONUT_BOXES_3916f1d7-f9e8-4e73-b8d6-bc8282a1a0b2.jpg",
             "video_url": "",
-            "width": "100",
-            "height": 500,
-            "text_size": 120,
-            "text_align": "vertical-center horizontal-center",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
             "focal_point": "center",
-            "color_accent": "rgba(0,0,0,0)",
+            "color_accent": "#148394",
             "boxed": false,
-            "framed": false
+            "framed": true
           }
         }
       },
