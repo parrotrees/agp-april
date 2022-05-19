@@ -1,1 +1,44 @@
-{"sections":{"main":{"type":"main-cart","settings":{}},"recently-viewed-products":{"type":"recently-viewed-products","settings":{}}},"order":["main","recently-viewed-products"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "blocks": {
+        "03bea4c6-971d-44f4-8f09-17730542e7a6": {
+          "type": "trust",
+          "settings": {
+            "icon": "bi-customer-support",
+            "title": "Your title",
+            "content": "<p>Short content about your store<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "03bea4c6-971d-44f4-8f09-17730542e7a6"
+      ],
+      "settings": {
+        "enable_order_notes": true,
+        "show_payment_icons": true,
+        "gift_wrap_product": "",
+        "gift_wrap_text": "Do you want a gift wrap?",
+        "gift_wrap_button": "Add a gift wrap",
+        "show_shipping_estimator": true,
+        "shipping_estimator_default_country": "United States",
+        "trust_heading": "Our guarantees",
+        "upsell_heading": "Complete your cart",
+        "upsell_collection": "",
+        "upsell_products_count": 4
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "title": "Recently viewed",
+        "show_quick_buy": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recently-viewed-products"
+  ]
+}

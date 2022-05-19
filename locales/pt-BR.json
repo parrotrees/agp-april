@@ -50,10 +50,10 @@
   },
   "header": {
     "general": {
-      "country": "País/Região",
+      "country": "País\/Região",
       "language": "Idioma",
       "account": "Minha conta",
-      "login": "Entrar / Criar conta",
+      "login": "Entrar \/ Criar conta",
       "welcome": "Olá {{first_name}}",
       "cart": "Carrinho"
     },
@@ -82,7 +82,7 @@
   },
   "footer": {
     "general": {
-      "country": "País/Região",
+      "country": "País\/Região",
       "language": "Idioma",
       "follow_us": "Siga-nos",
       "we_accept": "Nós aceitamos"
@@ -92,7 +92,6 @@
       "input": "Seu e-mail",
       "submit": "Enviar"
     },
-
     "cookie_bar": {
       "accept": "Aceitar",
       "decline": "Recusar"
