@@ -103,98 +103,98 @@
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "hamilton_collapsible_cases",
             "link": ""
           }
         },
         "collection-2": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "posy-boxes",
             "link": ""
           }
         },
         "collection-3": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "shipper_boxes",
             "link": ""
           }
         },
         "collection-4": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "cupcake_gift_boxes",
             "link": ""
           }
         },
         "collection-5": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "carry_packs",
             "link": ""
           }
         },
         "collection-6": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "deluxe_hamper_trays",
             "link": ""
           }
         },
         "75426406-2ba9-4f03-a0a1-9002785b4e99": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "macaron_gift_boxes",
             "link": ""
           }
         },
         "e5e23457-7a28-4114-b3f0-6f3ba3ea1ab8": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "square_gift_boxes",
             "link": ""
           }
         },
         "88aa0585-beef-4ef9-ac1b-b7932933be1d": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "wine_boxes",
             "link": ""
           }
         },
         "1d557461-d283-4724-9906-9d29dea58014": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "beer_and_wine_carriers",
             "link": ""
           }
         },
         "ec74f70a-c27f-4df8-9e8e-161128d03f46": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "sweet_boxes",
             "link": ""
           }
         },
         "2833c72a-988f-412e-b799-5154fad7c614": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "grab_boxes",
             "link": ""
           }
         },
         "62026b2b-32c1-4a61-bc23-08d87ea88946": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "gourmet_display_boxes",
             "link": ""
           }
         },
         "68da4669-5aa3-4aeb-83fc-4ac26c013e08": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "pillow_boxes",
             "link": ""
           }
         }
@@ -219,7 +219,7 @@
         "title": "Our collections",
         "link_title": "View all",
         "link": "shopify:\/\/collections",
-        "round_images": true,
+        "round_images": false,
         "show_collection_title": true
       }
     },
