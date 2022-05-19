@@ -385,22 +385,23 @@
         "999fdf1b-e667-41cc-b828-ccaa85805b5d": {
           "type": "advanced",
           "settings": {
-            "subheading": "Limited time",
-            "heading": "Announce your promotion",
-            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "subheading": "",
+            "heading": "Carry Packs & Trays",
+            "textarea": "Designed to make products look good with minimum fuss and maximum style",
             "cta_text1": "Shop This",
-            "cta_link1": "",
-            "cta_text2": "Shop All",
+            "cta_link1": "shopify:\/\/collections\/carry_packs",
+            "cta_text2": "",
             "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_CARRY_PACKS_e562d2f1-d5e5-448f-9522-df2ad9cda543.jpg",
             "video_url": "",
-            "width": "100",
-            "height": 500,
-            "text_size": 120,
-            "text_align": "vertical-center horizontal-center",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
             "focal_point": "center",
-            "color_accent": "rgba(0,0,0,0)",
+            "color_accent": "#148394",
             "boxed": false,
-            "framed": false
+            "framed": true
           }
         }
       },
