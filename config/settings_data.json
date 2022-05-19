@@ -146,7 +146,7 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "show_announcement": true,
+          "show_announcement": false,
           "background": "#1e2d7d",
           "text_color": "#ffffff",
           "text": "Announce something here",

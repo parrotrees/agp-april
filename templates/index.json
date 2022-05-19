@@ -248,6 +248,89 @@
         "show_excerpt": false,
         "stack_mobile": false
       }
+    },
+    "16529212497ba5c00c": {
+      "type": "custom-grid",
+      "blocks": {
+        "1652921249711f1fe2-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Magnetic Closure Boxes",
+            "textarea": "A perfect keepsake with minimalist design, fine emboss and Matt finish inside and out",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/magnetic_closure_boxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_MAGNETIC_CLOSUE_BOX_774eeb1f-89b5-48bb-8b14-1466e1b564bf.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "1652921249711f1fe2-1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "100",
+            "height": 500,
+            "text_size": 120,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        }
+      },
+      "block_order": [
+        "1652921249711f1fe2-0",
+        "1652921249711f1fe2-1",
+        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 10,
+        "space_above": true,
+        "space_below": true,
+        "hdg_font": 20,
+        "sub_hdg_font": 12,
+        "text_font": 14
+      }
     }
   },
   "order": [
@@ -256,6 +339,7 @@
     "featured-product",
     "collection-list",
     "newsletter",
-    "blog-posts"
+    "blog-posts",
+    "16529212497ba5c00c"
   ]
 }
