@@ -251,6 +251,7 @@
     },
     "16529212497ba5c00c": {
       "type": "custom-grid",
+      "disabled": true,
       "blocks": {
         "1652921249711f1fe2-0": {
           "type": "advanced",
@@ -277,6 +278,91 @@
         "1652921249711f1fe2-1": {
           "type": "advanced",
           "settings": {
+            "subheading": "",
+            "heading": "Hamper  Packaging",
+            "textarea": "Stylish, as well as sturdy enough to handle just about anything you can think to put in them.",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/hamper_packaging",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_HAMPER_PACKAGES_fff579da-61fb-4e8a-aea3-94a82a819cb8.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Gift Boxes",
+            "textarea": "When you need to give someone something special, give it in one of our elegantly designed gift boxes.",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/giftboxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_GIFT_BOXES_29a62547-fcf3-41c2-b842-7f95204b2869.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        }
+      },
+      "block_order": [
+        "1652921249711f1fe2-0",
+        "1652921249711f1fe2-1",
+        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 10,
+        "space_above": true,
+        "space_below": true,
+        "hdg_font": 20,
+        "sub_hdg_font": 12,
+        "text_font": 14
+      }
+    },
+    "165292176308226db5": {
+      "type": "custom-grid",
+      "blocks": {
+        "1652921762cc9d9d94-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Postage &  Shipper Boxes",
+            "textarea": "Engineered for rapid assembly, for quick pick and pack, getting your orders out in a fast-paced environment",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/shipper_boxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_POSTAGE_AND_SHIPPER_BOXES_294ad514-6de3-440e-bcf8-8137554ad729.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "1652921762cc9d9d94-1": {
+          "type": "advanced",
+          "settings": {
             "subheading": "Limited time",
             "heading": "Announce your promotion",
             "textarea": "Include the smaller details of your promotion in text below the title.",
@@ -295,7 +381,7 @@
             "framed": false
           }
         },
-        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e": {
+        "999fdf1b-e667-41cc-b828-ccaa85805b5d": {
           "type": "advanced",
           "settings": {
             "subheading": "Limited time",
@@ -318,18 +404,100 @@
         }
       },
       "block_order": [
-        "1652921249711f1fe2-0",
-        "1652921249711f1fe2-1",
-        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e"
+        "1652921762cc9d9d94-0",
+        "1652921762cc9d9d94-1",
+        "999fdf1b-e667-41cc-b828-ccaa85805b5d"
       ],
       "settings": {
         "full_width": false,
-        "gutter_size": 10,
+        "gutter_size": 20,
         "space_above": true,
         "space_below": true,
         "hdg_font": 20,
         "sub_hdg_font": 12,
         "text_font": 14
+      }
+    },
+    "1652922020f7cd652c": {
+      "type": "custom-grid",
+      "blocks": {
+        "1652922020beca01c9-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "1652922020beca01c9-1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_size": 100,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Limited time",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "100",
+            "height": 500,
+            "text_size": 120,
+            "text_align": "vertical-center horizontal-center",
+            "focal_point": "center",
+            "color_accent": "rgba(0,0,0,0)",
+            "boxed": false,
+            "framed": false
+          }
+        }
+      },
+      "block_order": [
+        "1652922020beca01c9-0",
+        "1652922020beca01c9-1",
+        "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true,
+        "hdg_font": 20,
+        "sub_hdg_font": 18,
+        "text_font": 16
       }
     }
   },
@@ -340,6 +508,8 @@
     "collection-list",
     "newsletter",
     "blog-posts",
-    "16529212497ba5c00c"
+    "16529212497ba5c00c",
+    "165292176308226db5",
+    "1652922020f7cd652c"
   ]
 }
