@@ -78,7 +78,7 @@
                   {%- when 'external_video' -%}
                     <div class="product-gallery__external-video">
                       <div class="video-wrapper">
-                        {{- media | external_video_tag: image_size: '1024x', loop: section.settings.enable_video_looping -}}
+                        {{- media | external_video_tag: image_size: '1024x' -}}
                       </div>
                     </div>
 
@@ -215,5 +215,11 @@
         {%- endif -%}
       </div>
     </div>
+    
+   <div class="product-meta__description rte text-description">
+     <h3> Description </h3>
+        {{ product.description }}
+      </div>
+
   </div>
 {%- endif -%}

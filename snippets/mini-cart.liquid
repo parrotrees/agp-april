@@ -98,7 +98,7 @@
                       {%- if line_item.final_price == 0 -%}
                         <span class="price price--highlight">{{ 'cart.general.free' | t }}</span>
                       {%- else -%}
-                        <span class="price price--highlight">{{ line_item.final_line_price | money }}</span>
+                        <span class="price price--highlight">{{ line_item.final_price | money }}</span>
                       {%- endif -%}
 
                       <span class="price price--compare">{{ line_item.original_line_price | money }}</span>
@@ -146,12 +146,20 @@
                       {%- if line_item.variant.inventory_management and line_item.variant.inventory_policy == 'deny' and line_item.quantity == line_item.variant.inventory_quantity -%}
                         {%- assign allow_to_add_more = false -%}
                       {%- endif -%}
-
+                      
+    {% comment %}  
                       <button class="quantity-selector__button" data-action="decrease-quantity" data-quantity="{{ line_item.quantity | minus: 1 }}" data-line="{{ forloop.index }}" aria-label="{{ 'cart.items.decrease_quantity' | t }}" title="{{ 'cart.items.decrease_quantity' | t }}">{% render 'icon', icon: 'minus' %}</button>
                       <input aria-label="{{ 'product.form.quantity' | t }}" class="quantity-selector__value" inputmode="numeric" data-current-value="{{ line_item.quantity }}" data-line="{{ forloop.index }}" value="{{ line_item.quantity }}" size="{{ line_item.quantity | append: '' | size | at_least: 2 }}">
                       <button class="quantity-selector__button" data-action="increase-quantity" data-quantity="{{ line_item.quantity | plus: 1 }}" data-line="{{ forloop.index }}" {% if allow_to_add_more %}aria-label="{{ 'cart.items.increase_quantity' | t }}" title="{{ 'cart.items.increase_quantity' | t }}"{% else %}disabled="disabled" aria-label="{{ 'cart.items.no_more_stock' | t }}" data-tooltip="{{ 'cart.items.no_more_stock' | t }}" data-tooltip-position="bottom-left"{% endif %}>{% render 'icon', icon: 'plus' %}</button>
-                    </div>
+    {% endcomment %}     
+                      
+                      <input aria-label="{{ 'product.form.quantity' | t }}" class="quantity-selector__value" inputmode="numeric" data-current-value="{{ line_item.quantity }}" data-line="{{ forloop.index }}" value="{{ line_item.quantity }}" size="{{ line_item.quantity | append: '' | size | at_least: 2 }}" readonly>
+                      
+               
 
+                    
+                    
+                    </div>
                     <a href="{{ routes.cart_change_url }}?quantity=0&line={{ forloop.index }}" data-action="decrease-quantity" data-quantity="0" data-line="{{ forloop.index }}" class="mini-cart__quantity-remove link">{{ 'cart.items.remove' | t }}</a>
                   </div>
                 {%- endunless -%}
@@ -173,7 +181,7 @@
 
         <div class="mini-cart__recap-price-line">
           <span>{{ 'cart.general.total' | t }}</span>
-          <span>{{ cart.total_price | money_with_currency }}</span>
+          <span>{{ cart.total_price | money }}</span>
         </div>
 
         {%- comment -%}To calculate the total discount, we take both into account the Shopify Script (for Plus merchants), but we also add the compare at price{%- endcomment -%}

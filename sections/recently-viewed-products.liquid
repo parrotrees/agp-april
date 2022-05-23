@@ -13,7 +13,7 @@
     {%- endif -%}
 
     <div class="recently-viewed-products-placeholder">
-      {%- if request.page_type == 'search' -%}
+      {%- if template.name == 'search' -%}
         <div class="scroller">
           <div class="scroller__inner">
             <div class="product-list product-list--vertical product-list--scrollable">
@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  {%- if request.page_type != 'search' or search.results_count == 0 -%}
+  {%- if template.name != 'search' or search.results_count == 0 -%}
     <style>
       /* By default the section is hidden as we do not know if there are product yet */
       #shopify-section-{{ section.id }} {
@@ -95,7 +95,7 @@
   ],
   "presets": [
     {
-      "category": "Product",
+      "category": "Collection",
       "name": "Recently viewed products"
     }
   ]

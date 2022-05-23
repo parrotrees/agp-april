@@ -4,7 +4,7 @@
       {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,500,600,700,800,900,1000,1200,1400', image: article.image -%}{%- endcapture -%}
       {%- assign image_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
-      <div class="aspect-ratio" style="padding-bottom: {{ 100.0 | divided_by: article.image.aspect_ratio }}%">
+      <div class="aspect-ratio" style="padding-bottom: 54%">
         <img class="article-item__image lazyload image--fade-in" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ article.image.alt | escape }}">
 
         <noscript>
