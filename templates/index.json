@@ -123,7 +123,7 @@
       ],
       "settings": {
         "full_width": false,
-        "gutter_size": 10,
+        "gutter_size": 20,
         "space_above": true,
         "space_below": true,
         "hdg_font": 20,
@@ -206,6 +206,92 @@
         "1652921762cc9d9d94-0",
         "1652921762cc9d9d94-1",
         "999fdf1b-e667-41cc-b828-ccaa85805b5d"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true,
+        "hdg_font": 20,
+        "sub_hdg_font": 12,
+        "text_font": 14
+      }
+    },
+    "1652922020f7cd652c": {
+      "type": "custom-grid",
+      "disabled": true,
+      "blocks": {
+        "1652922020beca01c9-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Wine Boxes",
+            "textarea": "Economical to ship, impressive in presentation and durable enough to protect the valuable contents",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/wine_boxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_WINE_BOXES_e8fb70a3-e455-4fb1-aed1-0602140bb781.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "1652922020beca01c9-1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Window Boxes",
+            "textarea": "Economical to ship, impressive in presentation and durable enough to protect the valuable contents",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/window_boxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_WINDOW_BOXES_735bc672-2955-44c4-b3a4-7614b521e48d.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Donut Boxes",
+            "textarea": "Impress with AGP's unique range of standout display boxes for your irresistible bespoke donuts.",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/donut_boxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_DONUT_BOXES_3916f1d7-f9e8-4e73-b8d6-bc8282a1a0b2.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        }
+      },
+      "block_order": [
+        "1652922020beca01c9-0",
+        "1652922020beca01c9-1",
+        "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b"
       ],
       "settings": {
         "full_width": false,
@@ -594,92 +680,6 @@
         "round_images": false,
         "show_collection_title": true
       }
-    },
-    "1652922020f7cd652c": {
-      "type": "custom-grid",
-      "disabled": true,
-      "blocks": {
-        "1652922020beca01c9-0": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Wine Boxes",
-            "textarea": "Economical to ship, impressive in presentation and durable enough to protect the valuable contents",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/wine_boxes",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/900x900px_-_WINE_BOXES_e8fb70a3-e455-4fb1-aed1-0602140bb781.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
-          }
-        },
-        "1652922020beca01c9-1": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Window Boxes",
-            "textarea": "Economical to ship, impressive in presentation and durable enough to protect the valuable contents",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/window_boxes",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/900x900px_-_WINDOW_BOXES_735bc672-2955-44c4-b3a4-7614b521e48d.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
-          }
-        },
-        "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Donut Boxes",
-            "textarea": "Impress with AGP's unique range of standout display boxes for your irresistible bespoke donuts.",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/donut_boxes",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/900x900px_-_DONUT_BOXES_3916f1d7-f9e8-4e73-b8d6-bc8282a1a0b2.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
-          }
-        }
-      },
-      "block_order": [
-        "1652922020beca01c9-0",
-        "1652922020beca01c9-1",
-        "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b"
-      ],
-      "settings": {
-        "full_width": false,
-        "gutter_size": 20,
-        "space_above": true,
-        "space_below": true,
-        "hdg_font": 20,
-        "sub_hdg_font": 12,
-        "text_font": 14
-      }
     }
   },
   "order": [
@@ -687,10 +687,10 @@
     "featured-collection",
     "16529212497ba5c00c",
     "165292176308226db5",
+    "1652922020f7cd652c",
     "16532654360dee4f15",
     "165326742187667ea8",
     "featured-product",
-    "collection-list",
-    "1652922020f7cd652c"
+    "collection-list"
   ]
 }

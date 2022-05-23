@@ -41,14 +41,6 @@
             "shipping_estimator_default_country": "Austarlia",
             "show_refunds_policy": true
           }
-        },
-        "48776828-8d08-475e-bb8c-9968853a6cc1": {
-          "type": "trust",
-          "settings": {
-            "trust_title": "Payment & Security",
-            "show_payment_icons": true,
-            "custom_security_badge_width": 200
-          }
         }
       },
       "block_order": [
@@ -56,8 +48,7 @@
         "variant_selector",
         "buy_buttons",
         "description",
-        "2bb813ee-8ca3-4f23-a0d1-f3c94bbd9dad",
-        "48776828-8d08-475e-bb8c-9968853a6cc1"
+        "2bb813ee-8ca3-4f23-a0d1-f3c94bbd9dad"
       ],
       "settings": {
         "image_size": "small",
