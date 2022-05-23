@@ -305,7 +305,7 @@
             "content": "<p> <\/p>",
             "content_position": "top_left",
             "button_background": "#ffffff",
-            "button_text_color": "#000000",
+            "button_text_color": "#00aa00",
             "button_text": "Shop Now",
             "button_link": "shopify:\/\/collections\/food_packaging"
           }
@@ -323,7 +323,7 @@
             "content": "<p> <\/p>",
             "content_position": "top_left",
             "button_background": "#ffffff",
-            "button_text_color": "#000000",
+            "button_text_color": "#26c1ce",
             "button_text": "Shop Now",
             "button_link": ""
           }
@@ -359,7 +359,7 @@
             "content": "<p> <\/p>",
             "content_position": "top_left",
             "button_background": "#ffffff",
-            "button_text_color": "#000000",
+            "button_text_color": "#00aa00",
             "button_text": "Learn more",
             "button_link": ""
           }
@@ -377,7 +377,7 @@
             "content": "<p> <\/p>",
             "content_position": "top_left",
             "button_background": "#ffffff",
-            "button_text_color": "#000000",
+            "button_text_color": "#26c1ce",
             "button_text": "Shop Now",
             "button_link": ""
           }
