@@ -209,9 +209,9 @@
         "2cf52f42-961b-412c-b771-58cd7f17c759"
       ],
       "settings": {
-        "expand_items": false,
+        "expand_items": true,
         "section_size": "medium",
-        "stack_mobile": false
+        "stack_mobile": true
       }
     },
     "165326742187667ea8": {
