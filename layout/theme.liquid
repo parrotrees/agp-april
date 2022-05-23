@@ -107,6 +107,15 @@
     <script src="{{ 'theme.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
 
+    <script src="{{ 'bootstrap.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'popper.min.js' | asset_url }}" defer></script>
+   
+
+ <!--    <script src="{{ 'pk-vendor-scripts-v9.js' | asset_url | split: '?' | first}}" ></script>
+<script src="{{ 'pk-theme.min.js' | asset_url }}" ></script>
+  
+     <script src="{{ 'pk-theme.js' | asset_url }}" defer></script>  -->
+
     {%- if request.page_type != 'cart' -%}
       <script>
         (function () {
@@ -121,6 +130,13 @@
         })();
       </script>
     {%- endif -%}
+    {% include 'mincart' %}  {% include 'qikify-navigator' %}
+    {% include 'qikify-smartmenu' %}
+     
+   
+  {% include 'pagefly-header' %}
+   
+  {{ 'scqb-tmp-2017210342.js' | asset_url | script_tag }}
   </head>
 
   <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport">
@@ -135,7 +151,7 @@
     <a href="#main" class="visually-hidden skip-to-content">{{ 'general.accessibility.skip_to_content' | t }}</a>
     <span class="loading-bar"></span>
 
-    {% section 'announcement-bar' %}
+    <!--  {% section 'announcement-bar' %}  -->
 
     {%- unless request.page_type == 'cart' -%}
       {%- comment -%}As required by Shopify rules, popup must be removed on cart page to remove distraction{%- endcomment -%}
@@ -150,9 +166,12 @@
 
     {% section 'static-text-with-icons' %}
     {% section 'footer' %}
+    
 
     <ul hidden>
       <li id="a11y-new-window-message">{{ 'general.accessibility.new_window' | t }}</li>
+    </ul>
+     {% render 'sc-quantity-break' %}
     </ul>
   </body>
 </html>
