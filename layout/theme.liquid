@@ -103,43 +103,18 @@
       <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
       <script src="{{ 'customer_area.js' | shopify_asset_url }}" defer></script>
     {%- endif -%}
-
+   
     <script src="{{ 'theme.min.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
-
+    
     <script src="{{ 'bootstrap.min.js' | asset_url }}" defer></script>
     <script src="{{ 'popper.min.js' | asset_url }}" defer></script>
+   
 
-    <!--    <script src="{{ 'pk-vendor-scripts-v9.js' | asset_url | split: '?' | first}}" ></script>
+ <!--    <script src="{{ 'pk-vendor-scripts-v9.js' | asset_url | split: '?' | first}}" ></script>
 <script src="{{ 'pk-theme.min.js' | asset_url }}" ></script>
   
      <script src="{{ 'pk-theme.js' | asset_url }}" defer></script>  -->
-
-    {%- if request.page_type != 'cart' -%}
-      <script>
-        (function () {
-          window.onpageshow = function() {
-            // We force re-freshing the cart content onpageshow, as most browsers will serve a cache copy when hitting the
-            // back button, which cause staled data
-            document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
-              bubbles: true,
-              detail: {scrollToTop: false}
-            }));
-          };
-        })();
-      </script>
-    {%- endif -%}
-    {% include 'mincart' %}  {% include 'qikify-navigator' %}
-    {% include 'qikify-smartmenu' %}
-     
-   
-  {% include 'pagefly-header' %}
-
-  {{ 'scqb-tmp-2017210342.js' | asset_url | script_tag }}
-</head> 
-
-  <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport">
-    <!-- Additionally, paste this code immediately after the opening <body> tag: -->
     
    
     {%- if request.page_type != 'cart' -%}
@@ -160,46 +135,110 @@
   {% include 'qikify-smartmenu' %}
    
  
-  {% include 'pagefly-header' %}
+{% include 'pagefly-header' %}
  
-  {{ 'scqb-tmp-2017210342.js' | asset_url | script_tag }}
-  </head> 
+{{ 'scqb-tmp-2017210342.js' | asset_url | script_tag }}
+</head> 
+
+  <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport">
+    <!-- Additionally, paste this code immediately after the opening <body> tag: -->
+
+<!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src=https://www.googletagmanager.com/ns.html?id=GTM-NS2J7X6
+
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <a href="#main" class="visually-hidden skip-to-content">{{ 'general.accessibility.skip_to_content' | t }}</a>
+    <span class="loading-bar"></span>
+
+<!--     {% section 'announcement-bar' %} -->
+
+    {%- unless request.page_type == 'cart' -%}
+      {%- comment -%}As required by Shopify rules, popup must be removed on cart page to remove distraction{%- endcomment -%}
+<!--       {% section 'popups' %} -->
+    {%- endunless -%}
+<div id="PageContainer" class="page-container">
+    <div class="transition-body">
+    {% section 'header' %}
+
+    <main id="main" role="main">
+      {{ content_for_layout }}
+    </main>
+
+    {%- if request.page_type == 'blog' or request.page_type == 'article' or request.page_type == 'page' -%}
+      {% section 'static-newsletter' %}
+    {%- endif -%}
+
+    {% section 'text-with-icons' %}
+    {% section 'footer' %}
+ </div>
+  </div>
+    <ul hidden>
+      <li id="a11y-new-window-message">{{ 'general.accessibility.new_window' | t }}</li>
+    </ul>
+     {% render 'sc-quantity-break' %}
+
+
+   <script src="https://widget.reviews.io/product/dist.js"></script>
+
+<script src="https://widget.reviews.io/rating-snippet/dist.js"></script>
+<link rel="stylesheet" href="https://widget.reviews.io/rating-snippet/dist.css" />
+
+<script>
+  var loadRating = function () {
+    ratingSnippet("ruk_rating_snippet",{
+    store: "box-fox",
+    color: "#3a3a3a",
+    linebreak: false,
+    text: "Reviews",
+      usePolaris: true,
+    });
+  }
   
-    <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport">
-      <!-- Additionally, paste this code immediately after the opening <body> tag: -->
+      loadRating();
+
   
-  <!-- Google Tag Manager (noscript) -->
+  $(document).on('click', '[data-secondary-action="open-quick-view"], [data-pagination]', function () {
+    setTimeout(function(){
+      loadRating();
+    }, 500);
+  });
+    </script>
+  <script>
+jQuery(function() {
+  jQuery('.swatch :radio').change(function() {
+    var optionIndex = jQuery(this).closest('.swatch').attr('data-option-index');
+    var optionValue = jQuery(this).val();
+    jQuery(this)
+      .closest('form')
+      .find('.single-option-selector')
+      .eq(optionIndex)
+      .val(optionValue)
+      .trigger('change');
+  });
+});
+</script>
+
+    <style>.ruk_rating_snippet { display: block !important } .ruk_rating_snippet span { font-family: inherit !Important } </style>
+    
+
+    
+    </body>
+</html>
+
+<!--  // BEGIN SWATCHES  -->
+<script>
+if (variant) {
+  var form = jQuery('#' + selector.domIdPrefix).closest('form');
+  for (var i=0,length=variant.options.length; i<length; i++) {
+    var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] +'"]');
+    if (radioButton.size()) {
+      radioButton.get(0).checked = true;
+    }
+  }
+}
+  </script>
+<!-- // END SWATCHES  -->
+
   
-  <noscript><iframe src=https://www.googletagmanager.com/ns.html?id=GTM-NS2J7X6
-  
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-      <a href="#main" class="visually-hidden skip-to-content">{{ 'general.accessibility.skip_to_content' | t }}</a>
-      <span class="loading-bar"></span>
-  
-  <!--     {% section 'announcement-bar' %} -->
-  
-      {%- unless request.page_type == 'cart' -%}
-        {%- comment -%}As required by Shopify rules, popup must be removed on cart page to remove distraction{%- endcomment -%}
-  <!--       {% section 'popups' %} -->
-      {%- endunless -%}
-  <div id="PageContainer" class="page-container">
-      <div class="transition-body">
-      {% section 'header' %}
-  
-      <main id="main" role="main">
-        {{ content_for_layout }}
-      </main>
-  
-      {%- if request.page_type == 'blog' or request.page_type == 'article' or request.page_type == 'page' -%}
-        {% section 'static-newsletter' %}
-      {%- endif -%}
-  
-      {% section 'text-with-icons' %}
-      {% section 'footer' %}
-   </div>
-    </div>
-      <ul hidden>
-        <li id="a11y-new-window-message">{{ 'general.accessibility.new_window' | t }}</li>
-      </ul>
-       {% render 'sc-quantity-break' %}
