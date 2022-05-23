@@ -78,6 +78,49 @@
     "sections": {
       "header": {
         "type": "header",
+        "blocks": {
+          "aa9cf6a2-3ef6-4c00-8706-f66e28bd2a0c": {
+            "type": "mega_menu",
+            "settings": {
+              "menu_item": "Shop",
+              "image_1_heading": "CARRY PACKS & TRAYS",
+              "image_1_text": "",
+              "image_1_link": "shopify:\/\/collections\/carry_packs",
+              "image_2_heading": "",
+              "image_2_text": "Tell your story",
+              "image_2_link": ""
+            }
+          },
+          "aec005a9-1264-4c75-85db-e2d36ec16831": {
+            "type": "mega_menu",
+            "settings": {
+              "menu_item": "",
+              "image_1_heading": "Your image",
+              "image_1_text": "Tell your story",
+              "image_1_link": "",
+              "image_2_heading": "Your image",
+              "image_2_text": "Tell your story",
+              "image_2_link": ""
+            }
+          },
+          "830ed09f-5f98-44fe-9c38-093ca67634bc": {
+            "type": "mega_menu",
+            "settings": {
+              "menu_item": "",
+              "image_1_heading": "Your image",
+              "image_1_text": "Tell your story",
+              "image_1_link": "",
+              "image_2_heading": "Your image",
+              "image_2_text": "Tell your story",
+              "image_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "aa9cf6a2-3ef6-4c00-8706-f66e28bd2a0c",
+          "aec005a9-1264-4c75-85db-e2d36ec16831",
+          "830ed09f-5f98-44fe-9c38-093ca67634bc"
+        ],
         "settings": {
           "enable_sticky_header": true,
           "logo_max_width": 140,
