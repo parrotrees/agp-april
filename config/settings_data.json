@@ -136,8 +136,8 @@
           "navigation_phone_number": "",
           "navigation_email": "sales@agp.net.au",
           "show_condensed_search": true,
-          "show_search_filter": true,
-          "search_menu": "",
+          "show_search_filter": false,
+          "search_menu": "footer",
           "show_search_menu_title": true
         }
       },
