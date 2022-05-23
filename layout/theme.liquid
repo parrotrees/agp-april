@@ -104,11 +104,16 @@
       <script src="{{ 'customer_area.js' | shopify_asset_url }}" defer></script>
     {%- endif -%}
 
-    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+    <script src="{{ 'theme.min.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
 
     <script src="{{ 'bootstrap.min.js' | asset_url }}" defer></script>
     <script src="{{ 'popper.min.js' | asset_url }}" defer></script>
+
+    <!--    <script src="{{ 'pk-vendor-scripts-v9.js' | asset_url | split: '?' | first}}" ></script>
+<script src="{{ 'pk-theme.min.js' | asset_url }}" ></script>
+  
+     <script src="{{ 'pk-theme.js' | asset_url }}" defer></script>  -->
 
     {%- if request.page_type != 'cart' -%}
       <script>
@@ -124,14 +129,17 @@
         })();
       </script>
     {%- endif -%}
-
-
+    {% include 'mincart' %}  {% include 'qikify-navigator' %}
+    {% include 'qikify-smartmenu' %}
+     
    
+  {% include 'pagefly-header' %}
 
- <!--    <script src="{{ 'pk-vendor-scripts-v9.js' | asset_url | split: '?' | first}}" ></script>
-<script src="{{ 'pk-theme.min.js' | asset_url }}" ></script>
-  
-     <script src="{{ 'pk-theme.js' | asset_url }}" defer></script>  -->
+  {{ 'scqb-tmp-2017210342.js' | asset_url | script_tag }}
+</head> 
+
+  <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport">
+    <!-- Additionally, paste this code immediately after the opening <body> tag: -->
     
    
     {%- if request.page_type != 'cart' -%}
@@ -152,43 +160,46 @@
   {% include 'qikify-smartmenu' %}
    
  
-{% include 'pagefly-header' %}
+  {% include 'pagefly-header' %}
  
-{{ 'scqb-tmp-2017210342.js' | asset_url | script_tag }}
- 
-</head>
-
-  <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport">
-    {%- comment -%}Common SVG definitions that we are re-using in several places{%- endcomment -%}
-    <svg class="visually-hidden">
-      <linearGradient id="rating-star-gradient-half">
-        <stop offset="50%" stop-color="var(--product-review-star-color)" />
-        <stop offset="50%" stop-color="rgba(var(--text-color-rgb), .4)" stop-opacity="0.4" />
-      </linearGradient>
-    </svg>
-
-    <a href="#main" class="visually-hidden skip-to-content">{{ 'general.accessibility.skip_to_content' | t }}</a>
-    <span class="loading-bar"></span>
-
-    {% section 'announcement-bar' %}
-
-    {%- unless request.page_type == 'cart' -%}
-      {%- comment -%}As required by Shopify rules, popup must be removed on cart page to remove distraction{%- endcomment -%}
-      {% section 'popups' %}
-    {%- endunless -%}
-
-    {% section 'header' %}
-
-    <main id="main" role="main">
-      {{ content_for_layout }}
-    </main>
-
-    {% section 'static-text-with-icons' %}
-    {% section 'footer' %}
-    {% render 'sc-quantity-break' %}
-    <ul hidden>
-      <li id="a11y-new-window-message">{{ 'general.accessibility.new_window' | t }}</li>
-    </ul>
-
-  </body>
-</html>
+  {{ 'scqb-tmp-2017210342.js' | asset_url | script_tag }}
+  </head> 
+  
+    <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport">
+      <!-- Additionally, paste this code immediately after the opening <body> tag: -->
+  
+  <!-- Google Tag Manager (noscript) -->
+  
+  <noscript><iframe src=https://www.googletagmanager.com/ns.html?id=GTM-NS2J7X6
+  
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      <a href="#main" class="visually-hidden skip-to-content">{{ 'general.accessibility.skip_to_content' | t }}</a>
+      <span class="loading-bar"></span>
+  
+  <!--     {% section 'announcement-bar' %} -->
+  
+      {%- unless request.page_type == 'cart' -%}
+        {%- comment -%}As required by Shopify rules, popup must be removed on cart page to remove distraction{%- endcomment -%}
+  <!--       {% section 'popups' %} -->
+      {%- endunless -%}
+  <div id="PageContainer" class="page-container">
+      <div class="transition-body">
+      {% section 'header' %}
+  
+      <main id="main" role="main">
+        {{ content_for_layout }}
+      </main>
+  
+      {%- if request.page_type == 'blog' or request.page_type == 'article' or request.page_type == 'page' -%}
+        {% section 'static-newsletter' %}
+      {%- endif -%}
+  
+      {% section 'text-with-icons' %}
+      {% section 'footer' %}
+   </div>
+    </div>
+      <ul hidden>
+        <li id="a11y-new-window-message">{{ 'general.accessibility.new_window' | t }}</li>
+      </ul>
+       {% render 'sc-quantity-break' %}
