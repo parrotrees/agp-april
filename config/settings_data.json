@@ -131,7 +131,7 @@
           "navigation_menu": "main-menu",
           "navigation_mobile_menu": "",
           "desktop_navigation_layout": "inline",
-          "desktop_navigation_open_trigger": "hover",
+          "desktop_navigation_open_trigger": "click",
           "show_navigation_social_media": true,
           "navigation_phone_number": "",
           "navigation_email": "sales@agp.net.au",
