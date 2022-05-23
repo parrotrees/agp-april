@@ -102,24 +102,11 @@
               "image_2_text": "Tell your story",
               "image_2_link": ""
             }
-          },
-          "830ed09f-5f98-44fe-9c38-093ca67634bc": {
-            "type": "mega_menu",
-            "settings": {
-              "menu_item": "",
-              "image_1_heading": "Your image",
-              "image_1_text": "Tell your story",
-              "image_1_link": "",
-              "image_2_heading": "Your image",
-              "image_2_text": "Tell your story",
-              "image_2_link": ""
-            }
           }
         },
         "block_order": [
           "aa9cf6a2-3ef6-4c00-8706-f66e28bd2a0c",
-          "aec005a9-1264-4c75-85db-e2d36ec16831",
-          "830ed09f-5f98-44fe-9c38-093ca67634bc"
+          "aec005a9-1264-4c75-85db-e2d36ec16831"
         ],
         "settings": {
           "enable_sticky_header": true,
