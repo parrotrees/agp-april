@@ -14,9 +14,9 @@
     "secondary_button_background": "#222021",
     "secondary_button_text_color": "#ffffff",
     "header_background": "#222021",
-    "header_text_color": "#ffffff",
-    "header_light_text_color": "#e8e8e8",
-    "header_accent_color": "#cb1836",
+    "header_text_color": "#e8e8e8",
+    "header_light_text_color": "#ffffff",
+    "header_accent_color": "#1c7b36",
     "footer_background_color": "#222021",
     "footer_heading_text_color": "#ffffff",
     "footer_body_text_color": "#ffffff",
@@ -94,7 +94,7 @@
           "aec005a9-1264-4c75-85db-e2d36ec16831": {
             "type": "mega_menu",
             "settings": {
-              "menu_item": "",
+              "menu_item": "Info",
               "image_1_heading": "Your image",
               "image_1_text": "Tell your story",
               "image_1_link": "",
@@ -242,6 +242,12 @@
         ],
         "settings": {
           "show_section": true,
+          "stack_mobile": false
+        }
+      },
+      "text-with-icons": {
+        "type": "text-with-icons",
+        "settings": {
           "stack_mobile": false
         }
       }
