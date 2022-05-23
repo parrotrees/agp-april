@@ -327,6 +327,58 @@
             "button_text": "Shop Now",
             "button_link": ""
           }
+        },
+        "66d93c20-19bf-4df1-a42f-01b139324cb1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/900x900px_-_WINE_BOXES_e8fb70a3-e455-4fb1-aed1-0602140bb781.jpg",
+            "show_overlay": true,
+            "overlay_opacity": 50,
+            "stretch_image": true,
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "title": "Wine Boxes",
+            "content": "<p> <\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "button_text": "Shop Now",
+            "button_link": ""
+          }
+        },
+        "5e4cd800-eb06-4328-8766-6832ef6b7340": {
+          "type": "item",
+          "settings": {
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": false,
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "title": "Your heading",
+            "content": "<p>Tell more about your product, collection...<\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "button_text": "Learn more",
+            "button_link": ""
+          }
+        },
+        "2cf52f42-961b-412c-b771-58cd7f17c759": {
+          "type": "item",
+          "settings": {
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": false,
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "title": "Your heading",
+            "content": "<p>Tell more about your product, collection...<\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "button_text": "Learn more",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
@@ -335,7 +387,10 @@
         "1653265436853c9dbb-2",
         "12c4ae0c-8756-4588-9b0c-8e30a191ca19",
         "9d65abdc-7854-4b39-b71a-7738359b9023",
-        "bda2a3d2-702c-489a-a210-c84433a8e336"
+        "bda2a3d2-702c-489a-a210-c84433a8e336",
+        "66d93c20-19bf-4df1-a42f-01b139324cb1",
+        "5e4cd800-eb06-4328-8766-6832ef6b7340",
+        "2cf52f42-961b-412c-b771-58cd7f17c759"
       ],
       "settings": {
         "expand_items": false,
