@@ -7,9 +7,9 @@
           "type": "product_meta",
           "settings": {
             "show_vendor": true,
-            "show_sku": false,
+            "show_sku": true,
             "show_reviews_badge": false,
-            "show_share_buttons": true
+            "show_share_buttons": false
           }
         },
         "variant_selector": {
@@ -38,7 +38,7 @@
         "2bb813ee-8ca3-4f23-a0d1-f3c94bbd9dad": {
           "type": "shipping_estimator",
           "settings": {
-            "shipping_estimator_default_country": "United States",
+            "shipping_estimator_default_country": "Austarlia",
             "show_refunds_policy": true
           }
         },
