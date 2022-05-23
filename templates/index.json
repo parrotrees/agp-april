@@ -400,6 +400,22 @@
         "stack_mobile": false
       }
     },
+    "165326742187667ea8": {
+      "type": "collection-with-image",
+      "settings": {
+        "collection": "window_boxes",
+        "products_count": 12,
+        "show_quick_buy": false,
+        "background": "#00aa00",
+        "text_color": "#ffffff",
+        "title": "Window Boxes",
+        "content": "Promote your brand and style and make a feature of your collections",
+        "button_background": "#ffffff",
+        "button_text_color": "#0774d7",
+        "button_text": "Learn more",
+        "button_link": ""
+      }
+    },
     "featured-product": {
       "type": "featured-product",
       "blocks": {
@@ -672,6 +688,7 @@
     "16529212497ba5c00c",
     "165292176308226db5",
     "16532654360dee4f15",
+    "165326742187667ea8",
     "featured-product",
     "collection-list",
     "1652922020f7cd652c"
