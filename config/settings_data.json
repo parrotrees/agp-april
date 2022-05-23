@@ -112,10 +112,10 @@
         "settings": {
           "enable_sticky_header": true,
           "logo": "shopify:\/\/shop_images\/AGP_AI-01_a427edf0-432e-4858-ab35-e6cedc4ffbda.png",
-          "logo_max_width": 140,
+          "logo_max_width": 205,
           "mobile_logo_max_width": 100,
-          "show_locale_selector": true,
-          "show_country_selector": false,
+          "show_locale_selector": false,
+          "show_country_selector": true,
           "navigation_menu": "main-menu",
           "navigation_mobile_menu": "",
           "desktop_navigation_layout": "inline",
