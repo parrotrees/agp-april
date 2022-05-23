@@ -219,13 +219,13 @@
       "settings": {
         "collection": "window_boxes",
         "products_count": 12,
-        "show_quick_buy": false,
+        "show_quick_buy": true,
         "background": "#068606",
         "text_color": "#ffffff",
         "title": "Window Boxes",
         "content": "Promote your brand and style and make a feature of your collections",
         "button_background": "#ffffff",
-        "button_text_color": "#0774d7",
+        "button_text_color": "#222021",
         "button_text": "Shop Now",
         "button_link": "shopify:\/\/collections\/window_boxes"
       }
