@@ -23,7 +23,7 @@
                 {%- endif -%}
 
                 {%- if block.settings.title != blank -%}
-                  <p class="promo-block__content">{{ block.settings.content | escape | newline_to_br }}</p>
+                  <p class="promo-block__content">{{ block.settings.content }}</p>
                 {%- endif -%}
 
                 {%- if block.settings.button_text != blank -%}
@@ -167,10 +167,10 @@
           "default": "Your heading"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "content",
           "label": "Text",
-          "default": "Tell more about your product, collection..."
+          "default": "<p>Tell more about your product, collection...</p>"
         },
         {
           "type": "select",

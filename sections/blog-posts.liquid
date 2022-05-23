@@ -1,4 +1,4 @@
-{%- assign blog = blogs[section.settings.blog] -%}
+{%- assign blog = section.settings.blog -%}
 
 <section class="section" data-section-id="{{ section.id }}" data-section-type="blog-posts">
   <div class="container">
@@ -6,7 +6,7 @@
       <header class="section__header">
         <h2 class="section__title heading h3">{{ section.settings.title | escape }}</h2>
 
-        {%- unless blog.empty? or section.settings.link_title == blank -%}
+        {%- unless section.settings.link_title == blank -%}
           <a href="{{ blog.url }}" class="section__action-link link">{{ section.settings.link_title }} {% render 'icon', icon: 'tail-right' %}</a>
         {%- endunless -%}
       </header>

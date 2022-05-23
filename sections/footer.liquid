@@ -80,28 +80,25 @@
       {%- endif -%}
 
       <aside class="footer__aside">
-        {%- assign currency_selector = false -%}
-        {%- assign locale_selector = false -%}
-
-        {%- if section.settings.show_currency_selector and shop.enabled_currencies.size > 1 -%}
-          {%- assign currency_selector = true -%}
+        {%- if section.settings.show_country_selector and localization.available_countries.size > 1 -%}
+          {%- assign country_selector = true -%}
         {%- endif -%}
 
-        {%- if section.settings.show_locale_selector and shop.published_locales.size > 1 -%}
+        {%- if section.settings.show_locale_selector and localization.available_languages.size > 1 -%}
           {%- assign locale_selector = true -%}
         {%- endif -%}
 
-        <div class="footer__aside-item footer__aside-item--localization {% if currency_selector == false and locale_selector == false %}hidden-pocket{% endif %}">
-          {%- if locale_selector or currency_selector -%}
+        <div class="footer__aside-item footer__aside-item--localization {% if country_selector == false and locale_selector == false %}hidden-pocket{% endif %}">
+          {%- if locale_selector or country_selector -%}
             {%- form 'localization', id: 'localization_form_footer', class: 'footer__localization-form' -%}
               {%- if locale_selector -%}
                 <div class="footer__localization-form-item">
-                  <input type="hidden" name="locale_code" value="{{ form.current_locale.iso_code }}">
+                  <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
                   <span class="visually-hidden">{{ 'footer.general.language' | t }}</span>
 
                   <div class="value-picker-wrapper">
                     <button type="button" class="select-button select-button--mini" aria-haspopup="true" aria-expanded="false" aria-controls="footer-locale-picker" data-action="open-value-picker">
-                      {{- form.current_locale.endonym_name | capitalize -}}
+                      {{- localization.language.endonym_name | capitalize -}}
                       {%- render 'icon', icon: 'arrow-bottom' -%}
                     </button>
 
@@ -115,10 +112,10 @@
                         </header>
 
                         <ul class="value-picker__choice-list" role="list">
-                          {%- for locale in form.available_locales -%}
+                          {%- for language in localization.available_languages -%}
                             <li class="value-picker__choice-list-item">
-                              <button type="submit" name="locale_code" class="value-picker__choice-item" value="{{ locale.iso_code }}" {% if locale.iso_code == form.current_locale.iso_code %}aria-current="true"{% endif %}>
-                                {{- locale.endonym_name | capitalize -}}
+                              <button type="submit" name="locale_code" class="value-picker__choice-item" value="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %}>
+                                {{- language.endonym_name | capitalize -}}
                               </button>
                             </li>
                           {%- endfor -%}
@@ -129,31 +126,31 @@
                 </div>
               {%- endif -%}
 
-              {%- if currency_selector -%}
+              {%- if country_selector -%}
                 <div class="footer__localization-form-item">
-                  <input type="hidden" name="currency_code" value="{{ form.current_currency.iso_code }}">
-                  <span class="visually-hidden">{{ 'footer.general.currency' | t }}</span>
+                  <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+                  <span class="visually-hidden">{{ 'footer.general.country' | t }}</span>
 
                   <div class="value-picker-wrapper">
                     <button type="button" class="select-button select-button--mini" aria-haspopup="true" aria-expanded="false" aria-controls="footer-currency-picker" data-action="open-value-picker">
-                      {{ form.current_currency.iso_code }} {% if form.current_currency.symbol %}{{ form.current_currency.symbol }}{% endif %}
+                      {{- localization.country.name }} ({{ localization.country.currency.iso_code }} {% if localization.country.currency.symbol %}{{ localization.country.currency.symbol }}{%- endif -%})
                       {%- render 'icon', icon: 'arrow-bottom' -%}
                     </button>
 
                     <div id="footer-currency-picker" class="value-picker value-picker--auto value-picker--small" data-picker-position="top" aria-hidden="true">
                       {% render 'icon', icon: 'nav-triangle-borderless' %}
 
-                      <div class="value-picker__inner">
+                      <div class="value-picker__inner value-picker__inner--restrict">
                         <header class="value-picker__header">
-                          <span class="value-picker__title text--strong">{{ 'footer.general.currency' | t }}</span>
+                          <span class="value-picker__title text--strong">{{ 'footer.general.country' | t }}</span>
                           <button type="button" class="value-picker__close" data-action="close-value-picker" aria-controls="footer-currency-picker" aria-label="{{ 'general.accessibility.close' | t }}">{% render 'icon', icon: 'close' %}</button>
                         </header>
 
                         <ul class="value-picker__choice-list" role="list">
-                          {%- for currency in form.available_currencies -%}
+                          {%- for country in localization.available_countries -%}
                             <li class="value-picker__choice-list-item">
-                              <button type="submit" name="currency_code" class="value-picker__choice-item" value="{{ currency.iso_code }}" {% if currency.iso_code == form.current_currency.iso_code %}aria-current="true"{% endif %}>
-                                {{ currency.iso_code }} {% if currency.symbol %}{{ currency.symbol }}{% endif %}
+                              <button type="submit" name="country_code" class="value-picker__choice-item" value="{{ country.iso_code }}" {% if country.iso_code == localization.country.iso_code %}aria-current="true"{% endif %}>
+                                {{- country.name }} ({{ country.currency.iso_code }} {% if country.currency.symbol %}{{ country.currency.symbol }}{%- endif -%})
                               </button>
                             </li>
                           {%- endfor -%}
@@ -166,7 +163,7 @@
             {%- endform -%}
           {%- endif -%}
 
-          {%- capture copyright_info -%}© {{ 'now' | date: '%Y' }} {{ shop.name }}{%- endcapture -%}
+          {%- capture copyright_info -%}© {{ 'now' | date: '%Y' }} {{ shop.name }}<br>{{ powered_by_link }}{%- endcapture -%}
           <p class="hidden-pocket">{{ copyright_info }}</p>
         </div>
 
@@ -187,8 +184,7 @@
             <p class="footer__aside-title">{{ 'footer.general.we_accept' | t }}</p>
 
             <div class="payment-list">
-              {% assign enabled_payment_types = 'afterpay,american_express,apple_pay,master,paypal,shopify_pay,visa' | remove: ' ' | split: ',' %}
-				{% for type in enabled_payment_types %}
+              {% for type in shop.enabled_payment_types %}
                 {{ type | payment_type_svg_tag: class: 'payment-list__item' }}
               {% endfor %}
             </div>
@@ -215,9 +211,11 @@
             {{- section.settings.text -}}
           </div>
 
-          {%- if section.settings.accept_button != blank -%}
-            <button type="button" class="cookie-bar__button button button--secondary" data-action="accept-terms">{{ section.settings.accept_button | escape }}</button>
-          {%- endif -%}
+          <div class="cookie-bar__choice-container"> 
+            <div class="button-group button-group--fit">
+            <button type="button" class="cookie-bar__button button button--primary" data-action="accept-terms">{{ 'footer.cookie_bar.accept' | t }}</button>
+            <button type="button" class="cookie-bar__button button button--secondary" data-action="decline-terms">{{ 'footer.cookie_bar.decline' | t }}</button>
+          </div>
         </div>
       </div>
     </aside>
@@ -255,13 +253,13 @@
     },
     {
       "type": "header",
-      "content": "Currency selector",
-      "info": "To add a currency, go to your [payment settings.](/admin/settings/payments)"
+      "content": "Country/region selector",
+      "info": "To add a country/region, go to your [currency settings.](/admin/settings/payments)"
     },
     {
       "type": "checkbox",
-      "id": "show_currency_selector",
-      "label": "Show currency selector",
+      "id": "show_country_selector",
+      "label": "Show country/region selector",
       "default": true
     },
     {
@@ -279,13 +277,7 @@
       "id": "text",
       "label": "Text",
       "default": "<p>Use this bar to show information about your cookie policy.</p>"
-    },
-    {
-      "type": "text",
-      "id": "accept_button",
-      "label": "Accept button",
-      "default": "Accept"
-    }
+    }    
   ],
   "blocks": [
     {

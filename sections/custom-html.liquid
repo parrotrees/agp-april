@@ -2,7 +2,7 @@
   <div class="container">
     {%- if section.settings.title != blank -%}
       <header class="section__header">
-        <h2 class="section__title heading h3" style="background:url('{{section.settings.hdg_font}}');">{{ section.settings.title | escape }}</h2>
+        <h2 class="section__title heading h3">{{ section.settings.title | escape }}</h2>
       </header>
     {%- endif -%}
 
@@ -27,37 +27,7 @@
       "id": "html",
       "label": "HTML",
       "default": "<p>Write or copy/paste HTML code</p>"
-    },
-	{
-		"type" : "range",
-		"id" : "hdg_font",
-		"label" : "Heading Font",
-		"min" : 16,
-		"max" : 48,
-		"step" : 1,
-		"default": 20
-
-      },
-      {
-		"type" : "range",
-		"id" : "sub_hdg_font",
-		"label" : "Sub Heading Font",
-		"min" : 12,
-		"max" : 42,
-		"step" : 1,
-		"default": 18
-
-      },
-      {
-		"type" : "range",
-		"id" : "text_font",
-		"label" : "Text Font",
-		"min" : 10,
-		"max" : 36,
-		"step" : 1,
-		"default": 16
-
-      }
+    }
   ],
   "presets": [
     {

@@ -1,4 +1,32 @@
 <section class="gift-card {% if gift_card.expired or gift_card.enabled != true %}gift-card--disabled{% endif %}" data-section-id="{{ section.id }}" data-section-type="gift-card">
+  <header id="header" class="header" role="banner">
+    <div class="container">
+      <div class="header__inner {% if request.page_type == 'gift_card' %}header__inner--centered{% endif %}">
+        {%- comment -%}
+          --------------------------------------------------------------------------------------
+          LOGO COMPONENT
+          --------------------------------------------------------------------------------------
+        {%- endcomment -%}
+
+        <h1 class="header__logo">
+          <a href="{{ routes.root_url }}" class="header__logo-link">
+            {%- if section.settings.logo != blank -%}
+              {%- capture image_size -%}{{ section.settings.logo_max_width }}x{%- endcapture -%}
+              <img class="header__logo-image"
+                   width="{{ section.settings.logo.width }}"
+                   height="{{ section.settings.logo.height }}"
+                   src="{{ section.settings.logo | img_url: image_size }}"
+                   srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                   alt="{{ section.settings.logo.alt | default: shop.name | escape }}">
+            {%- else -%}
+              <span class="header__logo-text">{{ shop.name }}</span>
+            {%- endif -%}
+          </a>
+        </h1>
+      </div>
+    </div>
+  </header>
+
   <div class="container container--flush">
     <div class="gift-card__inner">
       <div class="gift-card__main">
@@ -83,6 +111,32 @@
 {
   "name": "Gift card page",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image",
+      "info": "200 x 60px .png recommended"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 50,
+      "max": 300,
+      "step": 5,
+      "unit": "px",
+      "label": "Logo image width",
+      "default": 140
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_max_width",
+      "min": 50,
+      "max": 170,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile logo image width",
+      "default": 100
+    },
     {
       "type": "image_picker",
       "id": "gift_card_image",

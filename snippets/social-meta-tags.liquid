@@ -24,7 +24,7 @@ Validate your Pinterest rich pins
     <meta property="og:image:height" content="{{ product.featured_media.height }}">
   {%- endif -%}
 
-  <meta property="product:price:amount" content="{{ product.price | money_without_currency | strip_html | escape }}">
+  <meta property="product:price:amount" content="{{ product.selected_or_first_available_variant.price | money_without_currency | strip_html | escape }}">
   <meta property="product:price:currency" content="{{ cart.currency.iso_code }}">
 {%- elsif request.page_type == 'article' -%}
   <meta property="og:type" content="article">

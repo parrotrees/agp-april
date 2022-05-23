@@ -8,8 +8,13 @@
 
 {%- assign text_font_bolder_weight = 'bolder' -%}
 
-<link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>
+{%- unless settings.heading_font.system? -%}
+  <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
+{%- endunless -%}
+
+{%- unless settings.text_font.system? -%}
+  <link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>
+{%- endunless -%}
 
 <style>
   {{ settings.heading_font | font_face: font_display: 'swap' }}
