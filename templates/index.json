@@ -45,6 +45,218 @@
         "link_url": ""
       }
     },
+    "16529212497ba5c00c": {
+      "type": "custom-grid",
+      "disabled": true,
+      "blocks": {
+        "1652921249711f1fe2-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Magnetic Closure Boxes",
+            "textarea": "A perfect keepsake with minimalist design, fine emboss and Matt finish inside and out",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/magnetic_closure_boxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_MAGNETIC_CLOSUE_BOX_774eeb1f-89b5-48bb-8b14-1466e1b564bf.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "1652921249711f1fe2-1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Hamper  Packaging",
+            "textarea": "Stylish, as well as sturdy enough to handle just about anything you can think to put in them.",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/hamper_packaging",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_HAMPER_PACKAGES_fff579da-61fb-4e8a-aea3-94a82a819cb8.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Gift Boxes",
+            "textarea": "When you need to give someone something special, give it in one of our elegantly designed gift boxes.",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/giftboxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_GIFT_BOXES_29a62547-fcf3-41c2-b842-7f95204b2869.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        }
+      },
+      "block_order": [
+        "1652921249711f1fe2-0",
+        "1652921249711f1fe2-1",
+        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 10,
+        "space_above": true,
+        "space_below": true,
+        "hdg_font": 20,
+        "sub_hdg_font": 12,
+        "text_font": 14
+      }
+    },
+    "16532654360dee4f15": {
+      "type": "promotion-list",
+      "blocks": {
+        "1653265436853c9dbb-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/900x900px_-_MAGNETIC_CLOSUE_BOX_774eeb1f-89b5-48bb-8b14-1466e1b564bf.jpg",
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": false,
+            "background": "#3285c8",
+            "text_color": "#ffffff",
+            "title": "Magnetic Closure Boxes",
+            "content": "",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#3285c8",
+            "button_text": "Learn more",
+            "button_link": ""
+          }
+        },
+        "1653265436853c9dbb-1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/900x900px_-_WINDOW_BOXES_735bc672-2955-44c4-b3a4-7614b521e48d.jpg",
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": false,
+            "background": "#fc2a68",
+            "text_color": "#ffffff",
+            "title": "Your heading",
+            "content": "<p>Tell more about your product, collection...<\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#fc2a68",
+            "button_text": "Learn more",
+            "button_link": ""
+          }
+        },
+        "1653265436853c9dbb-2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/900x900px_-_WINE_BOXES_e8fb70a3-e455-4fb1-aed1-0602140bb781.jpg",
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": false,
+            "background": "#26c1ce",
+            "text_color": "#ffffff",
+            "title": "Your heading",
+            "content": "<p>Tell more about your product, collection...<\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#26c1ce",
+            "button_text": "Learn more",
+            "button_link": ""
+          }
+        },
+        "12c4ae0c-8756-4588-9b0c-8e30a191ca19": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/900x900px_-_CARRY_PACKS_e562d2f1-d5e5-448f-9522-df2ad9cda543.jpg",
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": false,
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "title": "Your heading",
+            "content": "<p>Tell more about your product, collection...<\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "button_text": "Learn more",
+            "button_link": ""
+          }
+        },
+        "9d65abdc-7854-4b39-b71a-7738359b9023": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/900x900px_-_FOOD_PACKAGING_8659d187-bc2e-40d0-9169-a01b6ab5887b.jpg",
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": false,
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "title": "Your heading",
+            "content": "<p>Tell more about your product, collection...<\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "button_text": "Learn more",
+            "button_link": ""
+          }
+        },
+        "bda2a3d2-702c-489a-a210-c84433a8e336": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/900x900px_-_POSTAGE_AND_SHIPPER_BOXES_294ad514-6de3-440e-bcf8-8137554ad729.jpg",
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": false,
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "title": "Your heading",
+            "content": "<p>Tell more about your product, collection...<\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "button_text": "Learn more",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1653265436853c9dbb-0",
+        "1653265436853c9dbb-1",
+        "1653265436853c9dbb-2",
+        "12c4ae0c-8756-4588-9b0c-8e30a191ca19",
+        "9d65abdc-7854-4b39-b71a-7738359b9023",
+        "bda2a3d2-702c-489a-a210-c84433a8e336"
+      ],
+      "settings": {
+        "expand_items": false,
+        "section_size": "medium",
+        "stack_mobile": false
+      }
+    },
     "featured-product": {
       "type": "featured-product",
       "blocks": {
@@ -224,92 +436,6 @@
         "show_collection_title": true
       }
     },
-    "16529212497ba5c00c": {
-      "type": "custom-grid",
-      "disabled": true,
-      "blocks": {
-        "1652921249711f1fe2-0": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Magnetic Closure Boxes",
-            "textarea": "A perfect keepsake with minimalist design, fine emboss and Matt finish inside and out",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/magnetic_closure_boxes",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/900x900px_-_MAGNETIC_CLOSUE_BOX_774eeb1f-89b5-48bb-8b14-1466e1b564bf.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
-          }
-        },
-        "1652921249711f1fe2-1": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Hamper  Packaging",
-            "textarea": "Stylish, as well as sturdy enough to handle just about anything you can think to put in them.",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/hamper_packaging",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/900x900px_-_HAMPER_PACKAGES_fff579da-61fb-4e8a-aea3-94a82a819cb8.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
-          }
-        },
-        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Gift Boxes",
-            "textarea": "When you need to give someone something special, give it in one of our elegantly designed gift boxes.",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/giftboxes",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/900x900px_-_GIFT_BOXES_29a62547-fcf3-41c2-b842-7f95204b2869.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
-          }
-        }
-      },
-      "block_order": [
-        "1652921249711f1fe2-0",
-        "1652921249711f1fe2-1",
-        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e"
-      ],
-      "settings": {
-        "full_width": false,
-        "gutter_size": 10,
-        "space_above": true,
-        "space_below": true,
-        "hdg_font": 20,
-        "sub_hdg_font": 12,
-        "text_font": 14
-      }
-    },
     "165292176308226db5": {
       "type": "custom-grid",
       "disabled": true,
@@ -486,9 +612,10 @@
   "order": [
     "slideshow",
     "featured-collection",
+    "16529212497ba5c00c",
+    "16532654360dee4f15",
     "featured-product",
     "collection-list",
-    "16529212497ba5c00c",
     "165292176308226db5",
     "1652922020f7cd652c"
   ]
