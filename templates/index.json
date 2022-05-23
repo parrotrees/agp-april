@@ -161,7 +161,7 @@
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "Postage & Shipper Boxes",
+            "heading": "Food Packaging",
             "textarea": "Engineered for rapid assembly, for quick pick and pack, getting your orders out in a fast-paced environment",
             "cta_text1": "Shop Now",
             "cta_link1": "shopify:\/\/collections\/food_packaging",
@@ -301,13 +301,13 @@
             "stretch_image": false,
             "background": "#000000",
             "text_color": "#ffffff",
-            "title": "Your heading",
-            "content": "<p>Tell more about your product, collection...<\/p>",
-            "content_position": "top_left",
+            "title": "Food Packaging",
+            "content": "<p> <\/p>",
+            "content_position": "top_center",
             "button_background": "#ffffff",
             "button_text_color": "#000000",
-            "button_text": "Learn more",
-            "button_link": ""
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/food_packaging"
           }
         },
         "bda2a3d2-702c-489a-a210-c84433a8e336": {
