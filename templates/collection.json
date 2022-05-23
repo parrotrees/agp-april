@@ -11,7 +11,7 @@
         "default_view_layout": "grid",
         "show_quick_buy": "list",
         "show_quick_view": "list",
-        "quick_links": "",
+        "quick_links": "main-menu",
         "quick_links_show_products_count": false,
         "show_filters": true,
         "show_filter_color_swatch": true,
