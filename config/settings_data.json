@@ -96,11 +96,11 @@
             "type": "mega_menu",
             "settings": {
               "menu_item": "Info",
-              "image_1_heading": "Your image",
-              "image_1_text": "Tell your story",
+              "image_1_heading": "",
+              "image_1_text": "",
               "image_1_link": "",
-              "image_2_heading": "Your image",
-              "image_2_text": "Tell your story",
+              "image_2_heading": "",
+              "image_2_text": "",
               "image_2_link": ""
             }
           }
