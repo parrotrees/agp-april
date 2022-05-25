@@ -31,187 +31,261 @@
         "cycle_speed": 5
       }
     },
-    "16532654360dee4f15": {
-      "type": "promotion-list",
+    "16529212497ba5c00c": {
+      "type": "custom-grid",
       "blocks": {
-        "1653265436853c9dbb-0": {
-          "type": "item",
+        "1652921249711f1fe2-0": {
+          "type": "advanced",
           "settings": {
+            "subheading": "",
+            "heading": "Magnetic Closure Boxes",
+            "textarea": "A perfect keepsake with minimalist design, fine emboss and Matt finish inside and out",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/magnetic_closure_boxes",
+            "cta_text2": "",
+            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_MAGNETIC_CLOSUE_BOX_774eeb1f-89b5-48bb-8b14-1466e1b564bf.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#145b94",
-            "text_color": "#ffffff",
-            "title": "Magnetic Closure Boxes",
-            "content": "",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#3285c8",
-            "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/magnetic_closure_boxes"
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
           }
         },
-        "1653265436853c9dbb-1": {
-          "type": "item",
+        "1652921249711f1fe2-1": {
+          "type": "advanced",
           "settings": {
+            "subheading": "",
+            "heading": "Hamper  Packaging",
+            "textarea": "Stylish, as well as sturdy enough to handle just about anything you can think to put in them.",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/hamper_packaging",
+            "cta_text2": "",
+            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_HAMPER_PACKAGES_fff579da-61fb-4e8a-aea3-94a82a819cb8.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 68,
-            "stretch_image": true,
-            "background": "#0e9642",
-            "text_color": "#ffffff",
-            "title": "Hamper Packaging",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#00aa00",
-            "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/hamper_packaging"
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
           }
         },
-        "1653265436853c9dbb-2": {
-          "type": "item",
+        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e": {
+          "type": "advanced",
           "settings": {
+            "subheading": "",
+            "heading": "Gift Boxes",
+            "textarea": "When you need to give someone something special, give it in one of our elegantly designed gift boxes.",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/giftboxes",
+            "cta_text2": "",
+            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_GIFT_BOXES_29a62547-fcf3-41c2-b842-7f95204b2869.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#0492c2",
-            "text_color": "#ffffff",
-            "title": "Gift Boxes",
-            "content": "",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#26c1ce",
-            "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/giftboxes"
-          }
-        },
-        "12c4ae0c-8756-4588-9b0c-8e30a191ca19": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_POSTAGE_AND_SHIPPER_BOXES_294ad514-6de3-440e-bcf8-8137554ad729.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#145b94",
-            "text_color": "#ffffff",
-            "title": "Postage & Shippers",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#3285c8",
-            "button_text_color": "#000000",
-            "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/shipper_boxes"
-          }
-        },
-        "9d65abdc-7854-4b39-b71a-7738359b9023": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_FOOD_PACKAGING_8659d187-bc2e-40d0-9169-a01b6ab5887b.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#000000",
-            "text_color": "#ffffff",
-            "title": "Food Packaging",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#00aa00",
-            "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/food_packaging"
-          }
-        },
-        "bda2a3d2-702c-489a-a210-c84433a8e336": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_CARRY_PACKS_e562d2f1-d5e5-448f-9522-df2ad9cda543.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#000000",
-            "text_color": "#ffffff",
-            "title": "Carry Packs & Trays",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#26c1ce",
-            "button_text": "Shop Now",
-            "button_link": ""
-          }
-        },
-        "66d93c20-19bf-4df1-a42f-01b139324cb1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_WINE_BOXES_e8fb70a3-e455-4fb1-aed1-0602140bb781.jpg",
-            "show_overlay": true,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#000000",
-            "text_color": "#ffffff",
-            "title": "Wine Boxes",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "button_text": "Shop Now",
-            "button_link": ""
-          }
-        },
-        "5e4cd800-eb06-4328-8766-6832ef6b7340": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_WINDOW_BOXES_735bc672-2955-44c4-b3a4-7614b521e48d.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#000000",
-            "text_color": "#ffffff",
-            "title": "Window Boxes",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#00aa00",
-            "button_text": "Learn more",
-            "button_link": ""
-          }
-        },
-        "2cf52f42-961b-412c-b771-58cd7f17c759": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_DONUT_BOXES_3916f1d7-f9e8-4e73-b8d6-bc8282a1a0b2.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#000000",
-            "text_color": "#ffffff",
-            "title": "Donut Boxes",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#26c1ce",
-            "button_text": "Shop Now",
-            "button_link": ""
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
           }
         }
       },
       "block_order": [
-        "1653265436853c9dbb-0",
-        "1653265436853c9dbb-1",
-        "1653265436853c9dbb-2",
-        "12c4ae0c-8756-4588-9b0c-8e30a191ca19",
-        "9d65abdc-7854-4b39-b71a-7738359b9023",
-        "bda2a3d2-702c-489a-a210-c84433a8e336",
-        "66d93c20-19bf-4df1-a42f-01b139324cb1",
-        "5e4cd800-eb06-4328-8766-6832ef6b7340",
-        "2cf52f42-961b-412c-b771-58cd7f17c759"
+        "1652921249711f1fe2-0",
+        "1652921249711f1fe2-1",
+        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e"
       ],
       "settings": {
-        "expand_items": true,
-        "section_size": "medium",
-        "stack_mobile": true
+        "full_width": false,
+        "gutter_size": 21,
+        "space_above": true,
+        "space_below": true,
+        "hdg_font": 20,
+        "sub_hdg_font": 12,
+        "text_font": 14
+      }
+    },
+    "1652922020f7cd652c": {
+      "type": "custom-grid",
+      "disabled": true,
+      "blocks": {
+        "1652922020beca01c9-0": {
+          "type": "advanced",
+          "disabled": true,
+          "settings": {
+            "subheading": "",
+            "heading": "Wine Boxes",
+            "textarea": "Economical to ship, impressive in presentation and durable enough to protect the valuable contents",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/wine_boxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_WINE_BOXES_e8fb70a3-e455-4fb1-aed1-0602140bb781.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "1652922020beca01c9-1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Window Boxes",
+            "textarea": "Economical to ship, impressive in presentation and durable enough to protect the valuable contents",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/window_boxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_WINDOW_BOXES_735bc672-2955-44c4-b3a4-7614b521e48d.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Donut Boxes",
+            "textarea": "Impress with AGP's unique range of standout display boxes for your irresistible bespoke donuts.",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/donut_boxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_DONUT_BOXES_3916f1d7-f9e8-4e73-b8d6-bc8282a1a0b2.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        }
+      },
+      "block_order": [
+        "1652922020beca01c9-0",
+        "1652922020beca01c9-1",
+        "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true,
+        "hdg_font": 20,
+        "sub_hdg_font": 12,
+        "text_font": 14
+      }
+    },
+    "165292176308226db5": {
+      "type": "custom-grid",
+      "blocks": {
+        "1652921762cc9d9d94-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Postage &  Shipper Boxes",
+            "textarea": "Engineered for rapid assembly, for quick pick and pack, getting your orders out in a fast-paced environment",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/shipper_boxes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_POSTAGE_AND_SHIPPER_BOXES_294ad514-6de3-440e-bcf8-8137554ad729.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "1652921762cc9d9d94-1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Food Packaging",
+            "textarea": "Engineered for rapid assembly, for quick pick and pack, getting your orders out in a fast-paced environment",
+            "cta_text1": "Shop Now",
+            "cta_link1": "shopify:\/\/collections\/food_packaging",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_FOOD_PACKAGING_8659d187-bc2e-40d0-9169-a01b6ab5887b.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        },
+        "999fdf1b-e667-41cc-b828-ccaa85805b5d": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Carry Packs & Trays",
+            "textarea": "Designed to make products look good with minimum fuss and maximum style",
+            "cta_text1": "Shop This",
+            "cta_link1": "shopify:\/\/collections\/carry_packs",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/900x900px_-_CARRY_PACKS_e562d2f1-d5e5-448f-9522-df2ad9cda543.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 300,
+            "text_size": 85,
+            "text_align": "vertical-top horizontal-left",
+            "focal_point": "center",
+            "color_accent": "#148394",
+            "boxed": false,
+            "framed": true
+          }
+        }
+      },
+      "block_order": [
+        "1652921762cc9d9d94-0",
+        "1652921762cc9d9d94-1",
+        "999fdf1b-e667-41cc-b828-ccaa85805b5d"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true,
+        "hdg_font": 20,
+        "sub_hdg_font": 12,
+        "text_font": 14
       }
     },
     "165326742187667ea8": {
@@ -409,262 +483,188 @@
         "show_collection_title": true
       }
     },
-    "16529212497ba5c00c": {
-      "type": "custom-grid",
+    "16532654360dee4f15": {
+      "type": "promotion-list",
       "disabled": true,
       "blocks": {
-        "1652921249711f1fe2-0": {
-          "type": "advanced",
+        "1653265436853c9dbb-0": {
+          "type": "item",
           "settings": {
-            "subheading": "",
-            "heading": "Magnetic Closure Boxes",
-            "textarea": "A perfect keepsake with minimalist design, fine emboss and Matt finish inside and out",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/magnetic_closure_boxes",
-            "cta_text2": "",
-            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_MAGNETIC_CLOSUE_BOX_774eeb1f-89b5-48bb-8b14-1466e1b564bf.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": true,
+            "background": "#145b94",
+            "text_color": "#ffffff",
+            "title": "Magnetic Closure Boxes",
+            "content": "",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#3285c8",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/magnetic_closure_boxes"
           }
         },
-        "1652921249711f1fe2-1": {
-          "type": "advanced",
+        "1653265436853c9dbb-1": {
+          "type": "item",
           "settings": {
-            "subheading": "",
-            "heading": "Hamper  Packaging",
-            "textarea": "Stylish, as well as sturdy enough to handle just about anything you can think to put in them.",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/hamper_packaging",
-            "cta_text2": "",
-            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_HAMPER_PACKAGES_fff579da-61fb-4e8a-aea3-94a82a819cb8.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
+            "show_overlay": false,
+            "overlay_opacity": 68,
+            "stretch_image": true,
+            "background": "#0e9642",
+            "text_color": "#ffffff",
+            "title": "Hamper Packaging",
+            "content": "<p> <\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#00aa00",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/hamper_packaging"
           }
         },
-        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e": {
-          "type": "advanced",
+        "1653265436853c9dbb-2": {
+          "type": "item",
           "settings": {
-            "subheading": "",
-            "heading": "Gift Boxes",
-            "textarea": "When you need to give someone something special, give it in one of our elegantly designed gift boxes.",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/giftboxes",
-            "cta_text2": "",
-            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_GIFT_BOXES_29a62547-fcf3-41c2-b842-7f95204b2869.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": true,
+            "background": "#0492c2",
+            "text_color": "#ffffff",
+            "title": "Gift Boxes",
+            "content": "",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#26c1ce",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/giftboxes"
           }
-        }
-      },
-      "block_order": [
-        "1652921249711f1fe2-0",
-        "1652921249711f1fe2-1",
-        "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e"
-      ],
-      "settings": {
-        "full_width": false,
-        "gutter_size": 21,
-        "space_above": true,
-        "space_below": true,
-        "hdg_font": 20,
-        "sub_hdg_font": 12,
-        "text_font": 14
-      }
-    },
-    "165292176308226db5": {
-      "type": "custom-grid",
-      "disabled": true,
-      "blocks": {
-        "1652921762cc9d9d94-0": {
-          "type": "advanced",
+        },
+        "12c4ae0c-8756-4588-9b0c-8e30a191ca19": {
+          "type": "item",
           "settings": {
-            "subheading": "",
-            "heading": "Postage &  Shipper Boxes",
-            "textarea": "Engineered for rapid assembly, for quick pick and pack, getting your orders out in a fast-paced environment",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/shipper_boxes",
-            "cta_text2": "",
-            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_POSTAGE_AND_SHIPPER_BOXES_294ad514-6de3-440e-bcf8-8137554ad729.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": true,
+            "background": "#145b94",
+            "text_color": "#ffffff",
+            "title": "Postage & Shippers",
+            "content": "<p> <\/p>",
+            "content_position": "top_left",
+            "button_background": "#3285c8",
+            "button_text_color": "#000000",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/shipper_boxes"
           }
         },
-        "1652921762cc9d9d94-1": {
-          "type": "advanced",
+        "9d65abdc-7854-4b39-b71a-7738359b9023": {
+          "type": "item",
           "settings": {
-            "subheading": "",
-            "heading": "Food Packaging",
-            "textarea": "Engineered for rapid assembly, for quick pick and pack, getting your orders out in a fast-paced environment",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/food_packaging",
-            "cta_text2": "",
-            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_FOOD_PACKAGING_8659d187-bc2e-40d0-9169-a01b6ab5887b.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": true,
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "title": "Food Packaging",
+            "content": "<p> <\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#00aa00",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/food_packaging"
           }
         },
-        "999fdf1b-e667-41cc-b828-ccaa85805b5d": {
-          "type": "advanced",
+        "bda2a3d2-702c-489a-a210-c84433a8e336": {
+          "type": "item",
           "settings": {
-            "subheading": "",
-            "heading": "Carry Packs & Trays",
-            "textarea": "Designed to make products look good with minimum fuss and maximum style",
-            "cta_text1": "Shop This",
-            "cta_link1": "shopify:\/\/collections\/carry_packs",
-            "cta_text2": "",
-            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_CARRY_PACKS_e562d2f1-d5e5-448f-9522-df2ad9cda543.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": true,
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "title": "Carry Packs & Trays",
+            "content": "<p> <\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#26c1ce",
+            "button_text": "Shop Now",
+            "button_link": ""
           }
-        }
-      },
-      "block_order": [
-        "1652921762cc9d9d94-0",
-        "1652921762cc9d9d94-1",
-        "999fdf1b-e667-41cc-b828-ccaa85805b5d"
-      ],
-      "settings": {
-        "full_width": false,
-        "gutter_size": 20,
-        "space_above": true,
-        "space_below": true,
-        "hdg_font": 20,
-        "sub_hdg_font": 12,
-        "text_font": 14
-      }
-    },
-    "1652922020f7cd652c": {
-      "type": "custom-grid",
-      "disabled": true,
-      "blocks": {
-        "1652922020beca01c9-0": {
-          "type": "advanced",
+        },
+        "66d93c20-19bf-4df1-a42f-01b139324cb1": {
+          "type": "item",
           "settings": {
-            "subheading": "",
-            "heading": "Wine Boxes",
-            "textarea": "Economical to ship, impressive in presentation and durable enough to protect the valuable contents",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/wine_boxes",
-            "cta_text2": "",
-            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_WINE_BOXES_e8fb70a3-e455-4fb1-aed1-0602140bb781.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
+            "show_overlay": true,
+            "overlay_opacity": 50,
+            "stretch_image": true,
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "title": "Wine Boxes",
+            "content": "<p> <\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "button_text": "Shop Now",
+            "button_link": ""
           }
         },
-        "1652922020beca01c9-1": {
-          "type": "advanced",
+        "5e4cd800-eb06-4328-8766-6832ef6b7340": {
+          "type": "item",
           "settings": {
-            "subheading": "",
-            "heading": "Window Boxes",
-            "textarea": "Economical to ship, impressive in presentation and durable enough to protect the valuable contents",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/window_boxes",
-            "cta_text2": "",
-            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_WINDOW_BOXES_735bc672-2955-44c4-b3a4-7614b521e48d.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": true,
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "title": "Window Boxes",
+            "content": "<p> <\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#00aa00",
+            "button_text": "Learn more",
+            "button_link": ""
           }
         },
-        "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b": {
-          "type": "advanced",
+        "2cf52f42-961b-412c-b771-58cd7f17c759": {
+          "type": "item",
           "settings": {
-            "subheading": "",
-            "heading": "Donut Boxes",
-            "textarea": "Impress with AGP's unique range of standout display boxes for your irresistible bespoke donuts.",
-            "cta_text1": "Shop Now",
-            "cta_link1": "shopify:\/\/collections\/donut_boxes",
-            "cta_text2": "",
-            "cta_link2": "",
             "image": "shopify:\/\/shop_images\/900x900px_-_DONUT_BOXES_3916f1d7-f9e8-4e73-b8d6-bc8282a1a0b2.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 300,
-            "text_size": 85,
-            "text_align": "vertical-top horizontal-left",
-            "focal_point": "center",
-            "color_accent": "#148394",
-            "boxed": false,
-            "framed": true
+            "show_overlay": false,
+            "overlay_opacity": 50,
+            "stretch_image": true,
+            "background": "#000000",
+            "text_color": "#ffffff",
+            "title": "Donut Boxes",
+            "content": "<p> <\/p>",
+            "content_position": "top_left",
+            "button_background": "#ffffff",
+            "button_text_color": "#26c1ce",
+            "button_text": "Shop Now",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "1652922020beca01c9-0",
-        "1652922020beca01c9-1",
-        "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b"
+        "1653265436853c9dbb-0",
+        "1653265436853c9dbb-1",
+        "1653265436853c9dbb-2",
+        "12c4ae0c-8756-4588-9b0c-8e30a191ca19",
+        "9d65abdc-7854-4b39-b71a-7738359b9023",
+        "bda2a3d2-702c-489a-a210-c84433a8e336",
+        "66d93c20-19bf-4df1-a42f-01b139324cb1",
+        "5e4cd800-eb06-4328-8766-6832ef6b7340",
+        "2cf52f42-961b-412c-b771-58cd7f17c759"
       ],
       "settings": {
-        "full_width": false,
-        "gutter_size": 20,
-        "space_above": true,
-        "space_below": true,
-        "hdg_font": 20,
-        "sub_hdg_font": 12,
-        "text_font": 14
+        "expand_items": true,
+        "section_size": "medium",
+        "stack_mobile": true
       }
     },
     "featured-collection": {
@@ -684,13 +684,13 @@
   },
   "order": [
     "slideshow",
-    "16532654360dee4f15",
+    "16529212497ba5c00c",
+    "1652922020f7cd652c",
+    "165292176308226db5",
     "165326742187667ea8",
     "featured-product",
     "collection-list",
-    "16529212497ba5c00c",
-    "165292176308226db5",
-    "1652922020f7cd652c",
+    "16532654360dee4f15",
     "featured-collection"
   ]
 }

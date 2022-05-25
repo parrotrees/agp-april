@@ -51,11 +51,11 @@
         "2bb813ee-8ca3-4f23-a0d1-f3c94bbd9dad"
       ],
       "settings": {
-        "image_size": "small",
+        "image_size": "medium",
         "enable_video_looping": false,
         "enable_image_zoom": true,
         "zoom_effect": "outside",
-        "carousel_effect": "fade"
+        "carousel_effect": "slide"
       }
     },
     "product-recommendations": {
