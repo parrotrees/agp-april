@@ -53,24 +53,6 @@
             {{- form | payment_terms -}}
           </div>
 
-          {%- if section.settings.show_taxes_included -%}
-            {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
-              <p class="product-form__price-info">
-                {%- if cart.taxes_included -%}
-                  {{ 'product.general.include_taxes' | t }}
-                {%- endif -%}
-
-                {%- if shop.shipping_policy.body != blank -%}
-                  {{ 'product.general.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                {%- endif -%}
-              </p>
-            {%- endif -%}
-          {%- endif -%}
-        </div>
-      </div>
-      {%- if product.template_suffix != 'contact' -%}
-        {%- if section.settings.show_quantity_selector and isSample == false -%}
-
       
           <div class="product-form__info-item product-form__info-item--quantity">
             <label for="{{ section.id }}-{{ product.id }}-quantity" class="product-form__info-title text--strong">{{ 'product.form.quantity' | t }}:</label>
