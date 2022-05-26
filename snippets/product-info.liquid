@@ -66,50 +66,12 @@
           {% endif %}
         </select>                
               
-              
-              
-              </div>
-            </div>
-          </div>
-
-     
+   
       
         {%- else -%}
           <input type="hidden" name="quantity" value="1">
         {%- endif -%}
       {%- endif -%}
-  </div>
-  
-  </div>
-
-    <div class="product-form__payment-container">
-      {%- if product.template_suffix != 'contact' -%}
-        {%- if selected_variant.available -%}
-          {%- if product.template_suffix == 'pre-order' -%}
-            <button type="submit" class="product-form__add-button button button--primary" data-action="add-to-cart">{{ 'product.form.pre_order' | t }}</button>
-          {%- else -%}
-            <button type="submit" class="product-form__add-button button button--primary" data-action="add-to-cart">{{ 'product.form.add_to_cart' | t }}</button>
-          {%- endif -%}
-        {%- else -%}
-          <button type="submit" class="product-form__add-button button button--disabled" disabled>{{ 'product.form.sold_out' | t }}</button>
-        {%- endif -%}
-
-        {%- if section.settings.show_payment_button and product.template_suffix != 'pre-order' -%}
-          {{ form | payment_button }}
-        {%- endif -%}
-      {%- else -%}
-        <a href="mailto:{{ shop.email }}" class="button button--primary">{{ 'product.form.contact_us' | t }}</a>
-      {%- endif -%}
-      <div class="pk-right">
-    {% assign sample_product_handle = product.handle | append: "-sample" %}
-{% unless all_products[sample_product_handle] == blank %}
-{% assign sample_product_id = all_products[sample_product_handle].id %}
-{% assign sample_product_variant_id = all_products[sample_product_handle].variants.first.id %}
-<a href="{{ all_products[sample_product_handle].url }}" class="btn btn-default product-form--atc-button shopify-payment-button__button shopify-payment-button__button--unbranded" style="border-color:#464553;background-color:#464553; color:white;">&nbsp;BUY SAMPLE</a>          
-{% endunless %} 
-      </div>
-            </div>
-   
             <div class="card__section">
     {%- form 'product', product, id: product_form_id, class: 'product-form' -%}
       {%- for block in section.blocks -%}
