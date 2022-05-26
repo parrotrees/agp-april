@@ -79,3 +79,11 @@
     "recently-viewed-products"
   ]
 }
+  <script>
+    var qtyVaraints = {
+        {% for variant in product.variants %}
+            {{variant.id}}: {{variant.inventory_quantity}}{% unless forloop.last %},{% endfor %}
+        {% endfor %}
+    }
+</script>
+
