@@ -12,47 +12,6 @@
     ------------------------------------------------------------------------------
     {% endcomment %}
 
-    <div class="product-form__info-list">
-      <div class="pk-left">
-      <div class="product-form__info-item">
-        <span class="product-form__info-title text--strong">{{ 'product.form.price' | t }}:</span>
-
-        <div class="product-form__info-content" role="region" aria-live="polite">
-          <div class="price-list">
-            {%- if selected_variant.compare_at_price > selected_variant.price -%}
-              <span class="price price--highlight">
-                <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                {{- selected_variant.price | money -}}
-              </span>
-
-              <span class="price price--compare">
-                <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
-                {{- selected_variant.compare_at_price | money -}}
-              </span>
-            {%- else -%}
-              <span class="price">
-                <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                {{- selected_variant.price | money -}}  <span class="gst">Excl GST</span>
-              </span>
-            {%- endif -%}
-          </div>
-          <div class="product-form__price-info" style="display: {% if selected_variant.unit_price_measurement %}block{% else %}none{% endif %}">
-            <div class="unit-price-measurement">
-              <span class="unit-price-measurement__price">{{ selected_variant.unit_price | money }}</span>
-              <span class="unit-price-measurement__separator">/ </span>
-
-              <span class="unit-price-measurement__reference-value" {%- if selected_variant.unit_price_measurement.reference_value == 1 -%}style="display: none"{% endif %}>
-                {{- selected_variant.unit_price_measurement.reference_value -}}
-              </span>
-
-              <span class="unit-price-measurement__reference-unit">{{ selected_variant.unit_price_measurement.reference_unit }}</span>
-            </div>
-          </div>
-
-          <div class="product-form__installments-banner">
-            {{- form | payment_terms -}}
-          </div>
-
       
           <div class="product-form__info-item product-form__info-item--quantity">
             <label for="{{ section.id }}-{{ product.id }}-quantity" class="product-form__info-title text--strong">{{ 'product.form.quantity' | t }}:</label>
