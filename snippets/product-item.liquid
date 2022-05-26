@@ -45,55 +45,9 @@
   {%- assign filtered_variant = '' -%}
 
   {%- if product.media.size > 0 -%}
-    {%- comment -%}
-      Are you ready for some Liquid crazyness? Let's start!
-      The idea here is that when we are on a collection page that is filtered using a color swatch, instead of showing the featured
-      image, we'd like to show a variant image that is attached to the selected color. Unfortunately, because filtering is done using
-      tag, there is no direct relationship between tags and variants. We therefore have to do some crazy processing to match a filter
-      with a variant. Because this code is within a collection page, it is executed for each product, so it's pretty performance
-      sensitive. Disabling this piece of code may slightly improve the performance if you have lot of variants.
-    {%- endcomment -%}
-
     {%- assign primary_media = product.featured_media -%}
 
-    {%- if request.page_type == 'collection' and section.settings.show_filters and section.settings.filter_type == 'group' -%}
-      {%- assign matched_color_option = '' -%}
-
-      {%- for tag in current_tags -%}
-        {%- assign tag_parts = tag | split: '_' -%}
-        {%- assign tag_group_name = tag_parts | first | downcase -%}
-        {%- assign tag_group_value = tag_parts | last | downcase -%}
-
-        {%- if color_label contains tag_group_name -%}
-          {%- comment -%}We have found a matching color label, then we check if this product contains an option named the same{%- endcomment -%}
-
-          {%- for option in product.options -%}
-            {%- assign downcased_option = option | downcase -%}
-
-            {%- if downcased_option == tag_group_name -%}
-              {%- comment -%}We have found the index of the matching option, so we can iterate through the variants{%- endcomment -%}
-              {%- assign option_index = 'option' | append: forloop.index -%}
-
-              {%- for variant in product.variants -%}
-                {%- assign variant_option_value = variant[option_index] | downcase -%}
-
-                {%- if variant_option_value == tag_group_value and variant.featured_media -%}
-                  {%- assign primary_media = variant.featured_media -%}
-                  {%- assign filtered_variant = variant -%}
-                  {%- break -%}
-                {%- endif %}
-              {%- endfor -%}
-
-              {%- break -%}
-            {%- endif -%}
-          {%- endfor -%}
-
-          {%- break -%}
-        {%- endif -%}
-      {%- endfor -%}
-    {%- endif -%}
-
-    <a href="{{ filtered_variant.url | default: product.url }}" class="product-item__image-wrapper {% if show_secondary_media %}product-item__image-wrapper--with-secondary{% endif %}">
+    <a href="{{ product.url }}" class="product-item__image-wrapper {% if show_secondary_media %}product-item__image-wrapper--with-secondary{% endif %}">
       {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,500,600,700,800', image: primary_media.preview_image -%}{%- endcapture -%}
       {%- assign image_url = primary_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
@@ -108,7 +62,7 @@
         {%- endif -%}
 
         <noscript>
-          <img src="{{ primary_image | img_url: '600x' }}" alt="{{ primary_media.alt | escape }}">
+          <img src="{{ primary_media | img_url: '600x' }}" alt="{{ primary_media.alt | escape }}">
         </noscript>
       </div>
     </a>
@@ -120,8 +74,14 @@
         <div class="product-item__price-list price-list">
           {%- if product.price < product.compare_at_price -%}
             {%- if product.price_varies -%}
-              {%- capture price_min -%}<span>{{ product.price_min | money }}</span>{%- endcapture -%}
-              {%- capture price_max -%}<span>{{ product.price_max | money }}</span>{%- endcapture -%}
+              {%- if settings.currency_code_enabled -%}
+                {%- capture price_min -%}{{ product.price_min | money_with_currency }}{%- endcapture -%}
+                {%- capture price_max -%}{{ product.price_max | money_with_currency }}{%- endcapture -%}
+              {%- else -%}
+                {%- capture price_min -%}{{ product.price_min | money }}{%- endcapture -%}
+                {%- capture price_max -%}{{ product.price_max | money }}{%- endcapture -%}
+              {%- endif -%}
+
               <span class="price price--highlight">
                 <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
                 {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
@@ -129,51 +89,58 @@
 
               <span class="price price--compare">
                 <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
-                {{- product.compare_at_price_min | money -}}
+
+                {%- if settings.currency_code_enabled -%}
+                  {{- product.compare_at_price_min | money_with_currency -}}
+                {%- else -%}
+                  {{- product.compare_at_price_min | money -}}
+                {%- endif -%}
               </span>
             {%- else -%}
               <span class="price price--highlight">
                 <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                {{- product.price | money -}}
+
+                {%- if settings.currency_code_enabled -%}
+                  {{- product.price | money_with_currency -}}
+                {%- else -%}
+                  {{- product.price | money -}}
+                {%- endif -%}
               </span>
 
               <span class="price price--compare">
                 <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
-                {{- product.compare_at_price | money -}}
+                {%- if settings.currency_code_enabled -%}
+                  {{- product.compare_at_price | money_with_currency -}}
+                {%- else -%}
+                  {{- product.compare_at_price | money -}}
+                {%- endif -%}
               </span>
             {%- endif -%}
           {%- elsif product.price_varies -%}
-            {%- capture price_min -%}<span>{{ product.price_min | money }}</span>{%- endcapture -%}
-            {%- capture price_max -%}<span>{{ product.price_max | money }}</span>{%- endcapture -%}
+            {%- if settings.currency_code_enabled -%}
+              {%- capture price_min -%}{{ product.price_min | money_with_currency }}{%- endcapture -%}
+              {%- capture price_max -%}{{ product.price_max | money_with_currency }}{%- endcapture -%}
+            {%- else -%}
+              {%- capture price_min -%}{{ product.price_min | money }}{%- endcapture -%}
+              {%- capture price_max -%}{{ product.price_max | money }}{%- endcapture -%}
+            {%- endif -%}
 
             <span class="price">
               <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-              {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}} 
-              <span class="gst">Excl GST</span>
+              {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
             </span>
           {%- else -%}
             <span class="price">
               <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-              {{- product.price | money -}} 
-              <span class="gst">Excl GST</span>
+              {%- if settings.currency_code_enabled -%}
+                {{- product.price | money_with_currency -}}
+              {%- else -%}
+                {{- product.price | money -}}
+              {%- endif -%}
             </span>
           {%- endif -%}
-        
         </div>
-			<div class="product-meta__reference">
-            {%- assign vendor_handle = product.vendor | handle -%}
-            {%- assign collection_for_vendor = collections[vendor_handle] -%}
 
-            {%- unless collection_for_vendor.empty? -%}
-              <a class="product-meta__vendor" >{{ product.vendor }}</a>
-            {%- else -%}
-              <a class="product-meta__vendor">{{ product.vendor }}</a>
-            {%- endunless -%}
-			{% assign current_variant = product.selected_or_first_available_variant %}
-<!--             <span class="product-meta__sku">
-              {{- 'product.general.sku' | t -}} <span class="product-meta__sku-number">{{ current_variant.sku}}</span>
-            </span> -->
-        </div>
         {%- if product.selected_or_first_available_variant.unit_price_measurement -%}
           <div class="product-item__price-info">
             <div class="unit-price-measurement">
@@ -191,10 +158,16 @@
       {%- endcapture -%}
 
       {%- capture vendor -%}
+        {%- if settings.show_vendor -%}
           {%- assign vendor_handle = product.vendor | handle -%}
           {%- assign collection_for_vendor = collections[vendor_handle] -%}
 
-         
+          {%- unless collection_for_vendor.empty? -%}
+            <a class="product-item__vendor link" href="{{ collection_for_vendor.url }}">{{ product.vendor }}</a>
+          {%- else -%}
+            <a class="product-item__vendor link" href="{{ product.vendor | url_for_vendor }}">{{ product.vendor }}</a>
+          {%- endunless -%}
+        {%- endif -%}
       {%- endcapture -%}
 
       {%- if settings.product_price_position == 'before_title' -%}
@@ -206,7 +179,6 @@
       {%- endif -%}
 
       <a href="{{ filtered_variant.url | default: product.url }}" class="product-item__title text--strong link">{{ product.title }}</a>
-      <div class='ruk_rating_snippet' data-sku='{{ product.variants | map: 'sku' | join: ';' }};{{ product.variants | map: 'id' | join: ';' }}' style="display:none;"></div>
 
       {%- if settings.product_price_position == 'before_title' -%}
         {{ vendor }}
@@ -222,6 +194,8 @@
             {%- if color_label contains downcased_option -%}
               {%- assign variant_option = 'option' | append: forloop.index -%}
               {%- assign value_to_match = filtered_variant[variant_option] | default: option.selected_value -%}
+
+              {%- assign color_swatch_config = settings.color_swatch_config | newline_to_br | split: '<br />' -%}
 
               {%- for value in option.values -%}
                 {%- assign downcased_value = value | downcase -%}
@@ -240,11 +214,8 @@
                     {%- assign image_url = variant_for_value.featured_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
                   {%- endif -%}
 
-                  {%- assign color_swatch_name = value | handle | append: '.png' -%}
-                  {%- assign color_swatch_image = images[color_swatch_name] -%}
-
                   <input class="color-swatch__radio" type="radio" name="{{ color_name }}" id="{{ color_id }}" value="{{ value | escape }}" {% if value_to_match == value %}checked="checked"{% endif %} data-variant-url="{{ variant_for_value.url }}" {% if variant_for_value.featured_media %}data-media-id="{{ variant_for_value.featured_media.id }}" data-image-url="{{ image_url }}" data-image-widths="[{{ supported_sizes }}]" data-image-aspect-ratio="{{ variant_for_value.featured_media.preview_image.aspect_ratio }}"{% endif %} aria-label="{{ value | escape }}">
-                  <label class="color-swatch__item lazyload" for="{{ color_id }}" {% if color_swatch_image != blank %}data-bg="{{ color_swatch_image | img_url: '64x64' }}"{% else %}style="background-color: {{ value | replace: ' ', '' | downcase }}"{% endif %} title="{{ value | escape }}">
+                  <label class="color-swatch__item" for="{{ color_id }}" style="{% render 'color-swatch-style', color_swatch_config: color_swatch_config, value: downcased_value %}" title="{{ value | escape }}">
                     <span class="visually-hidden">{{ value }}</span>
                   </label>
                   <a href="{{ product.url }}" class="color-swatch__item-link">+{{ option.values.size | minus: forloop.index0 }}</a>
@@ -268,13 +239,12 @@
       {%- endif -%}
 
       {%- if settings.show_reviews_badge -%}
-        <a class="product-item__reviews-badge link pk-review-link" href="{{ product.url }}#product-reviews">
-          <span class="visually-hidden">{{ 'product.general.reviews' | t }}</span>
-
-  
+        <a class="product-item__reviews-badge link" href="{{ product.url }}#product-reviews">
+          {%- render 'product-rating', product: product -%}
+        </a>
       {%- endif -%}
 
-      {%- if settings.show_inventory_quantity and product.template_suffix != 'pre-order' -%}
+      {%- if settings.show_inventory_quantity and product.variants.first.inventory_management != blank and product.template_suffix != 'pre-order' -%}
         {%- if product.available -%}
           {%- assign should_calculate_inventory = true -%}
 
@@ -333,25 +303,8 @@
           </a>
         </div>
       {%- else -%}
-
-{% assign isSample = false %}                 
-{% for collection in product.collections %}
-  {% if collection.title == 'Samples' %}
-      {% assign isSample = true %}
-  {% endif %}
-{% endfor %}        
-    
-    
-    {%- form 'product', product, id: form_id, class: product_form_classes -%}
-
-
-    {%- if product.metafields["global"]["Qty-1"] and isSample == false -%}    
-    <input type="hidden" name="quantity" value="{{ product.metafields["global"]["Qty-1"] }}">
-    {%- else -%}
-    <input type="hidden" name="quantity" value="1">
-    {%- endif -%}    
-    
-    
+        {%- form 'product', product, id: form_id, class: product_form_classes -%}
+          <input type="hidden" name="quantity" value="1">
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
           {%- if section.settings.show_quick_buy == 'list_grid' or show_add_to_cart -%}
@@ -377,9 +330,9 @@
           {%- endif -%}
 
           {%- if section.settings.show_quick_view == 'list_grid' -%}
-            {%- assign quick_view_classes = 'product-item__action-button button button--small button--ternary ' -%}
+            {%- assign quick_view_classes = 'product-item__action-button button button--small button--ternary hidden-phone' -%}
           {%- else -%}
-            {%- assign quick_view_classes = 'product-item__action-button product-item__action-button--list-view-only button button--small button--ternary ' -%}
+            {%- assign quick_view_classes = 'product-item__action-button product-item__action-button--list-view-only button button--small button--ternary hidden-phone' -%}
           {%- endif -%}
 
           <button type="button" class="{{ quick_view_classes }}" data-action="open-modal" data-secondary-action="open-quick-view" aria-controls="modal-quick-view-{{ section.id }}" data-product-url="{{ product.url }}">{{ 'collection.product.quick_view' | t }}</button>
@@ -388,22 +341,3 @@
     {%- endif -%}
   </div>
 </div>
-  
-  {% if section.settings.product_show_vendor and product.vendor %}
-{% assign its_a_match = false %}
-
-{% capture my_collection_handle %} {{ product.vendor | handleize | strip | escape  }} {% endcapture %}
-{% assign my_collection_handle_stripped = my_collection_handle | strip | escape %}
-
-{% for collection in collections %}
-{% if my_collection_handle_stripped == collection.handle %}
-{% assign its_a_match = true %}
-{% endif %}
-{% endfor %}
-
-{% if its_a_match %} 
-<p><a href="/collections/{{ product.vendor | handleize }}" class="border-bottom-link uppercase">{{ product.vendor }}</a></p>
-{% else %}
-<p><a href="{{ product.vendor | url_for_vendor }}" class="border-bottom-link uppercase">{{ product.vendor }}</a></p>
-{% endif %}
-{% endif %}
