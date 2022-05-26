@@ -336,9 +336,13 @@
           </a>
         </div>
       {%- else -%}
-        {%- form 'product', product, id: form_id, class: product_form_classes -%}
-          <input type="hidden" name="quantity" value="1">
-          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      {%- if product.metafields["global"]["Qty-1"] and isSample == false -%}    
+      <input type="hidden" name="quantity" value="{{ product.metafields["global"]["Qty-1"] }}">
+      {%- else -%}
+      <input type="hidden" name="quantity" value="1">
+      {%- endif -%} 
+
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
           {%- if section.settings.show_quick_buy == 'list_grid' or show_add_to_cart -%}
             {%- assign quick_buy_classes = 'product-item__action-button button button--small button--primary' -%}
