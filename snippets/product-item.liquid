@@ -341,3 +341,9 @@
     {%- endif -%}
   </div>
 </div>
+
+{%- if product.metafields["global"]["Qty-1"] and isSample == false -%}    
+<input type="hidden" name="quantity" value="{{ product.metafields["global"]["Qty-1"] }}">
+{%- else -%}
+<input type="hidden" name="quantity" value="1">
+{%- endif -%}    
