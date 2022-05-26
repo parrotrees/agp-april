@@ -45,6 +45,7 @@
   {%- assign filtered_variant = '' -%}
 
   {%- if product.media.size > 0 -%}
+
     {%- assign primary_media = product.featured_media -%}
 
     <a href="{{ product.url }}" class="product-item__image-wrapper {% if show_secondary_media %}product-item__image-wrapper--with-secondary{% endif %}">
@@ -77,11 +78,43 @@
               {%- if settings.currency_code_enabled -%}
                 {%- capture price_min -%}{{ product.price_min | money_with_currency }}{%- endcapture -%}
                 {%- capture price_max -%}{{ product.price_max | money_with_currency }}{%- endcapture -%}
+                <span class="price price--highlight">
+                  <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+                  {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
+                </span>
+  
+                <span class="price price--compare">
+                  <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
+                  {{- product.compare_at_price_min | money -}}
+                </span>
               {%- else -%}
+                <span class="price price--highlight">
+                  <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+                  {{- product.price | money -}}
+                </span>
+  
+                <span class="price price--compare">
+                  <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
+                  {{- product.compare_at_price | money -}}
+                </span>
+              {%- endif -%}
+            {%- elsif product.price_varies -%} 
+                {%- else -%}
                 {%- capture price_min -%}{{ product.price_min | money }}{%- endcapture -%}
                 {%- capture price_max -%}{{ product.price_max | money }}{%- endcapture -%}
               {%- endif -%}
-
+              <span class="price">
+                <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+                {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}} 
+                <span class="gst">Excl GST</span>
+              </span>
+            {%- else -%}
+              <span class="price">
+                <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+                {{- product.price | money -}} 
+                <span class="gst">Excl GST</span>
+              </span>
+            {%- endif -%}
               <span class="price price--highlight">
                 <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
                 {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
