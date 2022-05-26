@@ -15,8 +15,8 @@
         "variant_selector": {
           "type": "variant_selector",
           "settings": {
-            "selector_mode": "block",
-            "color_mode": "color",
+            "selector_mode": "dropdown",
+            "color_mode": "dropdown",
             "show_quantity_selector": true,
             "show_taxes_included": true,
             "show_inventory_quantity": true,
