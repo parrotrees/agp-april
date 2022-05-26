@@ -17,6 +17,7 @@
           "settings": {
             "selector_mode": "dropdown",
             "color_mode": "dropdown",
+            "show": "product_quantity_dropdown"
             "show_quantity_selector": true,
             "show_taxes_included": true,
             "show_inventory_quantity": true,
@@ -79,11 +80,3 @@
     "recently-viewed-products"
   ]
 }
-  <script>
-    var qtyVaraints = {
-        {% for variant in product.variants %}
-            {{variant.id}}: {{variant.inventory_quantity}}{% unless forloop.last %},{% endfor %}
-        {% endfor %}
-    }
-</script>
-

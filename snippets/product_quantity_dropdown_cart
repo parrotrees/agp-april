@@ -1,0 +1,15 @@
+{% if item.properties._qtysteps %}
+  {% assign quantityOptions = item.properties._qtysteps | split:',' %}
+    <div class="select-custom-dropdown">
+      <select name="updates[]" id="updates_{{ item.id }}" data-quantity-item="{{ forloop.index }}">
+        {% for q in quantityOptions %}
+          {% assign zahl1 = q | downcase %}
+            {% assign zahl2 = item.quantity | downcase %}
+            <option value="{{ q }}" {% if zahl1 == zahl2 %}selected{% endif %}>{{ q }}</option>
+        {% endfor %}
+      </select>
+      <div class="select_arrow">
+    </div>
+{% else %}
+  <input class="qty" type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" aria-label="{{ 'product.quantity' | t }}">                  
+{% endif %}
