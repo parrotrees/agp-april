@@ -137,5 +137,86 @@
         }
       {%- endif -%}
     }
+
+    <div class="product-form__info-item product-form__info-item--quantity">
+      <label for="{{ section.id }}-{{ product.id }}-quantity" class="product-form__info-title text--strong">{{ 'product.form.quantity' | t }}:</label>
+
+      <div class="product-form__info-content">
+        <div class="quantity-selector quantity-selector--product">
+          
+{% comment %}          
+          <button type="button" class="quantity-selector__button" data-action="decrease-picker-quantity" aria-label="{{ 'cart.items.decrease_quantity' | t }}" title="{{ 'cart.items.decrease_quantity' | t }}">{% render 'icon', icon: 'minus' %}</button>
+          <input name="quantity" aria-label="{{ 'product.form.quantity' | t }}" class="quantity-selector__value" inputmode="numeric" value="1" size="3">
+          <button type="button" class="quantity-selector__button" data-action="increase-picker-quantity" aria-label="{{ 'cart.items.increase_quantity' | t }}" title="{{ 'cart.items.increase_quantity' | t }}">{% render 'icon', icon: 'plus' %}</button>
+{% endcomment %}
+  <select
+          id="Quantity" name="quantity"
+          class="form-field-input form-field-select"
+          aria-label="{{ 'general.general.quantity' | t }}"
+          data-quantity-select
+          >
+    {% if product.metafields["global"]["Qty-1"] %}
+    <option selected value="{{ product.metafields["global"]["Qty-1"] }}">
+      {{ product.metafields["global"]["Qty-1"] }}
+    </option>            
+    {% if product.metafields["global"]["Qty-2"] %}
+    <option value="{{ product.metafields["global"]["Qty-2"] }}">
+      {{ product.metafields["global"]["Qty-2"] }}
+    </option>
+    {% endif %}
+    {% if product.metafields["global"]["Qty-3"] %}
+    <option value="{{ product.metafields["global"]["Qty-3"] }}">
+      {{ product.metafields["global"]["Qty-3"] }}
+    </option>
+    {% endif %}
+    {% if product.metafields["global"]["Qty-4"] %}
+    <option value="{{ product.metafields["global"]["Qty-4"] }}">
+      {{ product.metafields["global"]["Qty-4"] }}
+    </option>
+    {% endif %}
+    {% if product.metafields["global"]["Qty-5"] %}
+    <option value="{{ product.metafields["global"]["Qty-5"] }}">
+      {{ product.metafields["global"]["Qty-5"] }}
+    </option>
+    {% endif %}
+    {% if product.metafields["global"]["Qty-6"] %}
+    <option value="{{ product.metafields["global"]["Qty-6"] }}">
+      {{ product.metafields["global"]["Qty-6"] }}
+    </option>
+    {% endif %}
+    {% if product.metafields["global"]["Qty-7"] %}
+    <option value="{{ product.metafields["global"]["Qty-7"] }}">
+      {{ product.metafields["global"]["Qty-7"] }}
+    </option>
+    {% endif %}
+    {% if product.metafields["global"]["Qty-8"] %}
+    <option value="{{ product.metafields["global"]["Qty-8"] }}">
+      {{ product.metafields["global"]["Qty-8"] }}
+    </option>
+    {% endif %}
+    {% else %}
+    {% for i in (1..9) %}
+    <option {% if i == 1 %}selected {% endif %}value="{{ i }}">
+      {{ i }}
+    </option>
+    {% endfor %}              
+    {% endif %}
+  </select>                
+        
+        
+        
+        </div>
+      </div>
+    </div>
+
+
+
+  {%- else -%}
+    <input type="hidden" name="quantity" value="1">
+  {%- endif -%}
+{%- endif -%}
+</div>
+
+
   </script>
 </div>

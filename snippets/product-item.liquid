@@ -335,6 +335,12 @@
             {%- assign quick_view_classes = 'product-item__action-button product-item__action-button--list-view-only button button--small button--ternary hidden-phone' -%}
           {%- endif -%}
 
+          {%- if product.metafields["global"]["Qty-1"] and isSample == false -%}    
+          <input type="hidden" name="quantity" value="{{ product.metafields["global"]["Qty-1"] }}">
+          {%- else -%}
+          <input type="hidden" name="quantity" value="1">
+          {%- endif -%}  
+
           <button type="button" class="{{ quick_view_classes }}" data-action="open-modal" data-secondary-action="open-quick-view" aria-controls="modal-quick-view-{{ section.id }}" data-product-url="{{ product.url }}">{{ 'collection.product.quick_view' | t }}</button>
         {%- endform -%}
       {%- endif -%}
