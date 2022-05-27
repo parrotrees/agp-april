@@ -109,21 +109,12 @@
 
               <span class="price price--compare">
                 <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
-                {%- if settings.currency_code_enabled -%}
-                  {{- product.compare_at_price | money_with_currency -}}
-                {%- else -%}
-                  {{- product.compare_at_price | money -}}
-                {%- endif -%}
+                {{- product.compare_at_price | money -}}
               </span>
             {%- endif -%}
           {%- elsif product.price_varies -%}
-            {%- if settings.currency_code_enabled -%}
-              {%- capture price_min -%}{{ product.price_min | money_with_currency }}{%- endcapture -%}
-              {%- capture price_max -%}{{ product.price_max | money_with_currency }}{%- endcapture -%}
-            {%- else -%}
-              {%- capture price_min -%}{{ product.price_min | money }}{%- endcapture -%}
-              {%- capture price_max -%}{{ product.price_max | money }}{%- endcapture -%}
-            {%- endif -%}
+            {%- capture price_min -%}<span>{{ product.price_min | money }}</span>{%- endcapture -%}
+            {%- capture price_max -%}<span>{{ product.price_max | money }}</span>{%- endcapture -%}
 
             <span class="price">
               <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
