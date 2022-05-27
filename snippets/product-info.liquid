@@ -220,3 +220,41 @@
 
   </script>
 </div>
+
+<script type="application/json" data-product-json>
+  {
+    "product": {{ product | json }},
+    "options_with_values": {{ product.options_with_values | json }},
+    "selected_variant_id": {{ selected_variant.id }}
+    {%- if section.settings.show_inventory_quantity -%}
+      ,"inventories": {
+        {%- for variant in product.variants -%}
+          {%- if variant.available -%}
+            {%- if variant.inventory_management and variant.inventory_policy == 'deny' and section.settings.low_inventory_threshold > 0 -%}
+              {%- if variant.inventory_quantity <= section.settings.low_inventory_threshold -%}
+                {%- capture inventory_message -%}{{ 'product.form.low_stock_with_quantity_count' | t: count: variant.inventory_quantity }}{%- endcapture -%}
+              {%- else -%}
+                {%- capture inventory_message -%}{{ 'product.form.in_stock_with_quantity_count' | t: count: variant.inventory_quantity }}{%- endcapture -%}
+              {%- endif -%}
+            {%- else -%}
+              {%- if variant.inventory_policy == 'continue' and variant.inventory_quantity <= 0 and selected_variant.requires_shipping -%}
+                {%- capture inventory_message -%}{{ 'product.form.oversell_stock' | t }}{%- endcapture -%}
+              {%- else %}
+                {%- capture inventory_message -%}{{ 'product.form.in_stock' | t }}{%- endcapture -%}
+              {%- endif -%}
+            {%- endif -%}
+          {%- else -%}
+            {%- capture inventory_message -%}{{ 'product.form.sold_out' | t }}{%- endcapture -%}
+          {%- endif -%}
+
+          "{{ variant.id }}": {
+            "inventory_management": {{ variant.inventory_management | json }},
+            "inventory_policy": {{ variant.inventory_policy | json }},
+            "inventory_quantity": {{ variant.inventory_quantity | json }},
+            "inventory_message": {{ inventory_message | json }}
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      }
+    {%- endif -%}
+  }
+</script>
