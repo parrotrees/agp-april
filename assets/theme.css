@@ -13654,3 +13654,7 @@ display: none !important;
      display: none !important;  
 }
   
+
+.product-form__info-content  {
+  display: none !important;
+}
