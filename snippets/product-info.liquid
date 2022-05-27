@@ -17,7 +17,7 @@
           {%- when 'variant_selector' -%}
             {%- render 'product-variant-selector', product: product, form: form, block: block -%}
 
-                  
+          
           {% comment %}          
                   <button type="button" class="quantity-selector__button" data-action="decrease-picker-quantity" aria-label="{{ 'cart.items.decrease_quantity' | t }}" title="{{ 'cart.items.decrease_quantity' | t }}">{% render 'icon', icon: 'minus' %}</button>
                   <input name="quantity" aria-label="{{ 'product.form.quantity' | t }}" class="quantity-selector__value" inputmode="numeric" value="1" size="3">
@@ -77,12 +77,6 @@
           {% endfor %}              
           {% endif %}
           </select> 
-
-          {%- else -%}
-          <input type="hidden" name="quantity" value="1">
-        {%- endif -%}
-      {%- endif -%}
-  </div>
           
             {%- when 'buy_buttons' -%}
             {%- render 'product-buy-buttons', product: product, form: form, block: block -%}
