@@ -13655,3 +13655,6 @@ display: none !important;
 }
   
 
+.quantity-selector quantity-selector--product{
+     display: none !important;  
+}
