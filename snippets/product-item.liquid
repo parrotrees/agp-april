@@ -113,32 +113,22 @@
               <span class="gst">Excl GST</span>
             </span>
           {%- endif -%}
-
-          {%- elsif product.price_varies -%}
-            {%- if settings.currency_code_enabled -%}
-              {%- capture price_min -%}{{ product.price_min | money_with_currency }}{%- endcapture -%}
-              {%- capture price_max -%}{{ product.price_max | money_with_currency }}{%- endcapture -%}
-            {%- else -%}
-              {%- capture price_min -%}{{ product.price_min | money }}{%- endcapture -%}
-              {%- capture price_max -%}{{ product.price_max | money }}{%- endcapture -%}
-            {%- endif -%}
-
-            <span class="price">
-              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-              {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
-            </span>
-          {%- else -%}
-            <span class="price">
-              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-              {%- if settings.currency_code_enabled -%}
-                {{- product.price | money_with_currency -}}
-              {%- else -%}
-                {{- product.price | money -}}
-              {%- endif -%}
-            </span>
-          {%- endif -%}
+        
         </div>
+			<div class="product-meta__reference">
+            {%- assign vendor_handle = product.vendor | handle -%}
+            {%- assign collection_for_vendor = collections[vendor_handle] -%}
 
+            {%- unless collection_for_vendor.empty? -%}
+              <a class="product-meta__vendor" >{{ product.vendor }}</a>
+            {%- else -%}
+              <a class="product-meta__vendor">{{ product.vendor }}</a>
+            {%- endunless -%}
+			{% assign current_variant = product.selected_or_first_available_variant %}
+<!--             <span class="product-meta__sku">
+              {{- 'product.general.sku' | t -}} <span class="product-meta__sku-number">{{ current_variant.sku}}</span>
+            </span> -->
+        </div>
         {%- if product.selected_or_first_available_variant.unit_price_measurement -%}
           <div class="product-item__price-info">
             <div class="unit-price-measurement">
@@ -156,16 +146,8 @@
       {%- endcapture -%}
 
       {%- capture vendor -%}
-        {%- if settings.show_vendor -%}
           {%- assign vendor_handle = product.vendor | handle -%}
           {%- assign collection_for_vendor = collections[vendor_handle] -%}
-
-          {%- unless collection_for_vendor.empty? -%}
-            <a class="product-item__vendor link" href="{{ collection_for_vendor.url }}">{{ product.vendor }}</a>
-          {%- else -%}
-            <a class="product-item__vendor link" href="{{ product.vendor | url_for_vendor }}">{{ product.vendor }}</a>
-          {%- endunless -%}
-        {%- endif -%}
       {%- endcapture -%}
 
       {%- if settings.product_price_position == 'before_title' -%}
