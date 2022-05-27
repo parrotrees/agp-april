@@ -17,7 +17,9 @@
           {%- when 'variant_selector' -%}
             {%- render 'product-variant-selector', product: product, form: form, block: block -%}
 
-          
+            {%- if product.template_suffix != 'contact' -%}
+              {%- if section.settings.show_quantity_selector and isSample == false -%}
+                
           {% comment %}          
                   <button type="button" class="quantity-selector__button" data-action="decrease-picker-quantity" aria-label="{{ 'cart.items.decrease_quantity' | t }}" title="{{ 'cart.items.decrease_quantity' | t }}">{% render 'icon', icon: 'minus' %}</button>
                   <input name="quantity" aria-label="{{ 'product.form.quantity' | t }}" class="quantity-selector__value" inputmode="numeric" value="1" size="3">
