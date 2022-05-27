@@ -17,7 +17,7 @@
           "settings": {
             "selector_mode": "dropdown",
             "color_mode": "dropdown",
-            "show_quantity_dropdown": true,
+            "show_quantity_selector": true,
             "show_taxes_included": true,
             "show_inventory_quantity": true,
             "low_inventory_threshold": 0
