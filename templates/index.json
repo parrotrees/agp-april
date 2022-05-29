@@ -118,11 +118,9 @@
     },
     "1652922020f7cd652c": {
       "type": "custom-grid",
-      "disabled": true,
       "blocks": {
         "1652922020beca01c9-0": {
           "type": "advanced",
-          "disabled": true,
           "settings": {
             "subheading": "",
             "heading": "Wine Boxes",
