@@ -6,7 +6,7 @@
     "link_color": "#03c04a",
     "border_color": "#e4e4ee",
     "background": "#0492c2",
-    "secondary_background": "#ffffff",
+    "secondary_background": "#bce5f4",
     "error_color": "#cf0e0e",
     "success_color": "#1c7b36",
     "primary_button_background": "#03c04a",
@@ -150,6 +150,12 @@
               "menu": "our-products-1"
             }
           },
+          "c4cf1ad9-3e09-4fd0-8602-e0c3348b5595": {
+            "type": "links",
+            "settings": {
+              "menu": "footer"
+            }
+          },
           "footer-2": {
             "type": "newsletter",
             "disabled": true,
@@ -163,6 +169,7 @@
           "footer-0",
           "footer-1",
           "59703cb8-d7b2-44d8-8b2e-fe9f56708ecd",
+          "c4cf1ad9-3e09-4fd0-8602-e0c3348b5595",
           "footer-2"
         ],
         "settings": {
@@ -210,7 +217,7 @@
             "settings": {
               "icon": "bi-returns",
               "title": "Contact Us",
-              "content": "<p><strong>sales@agp.net.au<\/strong><\/p>"
+              "content": "<p><a href=\"mailto:sales@agp.net.au\" target=\"_blank\" title=\"mailto:sales@agp.net.au\"><strong>sales@agp.net.au<\/strong><\/a><\/p>"
             }
           },
           "static-text-with-icons-3": {
@@ -241,7 +248,15 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "9901917232353999808": {
+        "type": "shopify:\/\/apps\/buddha-mega-menu-navigation\/blocks\/megamenu\/dbb4ce56-bf86-4830-9b3d-16efbef51c6f",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Metal": {

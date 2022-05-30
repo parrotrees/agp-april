@@ -108,9 +108,9 @@
       ],
       "settings": {
         "full_width": false,
-        "gutter_size": 21,
-        "space_above": true,
-        "space_below": true,
+        "gutter_size": 10,
+        "space_above": false,
+        "space_below": false,
         "hdg_font": 20,
         "sub_hdg_font": 12,
         "text_font": 14
@@ -118,11 +118,9 @@
     },
     "1652922020f7cd652c": {
       "type": "custom-grid",
-      "disabled": true,
       "blocks": {
         "1652922020beca01c9-0": {
           "type": "advanced",
-          "disabled": true,
           "settings": {
             "subheading": "",
             "heading": "Wine Boxes",
@@ -195,7 +193,7 @@
       ],
       "settings": {
         "full_width": false,
-        "gutter_size": 20,
+        "gutter_size": 10,
         "space_above": true,
         "space_below": true,
         "hdg_font": 20,
@@ -280,7 +278,7 @@
       ],
       "settings": {
         "full_width": false,
-        "gutter_size": 20,
+        "gutter_size": 10,
         "space_above": true,
         "space_below": true,
         "hdg_font": 20,
@@ -326,10 +324,16 @@
           "settings": {
             "selector_mode": "block",
             "color_mode": "color",
-            "show_quantity_selector": true,
+            "show_quantity_selector": false,
             "show_taxes_included": true,
             "show_inventory_quantity": true,
             "low_inventory_threshold": 0
+          }
+        },
+        "b457684d-3508-4dc6-83c1-a585271aafac": {
+          "type": "text",
+          "settings": {
+            "content": "<p>Quantity Selector<\/p>"
           }
         },
         "buy-buttons": {
@@ -343,6 +347,7 @@
         "product-meta",
         "featured-description",
         "variant-selector",
+        "b457684d-3508-4dc6-83c1-a585271aafac",
         "buy-buttons"
       ],
       "settings": {
