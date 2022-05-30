@@ -108,9 +108,9 @@
       ],
       "settings": {
         "full_width": false,
-        "gutter_size": 21,
-        "space_above": true,
-        "space_below": true,
+        "gutter_size": 10,
+        "space_above": false,
+        "space_below": false,
         "hdg_font": 20,
         "sub_hdg_font": 12,
         "text_font": 14
