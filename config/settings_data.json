@@ -217,7 +217,7 @@
             "settings": {
               "icon": "bi-returns",
               "title": "Contact Us",
-              "content": "<p><strong>sales@agp.net.au<\/strong><\/p>"
+              "content": "<p><a href=\"mailto:sales@agp.net.au\" target=\"_blank\" title=\"mailto:sales@agp.net.au\"><strong>sales@agp.net.au<\/strong><\/a><\/p>"
             }
           },
           "static-text-with-icons-3": {
