@@ -104,7 +104,7 @@
                 {%- if settings.currency_code_enabled -%}
                   {{- product.price | money_with_currency -}}
                 {%- else -%}
-                  {{- product.price | money -}}
+                  {{- product.price | money excl gst -}}
                 {%- endif -%}
               </span>
 

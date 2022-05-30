@@ -13674,19 +13674,3 @@ display: none !important;
   color: gray;
   font-size: 10pt;
   }
-  .\#price-list::after {
-    content: "excl. GST";
-    position: relative;
-    margin-left: 5px;
-    top: 1px;
-    color: gray;
-    font-size: 10pt;
-    }
-.\#price::after {
-      content: "excl. GST";
-      position: relative;
-      margin-left: 5px;
-      top: 1px;
-      color: gray;
-      font-size: 10pt;
-      }
