@@ -1,0 +1,10 @@
+{% assign hideAttributes = "_printformer-hash,_printformer-uid,_qtysteps" | split: ','%}
+
+{% unless hideAttributes contains p.first %}
+  {{ p.first }}:
+    {% if p.last contains '/uploads/' %}
+    <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+  {% else %}
+    {{ p.last }}
+  {% endif %}
+{% endunless %}

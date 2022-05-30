@@ -87,19 +87,7 @@
                 {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
               </span>
 
-              <span class="price">
-                <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}} 
-                <span class="gst">Excl GST</span>
-              </span>
-            {%- else -%}
-              <span class="price">
-                <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                {{- product.price | money -}} 
-                <span class="gst">Excl GST</span>
-              </span>
-            {%- endif -%}
-
+              
               <span class="price price--compare">
                 <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
 
