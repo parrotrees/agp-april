@@ -6,6 +6,18 @@
     <div id="product-zoom-{{ section.id }}" class="product__zoom-wrapper"></div>
   {%- endif -%}
 
+  <span class="price">
+    <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+    {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}} 
+    <span class="gst">Excl GST</span>
+  </span>
+{%- else -%}
+  <span class="price">
+    <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+    {{- product.price | money -}} 
+    <span class="gst">Excl GST</span>
+  </span>
+{%- endif -%}
 
   <div class="card__section">
     {%- form 'product', product, id: product_form_id, class: 'product-form' -%}
