@@ -13658,3 +13658,11 @@ display: none !important;
 .quantity-selector quantity-selector--product{
      display: none !important;  
 }
+.\#product-card-price::after {
+  content: "excl. GST";
+  position: relative;
+  margin-left: 5px;
+  top: 5px;
+  color: gray;
+  font-size: 10pt;
+}
