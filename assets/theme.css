@@ -13666,3 +13666,11 @@ display: none !important;
   color: gray;
   font-size: 10pt;
 }
+.\#price-value::after {
+  content: "excl. GST";
+  position: relative;
+  margin-left: 5px;
+  top: 1px;
+  color: gray;
+  font-size: 10pt;
+  }
