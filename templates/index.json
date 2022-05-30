@@ -330,6 +330,12 @@
             "low_inventory_threshold": 0
           }
         },
+        "b457684d-3508-4dc6-83c1-a585271aafac": {
+          "type": "text",
+          "settings": {
+            "content": "<p>Quantity Selector<\/p>"
+          }
+        },
         "buy-buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -341,6 +347,7 @@
         "product-meta",
         "featured-description",
         "variant-selector",
+        "b457684d-3508-4dc6-83c1-a585271aafac",
         "buy-buttons"
       ],
       "settings": {
