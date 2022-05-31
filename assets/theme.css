@@ -13677,14 +13677,3 @@ display: none !important;
   color: gray;
   font-size: 10pt;
   }
-.price .money:last-child {
-	position: relative;
-}
-.price .was_price .money:after {
-    content: "ex. GST";
-    margin-left: 5px;
-    text-decoration: none;
-    color: #222;
-    position: absolute;
-    white-space: nowrap;
-}
