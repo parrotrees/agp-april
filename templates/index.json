@@ -319,6 +319,12 @@
           "settings": {
           }
         },
+        "965f54f3-6b50-4c62-95fe-fdd9e4d4cb1f": {
+          "type": "text",
+          "settings": {
+            "content": "<p>All PRICES Exclude GST<\/p>"
+          }
+        },
         "variant-selector": {
           "type": "variant_selector",
           "settings": {
@@ -346,6 +352,7 @@
       "block_order": [
         "product-meta",
         "featured-description",
+        "965f54f3-6b50-4c62-95fe-fdd9e4d4cb1f",
         "variant-selector",
         "b457684d-3508-4dc6-83c1-a585271aafac",
         "buy-buttons"
