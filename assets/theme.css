@@ -13578,10 +13578,6 @@ p.product-sku {
 
   
 
-
-
-
-
 /**
  * --------------------------------------------------------------------
  * CUSTOM COLOURS FOR HEADER CONTENT
@@ -13658,6 +13654,13 @@ display: none !important;
 .quantity-selector quantity-selector--product{
      display: none !important;  
 }
+
+/**
+ * --------------------------------------------------------------------
+ * GST tags  
+ * --------------------------------------------------------------------
+ */
+
 .\#product-card-price::after {
   content: "excl. GST";
   position: relative;
@@ -13674,10 +13677,14 @@ display: none !important;
   color: gray;
   font-size: 10pt;
   }
-  .product-item--vertical .product-item__action-button,
-  .product-item--horizontal .product-item__action-button {
-    border-radius: 30px;
-  }
-  .mega-menu__inner  .mega-menu__column > a {
-    font-weight: bold !important; 
+.price .money:last-child {
+	position: relative;
+}
+.price .was_price .money:after {
+    content: "ex. GST";
+    margin-left: 5px;
+    text-decoration: none;
+    color: #222;
+    position: absolute;
+    white-space: nowrap;
 }
