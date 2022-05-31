@@ -13674,3 +13674,10 @@ display: none !important;
   color: gray;
   font-size: 10pt;
   }
+  .product-item--vertical .product-item__action-button,
+  .product-item--horizontal .product-item__action-button {
+    border-radius: 30px;
+  }
+  .mega-menu__inner  .mega-menu__column > a {
+    font-weight: bold !important; 
+}
