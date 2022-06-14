@@ -537,5 +537,15 @@
       "signup_form_success": "We will send you an email right before we open!",
       "password_link": "Enter using password"
     }
+  },
+  "shopify": {
+    "links": {
+      "powered_by_shopify": " "
+    },
+    "checkout": {
+      "order_summary": {
+        "taxes_label": "GST"
+      }
+    }
   }
 }
