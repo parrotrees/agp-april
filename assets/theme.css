@@ -13678,11 +13678,11 @@ display: none !important;
   font-size: 10pt;
   }
 
-  .price.price--large.price--on-sale.price--show-badge::after {
-    content: "excl GST ";
-    white-space: nowrap;
-    font-size: 16px;
-    display: block;
+.price.price--large.price--on-sale.price--show-badge::after {
+  content: "excl GST";
+  white-space: nowrap;
+  font-size: 16px;
+  display: block;
 }
 
   .product-item--vertical .product-item__action-button,
