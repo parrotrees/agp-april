@@ -13681,3 +13681,11 @@ display: none !important;
   .mega-menu__inner  .mega-menu__column > a {
     font-weight: bold !important; 
 }
+
+body.page-handle_page {
+	background-color: #22c1c3!important;
+    color: #22c1c3 !important;
+}
+body.page-handle_page #page-content * {
+    color: #22c1c3 !important;
+}
