@@ -13720,3 +13720,19 @@ body.page-handle_page {
 body.page-handle_page #page-content * {
     color: #22c1c3 !important;
 }
+
+.product-form__info-content  {
+  display: none !important;
+  }
+
+.quantity-selector--product {
+  display: none !important;
+  }
+
+  ..quantity-selector--product .quantity-selector__button  {
+    display: none !important;
+    }
+
+    .quantity-selector--product .quantity-selector__button  {
+      display: none !important;
+      }
