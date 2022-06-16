@@ -13729,10 +13729,4 @@ body.page-handle_page #page-content * {
   display: none !important;
   }
 
-  ..quantity-selector--product .quantity-selector__button  {
-    display: none !important;
-    }
-
-    .quantity-selector--product .quantity-selector__button  {
-      display: none !important;
-      }
+  
