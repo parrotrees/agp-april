@@ -29,12 +29,6 @@
             "display_mode": "show_all"
           }
         },
-        "cd181560-67e1-455f-8116-558ea326cc1a": {
-          "type": "text",
-          "settings": {
-            "content": "<p>QUANTITY Selector <\/p>"
-          }
-        },
         "2bb813ee-8ca3-4f23-a0d1-f3c94bbd9dad": {
           "type": "shipping_estimator",
           "settings": {
@@ -53,7 +47,6 @@
         "product_meta",
         "variant_selector",
         "description",
-        "cd181560-67e1-455f-8116-558ea326cc1a",
         "2bb813ee-8ca3-4f23-a0d1-f3c94bbd9dad",
         "f88c5efe-78fe-47de-83c9-1eff54909102"
       ],
