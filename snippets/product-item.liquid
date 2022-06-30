@@ -91,7 +91,6 @@
               
               <span class="price price--compare">
                 <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
-                <span class="gst">Excl GST</span>
 
                 {%- if settings.currency_code_enabled -%}
                   {{- product.compare_at_price_min | money_with_currency -}}
@@ -102,20 +101,17 @@
             {%- else -%}
               <span class="price price--highlight">
                 <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                <span class="gst">Excl GST</span>
 
                 {%- if settings.currency_code_enabled -%}
                   {{- product.price | money_with_currency -}}
                 {%- else -%}
                   {{- product.price | money -}}
-                  <span class="gst">Excl GST</span>
                 {%- endif -%}
               </span>
 
               <span class="price price--compare">
                 <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
                 {{- product.compare_at_price | money -}}
-                <span class="gst">Excl GST</span>
               </span>
             {%- endif -%}
           {%- elsif product.price_varies -%}
@@ -129,7 +125,6 @@
               <span class="unit-price-measurement__price">{{ product.selected_or_first_available_variant.unit_price | money }}</span>
               <span class="unit-price-measurement__separator">/ </span>
 
-
               {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
                 <span class="unit-price-measurement__reference-value">{{ product.selected_or_first_available_variant.unit_price_measurement.reference_value }}</span>
               {%- endif -%}
@@ -139,8 +134,6 @@
           </div>
         {%- endif -%}
       {%- endcapture -%}
-
-      
 
       {%- capture vendor -%}
         {%- if settings.show_vendor -%}
