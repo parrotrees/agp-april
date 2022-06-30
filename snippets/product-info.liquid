@@ -20,15 +20,13 @@
             {%- render 'product-variant-selector', product: product, form: form, block: block -%}
 
           
-          
           {% comment %}          
                   <button type="button" class="quantity-selector__button" data-action="decrease-picker-quantity" aria-label="{{ 'cart.items.decrease_quantity' | t }}" title="{{ 'cart.items.decrease_quantity' | t }}">{% render 'icon', icon: 'minus' %}</button>
                   <input name="quantity" aria-label="{{ 'product.form.quantity' | t }}" class="quantity-selector__value" inputmode="numeric" value="1" size="3">
                   <button type="button" class="quantity-selector__button" data-action="increase-picker-quantity" aria-label="{{ 'cart.items.increase_quantity' | t }}" title="{{ 'cart.items.increase_quantity' | t }}">{% render 'icon', icon: 'plus' %}</button>
           {% endcomment %}
           
-              
-          
+            
           <select
               id="Quantity" name="quantity"
               class="form-field-input form-field-select"
