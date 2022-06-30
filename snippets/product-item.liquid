@@ -85,10 +85,8 @@
               <span class="price price--highlight">
                 <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
                 {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
-                <span class="gst">Excl GST</span>
               </span>
 
-              
               <span class="price price--compare">
                 <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
 
@@ -111,12 +109,36 @@
 
               <span class="price price--compare">
                 <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
-                {{- product.compare_at_price | money -}}
+                {%- if settings.currency_code_enabled -%}
+                  {{- product.compare_at_price | money_with_currency -}}
+                {%- else -%}
+                  {{- product.compare_at_price | money -}}
+                {%- endif -%}
               </span>
             {%- endif -%}
           {%- elsif product.price_varies -%}
-            {%- capture price_min -%}<span>{{ product.price_min | money }}</span>{%- endcapture -%}
-            {%- capture price_max -%}<span>{{ product.price_max | money }}</span>{%- endcapture -%}
+            {%- if settings.currency_code_enabled -%}
+              {%- capture price_min -%}{{ product.price_min | money_with_currency }}{%- endcapture -%}
+              {%- capture price_max -%}{{ product.price_max | money_with_currency }}{%- endcapture -%}
+            {%- else -%}
+              {%- capture price_min -%}{{ product.price_min | money }}{%- endcapture -%}
+              {%- capture price_max -%}{{ product.price_max | money }}{%- endcapture -%}
+            {%- endif -%}
+
+            <span class="price">
+              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+              {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
+            </span>
+          {%- else -%}
+            <span class="price">
+              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+              {%- if settings.currency_code_enabled -%}
+                {{- product.price | money_with_currency -}}
+              {%- else -%}
+                {{- product.price | money -}}
+              {%- endif -%}
+            </span>
+          {%- endif -%}
         </div>
 
         {%- if product.selected_or_first_available_variant.unit_price_measurement -%}
@@ -133,7 +155,7 @@
             </div>
           </div>
         {%- endif -%}
-      {%- endif -%}
+      {%- endcapture -%}
 
       {%- capture vendor -%}
         {%- if settings.show_vendor -%}
@@ -312,12 +334,6 @@
           {%- else -%}
             {%- assign quick_view_classes = 'product-item__action-button product-item__action-button--list-view-only button button--small button--ternary hidden-phone' -%}
           {%- endif -%}
-
-          {%- if product.metafields["global"]["Qty-1"] and isSample == false -%}    
-          <input type="hidden" name="quantity" value="{{ product.metafields["global"]["Qty-1"] }}">
-          {%- else -%}
-          <input type="hidden" name="quantity" value="1">
-          {%- endif -%}  
 
           <button type="button" class="{{ quick_view_classes }}" data-action="open-modal" data-secondary-action="open-quick-view" aria-controls="modal-quick-view-{{ section.id }}" data-product-url="{{ product.url }}">{{ 'collection.product.quick_view' | t }}</button>
         {%- endform -%}
