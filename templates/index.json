@@ -6,7 +6,7 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/AGP_-_STATIC_BANNER_1.png",
+            "image": "shopify:\/\/shop_images\/AGP_-_STATIC_BANNER_3_-_HAMPER_BOXES.png",
             "show_overlay": true,
             "overlay_opacity": 30,
             "text_color": "#3a3a3a",
@@ -286,8 +286,41 @@
         "text_font": 14
       }
     },
+    "165655659979b4463f": {
+      "type": "slideshow",
+      "blocks": {
+        "1656556599441ade7e-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/AGP_-_STATIC_BANNER_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/AGP_-_STATIC_BANNER_1.png",
+            "show_overlay": false,
+            "overlay_opacity": 30,
+            "text_color": "#ffffff",
+            "title": "",
+            "content": "",
+            "content_position": "top_left",
+            "button_background": "#3285c8",
+            "button_text_color": "#ffffff",
+            "button_text": "Shop Now",
+            "link": "shopify:\/\/collections\/hamper_trays"
+          }
+        }
+      },
+      "block_order": [
+        "1656556599441ade7e-0"
+      ],
+      "settings": {
+        "edge_to_edge": false,
+        "section_size": "preserve_ratio",
+        "carousel_effect": "slide",
+        "autoplay": true,
+        "cycle_speed": 5
+      }
+    },
     "165326742187667ea8": {
       "type": "collection-with-image",
+      "disabled": true,
       "settings": {
         "collection": "window_boxes",
         "products_count": 12,
@@ -699,6 +732,7 @@
     "16529212497ba5c00c",
     "1652922020f7cd652c",
     "165292176308226db5",
+    "165655659979b4463f",
     "165326742187667ea8",
     "featured-product",
     "collection-list",
