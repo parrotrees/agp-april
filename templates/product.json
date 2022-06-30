@@ -29,17 +29,17 @@
             "display_mode": "show_all"
           }
         },
-        "cd181560-67e1-455f-8116-558ea326cc1a": {
-          "type": "text",
-          "settings": {
-            "content": "<p>QUANTITY Selector <\/p>"
-          }
-        },
         "2bb813ee-8ca3-4f23-a0d1-f3c94bbd9dad": {
           "type": "shipping_estimator",
           "settings": {
             "shipping_estimator_default_country": "Austarlia",
             "show_refunds_policy": true
+          }
+        },
+        "a2ac56fa-8b8d-4bc7-a151-7ed74686b927": {
+          "type": "text",
+          "settings": {
+            "content": "<p>{{ product.title }}<\/p>"
           }
         },
         "f88c5efe-78fe-47de-83c9-1eff54909102": {
@@ -53,8 +53,8 @@
         "product_meta",
         "variant_selector",
         "description",
-        "cd181560-67e1-455f-8116-558ea326cc1a",
         "2bb813ee-8ca3-4f23-a0d1-f3c94bbd9dad",
+        "a2ac56fa-8b8d-4bc7-a151-7ed74686b927",
         "f88c5efe-78fe-47de-83c9-1eff54909102"
       ],
       "settings": {

@@ -337,6 +337,7 @@
     },
     "featured-product": {
       "type": "featured-product",
+      "disabled": true,
       "blocks": {
         "product-meta": {
           "type": "product_meta",
@@ -369,12 +370,6 @@
             "low_inventory_threshold": 0
           }
         },
-        "b457684d-3508-4dc6-83c1-a585271aafac": {
-          "type": "text",
-          "settings": {
-            "content": "<p>Quantity Selector<\/p>"
-          }
-        },
         "buy-buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -387,7 +382,6 @@
         "featured-description",
         "965f54f3-6b50-4c62-95fe-fdd9e4d4cb1f",
         "variant-selector",
-        "b457684d-3508-4dc6-83c1-a585271aafac",
         "buy-buttons"
       ],
       "settings": {
