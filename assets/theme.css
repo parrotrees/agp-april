@@ -13713,6 +13713,14 @@ display: none !important;
     font-weight: bold !important; 
 }
 
+body.page-handle_page {
+	background-color: #22c1c3!important;
+    color: #22c1c3 !important;
+}
+body.page-handle_page #page-content * {
+    color: #22c1c3 !important;
+}
+
 
 
 
