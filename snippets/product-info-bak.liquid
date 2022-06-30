@@ -298,9 +298,10 @@
                   {{- selected_variant.compare_at_price | money -}}
                 </span>
               {%- else -%}
-                <span class="price">
-                  <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                  {{- selected_variant.price | money -}}
+              <span class="price">
+                <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+                {{- selected_variant.price | money -}}  <span class="gst">Excl GST</span>
+              </span>
                 </span>
               {%- endif -%}
             </div>
