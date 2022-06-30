@@ -13607,8 +13607,9 @@ p.product-sku {
 }
 .shop-button:hover , .continue-shopping:hover {
     background: #0492C2 !important;
-  
- 
+
+
+
 /**
  * --------------------------------------------------------------------
  * RATING tags removed
@@ -13720,6 +13721,9 @@ body.page-handle_page {
 body.page-handle_page #page-content * {
     color: #22c1c3 !important;
 }
+.scroller {background: #ffffff !important;
+}
+
 
 
 
