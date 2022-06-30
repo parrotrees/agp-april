@@ -14,30 +14,17 @@
           {%- when 'product_meta' -%}
             {%- render 'product-meta', product: product, block: block -%}
 
-            <div class="product-form__info-list">
-              <div class="pk-left">
-              <div class="product-form__info-item">
-                <span class="product-form__info-title text--strong">{{ 'product.form.price' | t }}:</span>
-      
-                <div class="product-form__info-content" role="region" aria-live="polite">
-                  <div class="price-list">
-                    {%- if selected_variant.compare_at_price > selected_variant.price -%}
-                      <span class="price price--highlight">
-                        <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                        {{- selected_variant.price | money -}}
-                      </span>
-      
-                      <span class="price price--compare">
-                        <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
-                        {{- selected_variant.compare_at_price | money -}}
-                      </span>
-                    {%- else -%}
-                      <span class="price">
-                        <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                        {{- selected_variant.price | money -}}  <span class="gst">Excl GST</span>
-                      </span>
-                    {%- endif -%}
-                  </div>
+            <span class="price price--compare">
+              <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
+              {{- selected_variant.compare_at_price | money -}}
+            </span>
+          {%- else -%}
+            <span class="price">
+              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+              {{- selected_variant.price | money -}}  <span class="gst">Excl GST</span>
+            </span>
+          {%- endif -%}
+        </div>
 
           {%- when 'variant_selector' -%}
             {%- render 'product-variant-selector', product: product, form: form, block: block -%}
