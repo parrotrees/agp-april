@@ -90,6 +90,7 @@
 
               <span class="price price--compare">
                 <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
+                <span class="gst">Excl GST</span>
 
                 {%- if settings.currency_code_enabled -%}
                   {{- product.compare_at_price_min | money_with_currency -}}
