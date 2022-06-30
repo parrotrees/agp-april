@@ -14,17 +14,7 @@
           {%- when 'product_meta' -%}
             {%- render 'product-meta', product: product, block: block -%}
 
-            <span class="price price--compare">
-              <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
-              {{- selected_variant.compare_at_price | money -}}
-            </span>
-          {%- else -%}
-            <span class="price">
-              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-              {{- selected_variant.price | money -}}  <span class="gst">Excl GST</span>
-            </span>
-          {%- endif -%}
-        </div>
+            
 
           {%- when 'variant_selector' -%}
             {%- render 'product-variant-selector', product: product, form: form, block: block -%}
