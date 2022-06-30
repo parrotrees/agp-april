@@ -85,6 +85,7 @@
               <span class="price price--highlight">
                 <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
                 {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
+                <span class="gst">Excl GST</span>
               </span>
 
               
@@ -132,7 +133,7 @@
             </div>
           </div>
         {%- endif -%}
-      {%- endcapture -%}
+      
 
       {%- capture vendor -%}
         {%- if settings.show_vendor -%}
