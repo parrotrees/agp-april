@@ -39,7 +39,7 @@
         "a2ac56fa-8b8d-4bc7-a151-7ed74686b927": {
           "type": "text",
           "settings": {
-            "content": "<p>-{{ product.title }}<\/p>"
+            "content": "<p>{{ product.title }}<\/p>"
           }
         },
         "f88c5efe-78fe-47de-83c9-1eff54909102": {
