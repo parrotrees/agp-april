@@ -13729,7 +13729,8 @@ body.page-handle_page #page-content * {
 }
 .collection-list {background: #ffffff !important;
 }
-
+.collection-list .flickity-enabled {background: #ffffff !important;
+}
 
 
 
