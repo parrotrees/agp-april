@@ -13723,7 +13723,12 @@ body.page-handle_page #page-content * {
 }
 .scroller {background: #ffffff !important;
 }
-
+.scroller_inner {background: #ffffff !important;
+}
+.scroller {background: #ffffff !important;
+}
+.collection-list {background: #ffffff !important;
+}
 
 
 
