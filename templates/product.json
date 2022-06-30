@@ -41,12 +41,6 @@
             "content": "<p>QUANTITY Selector <\/p>"
           }
         },
-        "price Excl GST": {
-          "type": "price Excl GST",
-          "settings": {
-            "display_mode": "show_all"
-          }
-        },
         "2bb813ee-8ca3-4f23-a0d1-f3c94bbd9dad": {
           "type": "shipping_estimator",
           "settings": {
