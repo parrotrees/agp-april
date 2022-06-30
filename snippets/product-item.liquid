@@ -125,11 +125,11 @@
               <span class="unit-price-measurement__separator">/ </span>
 
               <span class="price">
-                <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}} 
-                <span class="gst">Excl GST</span>
-              </span>
-            {%- else -%}
+              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+              {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}} 
+              <span class="gst">Excl GST</span>
+            </span>
+          {%- else -%}
 
               {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
                 <span class="unit-price-measurement__reference-value">{{ product.selected_or_first_available_variant.unit_price_measurement.reference_value }}</span>
@@ -140,6 +140,19 @@
           </div>
         {%- endif -%}
       {%- endcapture -%}
+
+      <span class="price">
+        <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+        {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}} 
+        <span class="gst">Excl GST</span>
+      </span>
+    {%- else -%}
+      <span class="price">
+        <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+        {{- product.price | money -}} 
+        <span class="gst">Excl GST</span>
+      </span>
+    {%- endif -%}
 
       {%- capture vendor -%}
         {%- if settings.show_vendor -%}
