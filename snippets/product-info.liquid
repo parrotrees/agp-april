@@ -17,11 +17,7 @@
           {%- when 'variant_selector' -%}
             {%- render 'product-variant-selector', product: product, form: form, block: block -%}
 
-            <span class="price">
-              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-              {{- selected_variant.price | money -}}  <span class="gst">Excl GST</span>
-            </span>
-          {%- endcase -%}
+          
           
           {% comment %}          
                   <button type="button" class="quantity-selector__button" data-action="decrease-picker-quantity" aria-label="{{ 'cart.items.decrease_quantity' | t }}" title="{{ 'cart.items.decrease_quantity' | t }}">{% render 'icon', icon: 'minus' %}</button>
@@ -85,7 +81,8 @@
           {% endif %}
           </select> 
           
-            
+            {%- when 'buy_buttons' -%}
+            {%- render 'product-buy-buttons', product: product, form: form, block: block -%}
 
           {%- when 'text' -%}
             {%- if block.settings.content != blank -%}
