@@ -172,10 +172,10 @@
           "footer-2"
         ],
         "settings": {
-          "show_social_media": true,
-          "show_payment_icons": true,
-          "show_locale_selector": true,
-          "show_country_selector": true,
+          "show_social_media": false,
+          "show_payment_icons": false,
+          "show_locale_selector": false,
+          "show_country_selector": false,
           "show_cookie_bar": false,
           "text": "<p>Use this bar to show information about your cookie policy.<\/p>"
         }
