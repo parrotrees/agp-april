@@ -13733,5 +13733,18 @@ body.page-handle_page #page-content * {
 .pagination__prev, .pagination__next { position: relative !important; }
 
 
-
+.site-footer__content {
+    padding-top: 15px;
+}
+.grid__item.small--one-whole.site-footer-item-tall {
+    padding: 0;
+    margin: 0;
+}
+.grid__item.small--one-whole.site-footer-item-tall {
+    height: auto;
+    margin: 0;
+}
+hr.site-footer__hr {
+    margin: 45px 0 3px 0;
+}
   
