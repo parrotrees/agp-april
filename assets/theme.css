@@ -13733,11 +13733,9 @@ body.page-handle_page #page-content * {
 .pagination__prev, .pagination__next { position: relative !important; }
 
 
-@media only screen and (max-width: 749px){
-.site-footer__linklist-item {padding: 0px 0 !important;}
-}
-
-@media only screen and (min-width: 750px){
-.site-footer__hr { margin: 0px 0 20px 0 !important;}
+@media screen and (min-width: 949px){
+.footer-item h4{ padding-bottom: 0px !important; }
+.footer-item{ padding-bottom: 20px !important; }
+.footer{ padding: 55px 100px 0 !important; }
 }
   
