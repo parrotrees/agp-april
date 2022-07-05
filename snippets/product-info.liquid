@@ -12,13 +12,12 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'product_meta' -%}
+            <span class="gst">Excl GST</span>
             {%- render 'product-meta', product: product, block: block -%}
 
 
           {%- when 'variant_selector' -%}
             {%- render 'product-variant-selector', product: product, form: form, block: block -%}
-    
-            <span class="gst">Excl GST</span>
 
           
           {% comment %}          
