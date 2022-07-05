@@ -13732,6 +13732,18 @@ body.page-handle_page #page-content * {
 
 .pagination__prev, .pagination__next { position: relative !important; }
 
+.footer__link-item {
 
+padding: 0px 0px !important;
+}
+
+@media screen and (min-width: 641px){
+.footer__wrapper {
+padding: 15px 0 !important;
+}
+.footer__aside {
+margin-top:15px !important;
+}
+}
 
   
