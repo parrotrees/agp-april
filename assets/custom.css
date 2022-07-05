@@ -322,4 +322,4 @@ stroke: #fff;
     opacity: 0.4 !important;
 }
 
-.price-list {align-items: center;}
+.price-list {align-items: center !important;}
