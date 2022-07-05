@@ -196,7 +196,10 @@
               "inventory_quantity": {{ variant.inventory_quantity | json }},
               "inventory_message": {{ inventory_message | json }}
             }{% unless forloop.last %},{% endunless %}
+          	</span>
           {%- endfor -%}
+          <span>GST excluded</span>
+          </span>
         }
       {%- endif -%}
     }
