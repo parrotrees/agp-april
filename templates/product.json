@@ -54,7 +54,7 @@
         "image_size": "medium",
         "enable_video_looping": false,
         "enable_image_zoom": true,
-        "zoom_effect": "outside",
+        "zoom_effect": "inside",
         "carousel_effect": "slide"
       }
     },
