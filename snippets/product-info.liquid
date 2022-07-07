@@ -12,9 +12,9 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'product_meta' -%}
-            {%- render 'product-meta', product: product, block: block -%}
+            {%- render 'product-meta', product: product, block: block -%} 
+    		<!-- <span class="gst">Excl GST</span> -->
 
-            <span class="gst">Excl GST</span>
 
           {%- when 'variant_selector' -%}
             {%- render 'product-variant-selector', product: product, form: form, block: block -%}
@@ -25,9 +25,9 @@
                   <input name="quantity" aria-label="{{ 'product.form.quantity' | t }}" class="quantity-selector__value" inputmode="numeric" value="1" size="3">
                   <button type="button" class="quantity-selector__button" data-action="increase-picker-quantity" aria-label="{{ 'cart.items.increase_quantity' | t }}" title="{{ 'cart.items.increase_quantity' | t }}">{% render 'icon', icon: 'plus' %}</button>
           {% endcomment %}
-          <span class="quantity">QUANTITY Selector</span>
+          <span class="quantity"><strong>QUANTITY</strong> </span>
           
-          <select
+          &emsp; &emsp;<select
               id="Quantity" name="quantity"
               class="form-field-input form-field-select"
               aria-label="{{ 'general.general.quantity' | t }}"
@@ -80,6 +80,8 @@
           {% endfor %}              
           {% endif %}
           </select> 
+    </br> 
+    </br> 
           
             {%- when 'buy_buttons' -%}
             {%- render 'product-buy-buttons', product: product, form: form, block: block -%}
@@ -196,7 +198,10 @@
               "inventory_quantity": {{ variant.inventory_quantity | json }},
               "inventory_message": {{ inventory_message | json }}
             }{% unless forloop.last %},{% endunless %}
+          	</span>
           {%- endfor -%}
+          <span>GST excluded</span>
+          </span>
         }
       {%- endif -%}
     }

@@ -107,6 +107,11 @@
                 {%- else -%}
                   {{- product.price | money -}}
                 {%- endif -%}
+                  <span class="price">
+              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
+              {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}} 
+              <span class="gst">Excl GST</span>
+            </span>
               </span>
 
               <span class="price price--compare">
@@ -120,7 +125,7 @@
             {%- endif -%}
           {%- elsif product.price_varies -%}
             {%- if settings.currency_code_enabled -%}
-              {%- capture price_min -%}{{ product.price_min | money_with_currency }}{%- endcapture -%}
+{%- capture price_min -%}{{ product.price_min | money_with_currency }}{%- endcapture -%}
               {%- capture price_max -%}{{ product.price_max | money_with_currency }}{%- endcapture -%}
             {%- else -%}
               {%- capture price_min -%}{{ product.price_min | money }}{%- endcapture -%}
