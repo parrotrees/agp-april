@@ -53,7 +53,7 @@
             "focal_point": "center",
             "color_accent": "#148394",
             "boxed": false,
-            "framed": true
+            "framed": false
           }
         },
         "1652921249711f1fe2-1": {
@@ -75,7 +75,7 @@
             "focal_point": "center",
             "color_accent": "#148394",
             "boxed": false,
-            "framed": true
+            "framed": false
           }
         },
         "b9f959fd-4c9d-4ebf-9ebc-38153dee3e2e": {
@@ -97,7 +97,7 @@
             "focal_point": "center",
             "color_accent": "#148394",
             "boxed": false,
-            "framed": true
+            "framed": false
           }
         }
       },
@@ -138,7 +138,7 @@
             "focal_point": "center",
             "color_accent": "#148394",
             "boxed": false,
-            "framed": true
+            "framed": false
           }
         },
         "1652922020beca01c9-1": {
@@ -160,7 +160,7 @@
             "focal_point": "center",
             "color_accent": "#148394",
             "boxed": false,
-            "framed": true
+            "framed": false
           }
         },
         "d8e90ed1-9f7c-4040-a35f-88a4793a2f2b": {
@@ -182,7 +182,7 @@
             "focal_point": "center",
             "color_accent": "#148394",
             "boxed": false,
-            "framed": true
+            "framed": false
           }
         }
       },
@@ -223,7 +223,7 @@
             "focal_point": "center",
             "color_accent": "#148394",
             "boxed": false,
-            "framed": true
+            "framed": false
           }
         },
         "1652921762cc9d9d94-1": {
@@ -245,7 +245,7 @@
             "focal_point": "center",
             "color_accent": "#148394",
             "boxed": false,
-            "framed": true
+            "framed": false
           }
         },
         "999fdf1b-e667-41cc-b828-ccaa85805b5d": {
@@ -267,7 +267,7 @@
             "focal_point": "center",
             "color_accent": "#148394",
             "boxed": false,
-            "framed": true
+            "framed": false
           }
         }
       },
@@ -409,7 +409,7 @@
         "collection-2": {
           "type": "collection",
           "settings": {
-            "collection": "posy-boxes",
+            "collection": "small-flower-box",
             "link": ""
           }
         },
