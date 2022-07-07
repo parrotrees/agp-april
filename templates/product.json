@@ -36,12 +36,6 @@
             "show_refunds_policy": true
           }
         },
-        "a2ac56fa-8b8d-4bc7-a151-7ed74686b927": {
-          "type": "text",
-          "settings": {
-            "content": "<p>{{ product.title }}<\/p>"
-          }
-        },
         "f88c5efe-78fe-47de-83c9-1eff54909102": {
           "type": "buy_buttons",
           "settings": {
@@ -54,14 +48,13 @@
         "variant_selector",
         "description",
         "2bb813ee-8ca3-4f23-a0d1-f3c94bbd9dad",
-        "a2ac56fa-8b8d-4bc7-a151-7ed74686b927",
         "f88c5efe-78fe-47de-83c9-1eff54909102"
       ],
       "settings": {
         "image_size": "medium",
         "enable_video_looping": false,
         "enable_image_zoom": true,
-        "zoom_effect": "outside",
+        "zoom_effect": "inside",
         "carousel_effect": "slide"
       }
     },
