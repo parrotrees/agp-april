@@ -13747,3 +13747,16 @@ margin-top:15px !important;
 }
 
 .search-bar__input {background: #F1F9FC !important;} 
+
+button {
+  border-radius: 50px;
+}
+
+button.product-form__add-button.button.button--primary.navigable {
+  border-radius: 50px;
+}
+
+button.shopify-payment-button__button.shopify-payment-button__button--unbranded._2ogcW-Q9I-rgsSkNbRiJzA._2EiMjnumZ6FVtlC7RViKtj._2-dUletcCZ2ZL1aaH0GXxT.navigable
+{
+border-radius: 50px;
+}
