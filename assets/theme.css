@@ -13696,9 +13696,8 @@ body.page-handle_page #page-content * {
 
 
 @media screen and (min-width 641px) {
-
-  .pagination__nav { display: inline-block !important; }
-
+.pagination__nav { display: inline-block !important; }
+}
 
 .pagination__prev, .pagination__next { position: relative !important; }
 
