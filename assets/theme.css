@@ -13730,3 +13730,19 @@ border-radius: 50px;
 .pagination>span.current {
     display: inline-block !important;
 }
+
+.pagination{
+    justify-content: center;
+}
+.pagination .pagination__inner{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
+}
+.pagination .pagination__inner .pagination__nav{
+    margin-top: 4px;
+}
+.pagination .pagination__inner .pagination__page-count{
+    margin-top: 8px;
+}
