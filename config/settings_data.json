@@ -38,7 +38,7 @@
     "show_vendor": true,
     "show_secondary_image": true,
     "show_reviews_badge": false,
-    "show_discount": true,
+    "show_discount": false,
     "discount_mode": "percentage",
     "product_price_position": "after_title",
     "product_image_size": "square",
