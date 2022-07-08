@@ -13726,3 +13726,7 @@ button.shopify-payment-button__button.shopify-payment-button__button--unbranded.
 {
 border-radius: 50px;
 }
+
+.pagination>span.current {
+    display: inline-block !important;
+}
