@@ -39,7 +39,7 @@
         "f88c5efe-78fe-47de-83c9-1eff54909102": {
           "type": "buy_buttons",
           "settings": {
-            "show_payment_button": true
+            "show_payment_button": false
           }
         }
       },
