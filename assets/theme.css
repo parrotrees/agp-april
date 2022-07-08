@@ -13602,11 +13602,9 @@ p.product-sku {
   
   .nav-bar-bar::after {background: #0492C2 !important;}
   
-  .shop-button , .continue-shopping  {
-    background: #03C04A !important;
-}
-.shop-button:hover , .continue-shopping:hover {
-    background: #0492C2 !important;
+  .shop-button , .continue-shopping  {background: #03C04A !important;}
+
+  .shop-button:hover , .continue-shopping:hover {background: #0492C2 !important;}
 
 
 
@@ -13615,46 +13613,23 @@ p.product-sku {
  * RATING tags removed
  * --------------------------------------------------------------------
  */
-}	.ruk_rating_snippet  {
-display: none !important;
-}
+	.ruk_rating_snippet  {display: none !important;}
 
-.ruk-icon-percentage-star--100  {
-display: none !important; 
+	.ruk-icon-percentage-star--100  {display: none !important;}
+	
+	.ruk-rating-snippet-count  {display: none !important;}
 
-}
-	.ruk-rating-snippet-count  {
-display: none !important; 
+	.ruk-icon-percentage-star--75   {display: none !important;}
 
-}
+	.ruk-icon-percentage-star--25  {display: none !important;}
 
-.ruk-icon-percentage-star--75   {
-display: none !important;   
+	.product-item__reviews-badge .link .pk-review-link  {display: none !important;}
 
-  }
-
-  .ruk-icon-percentage-star--25  {
-display: none !important;   
-
-  }
-
- .product-item__reviews-badge .link .pk-review-link  {
-   display: none !important;   
-
- }
-   .ruk-icon-percentage-star--0  {
-     display: none !important;   
-
-  }
+	.ruk-icon-percentage-star--0  {display: none !important;}
   
-.ruk-icon-percentage-star--50{
-     display: none !important;  
-}
+	.ruk-icon-percentage-star--50{display: none !important;}
   
-
-.quantity-selector quantity-selector--product{
-     display: none !important;  
-}
+	.quantity-selector quantity-selector--product{display: none !important;}
 
 /**
  * --------------------------------------------------------------------
@@ -13679,19 +13654,17 @@ display: none !important;
   font-size: 10pt;
   }
 
-  .price .money:last-child {
-    position: relative;
-  }
-  .price .was_price .money:after {
+	.price .money:last-child {position: relative;}
+  
+	.price .was_price .money:after {
       content: "ex. GST";
       margin-left: 5px;
       text-decoration: none;
       color: #222;
       position: absolute;
-      white-space: nowrap;
-  }
+      white-space: nowrap;}
 
-.price.price--large.price--on-sale.price--show-badge::after {
+	.price.price--large.price--on-sale.price--show-badge::after {
   content: "excl GST";
   white-space: nowrap;
   font-size: 16px;
@@ -13707,12 +13680,8 @@ display: none !important;
   }
 
   .product-item--vertical .product-item__action-button,
-  .product-item--horizontal .product-item__action-button {
-    border-radius: 30px;
-  }
-  .mega-menu__inner  .mega-menu__column > a {
-    font-weight: bold !important; 
-}
+  .product-item--horizontal .product-item__action-button {border-radius: 30px;}
+  .mega-menu__inner  .mega-menu__column > a {font-weight: bold !important;}
 
 body.page-handle_page {
 	background-color: #22c1c3!important;
