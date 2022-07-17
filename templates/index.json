@@ -337,7 +337,6 @@
     },
     "featured-product": {
       "type": "featured-product",
-      "disabled": true,
       "blocks": {
         "product-meta": {
           "type": "product_meta",
@@ -373,7 +372,7 @@
         "buy-buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_payment_button": true
+            "show_payment_button": false
           }
         }
       },
@@ -521,204 +520,6 @@
         "round_images": false,
         "show_collection_title": true
       }
-    },
-    "16532654360dee4f15": {
-      "type": "promotion-list",
-      "disabled": true,
-      "blocks": {
-        "1653265436853c9dbb-0": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_MAGNETIC_CLOSUE_BOX_774eeb1f-89b5-48bb-8b14-1466e1b564bf.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#145b94",
-            "text_color": "#ffffff",
-            "title": "Magnetic Closure Boxes",
-            "content": "",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#3285c8",
-            "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/magnetic_closure_boxes"
-          }
-        },
-        "1653265436853c9dbb-1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_HAMPER_PACKAGES_fff579da-61fb-4e8a-aea3-94a82a819cb8.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 68,
-            "stretch_image": true,
-            "background": "#0e9642",
-            "text_color": "#ffffff",
-            "title": "Hamper Packaging",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#00aa00",
-            "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/hamper_packaging"
-          }
-        },
-        "1653265436853c9dbb-2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_GIFT_BOXES_29a62547-fcf3-41c2-b842-7f95204b2869.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#0492c2",
-            "text_color": "#ffffff",
-            "title": "Gift Boxes",
-            "content": "",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#26c1ce",
-            "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/giftboxes"
-          }
-        },
-        "12c4ae0c-8756-4588-9b0c-8e30a191ca19": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_POSTAGE_AND_SHIPPER_BOXES_294ad514-6de3-440e-bcf8-8137554ad729.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#145b94",
-            "text_color": "#ffffff",
-            "title": "Postage & Shippers",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#3285c8",
-            "button_text_color": "#000000",
-            "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/shipper_boxes"
-          }
-        },
-        "9d65abdc-7854-4b39-b71a-7738359b9023": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_FOOD_PACKAGING_8659d187-bc2e-40d0-9169-a01b6ab5887b.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#000000",
-            "text_color": "#ffffff",
-            "title": "Food Packaging",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#00aa00",
-            "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/food_packaging"
-          }
-        },
-        "bda2a3d2-702c-489a-a210-c84433a8e336": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_CARRY_PACKS_e562d2f1-d5e5-448f-9522-df2ad9cda543.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#000000",
-            "text_color": "#ffffff",
-            "title": "Carry Packs & Trays",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#26c1ce",
-            "button_text": "Shop Now",
-            "button_link": ""
-          }
-        },
-        "66d93c20-19bf-4df1-a42f-01b139324cb1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_WINE_BOXES_e8fb70a3-e455-4fb1-aed1-0602140bb781.jpg",
-            "show_overlay": true,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#000000",
-            "text_color": "#ffffff",
-            "title": "Wine Boxes",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000",
-            "button_text": "Shop Now",
-            "button_link": ""
-          }
-        },
-        "5e4cd800-eb06-4328-8766-6832ef6b7340": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_WINDOW_BOXES_735bc672-2955-44c4-b3a4-7614b521e48d.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#000000",
-            "text_color": "#ffffff",
-            "title": "Window Boxes",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#00aa00",
-            "button_text": "Learn more",
-            "button_link": ""
-          }
-        },
-        "2cf52f42-961b-412c-b771-58cd7f17c759": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/900x900px_-_DONUT_BOXES_3916f1d7-f9e8-4e73-b8d6-bc8282a1a0b2.jpg",
-            "show_overlay": false,
-            "overlay_opacity": 50,
-            "stretch_image": true,
-            "background": "#000000",
-            "text_color": "#ffffff",
-            "title": "Donut Boxes",
-            "content": "<p> <\/p>",
-            "content_position": "top_left",
-            "button_background": "#ffffff",
-            "button_text_color": "#26c1ce",
-            "button_text": "Shop Now",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "1653265436853c9dbb-0",
-        "1653265436853c9dbb-1",
-        "1653265436853c9dbb-2",
-        "12c4ae0c-8756-4588-9b0c-8e30a191ca19",
-        "9d65abdc-7854-4b39-b71a-7738359b9023",
-        "bda2a3d2-702c-489a-a210-c84433a8e336",
-        "66d93c20-19bf-4df1-a42f-01b139324cb1",
-        "5e4cd800-eb06-4328-8766-6832ef6b7340",
-        "2cf52f42-961b-412c-b771-58cd7f17c759"
-      ],
-      "settings": {
-        "expand_items": true,
-        "section_size": "medium",
-        "stack_mobile": true
-      }
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "collection": "",
-        "title": "Featured collection",
-        "products_count": 12,
-        "layout": "vertical",
-        "stack_products": false,
-        "show_quick_buy": false,
-        "link_title": "View all",
-        "link_url": ""
-      }
     }
   },
   "order": [
@@ -729,8 +530,6 @@
     "165655659979b4463f",
     "165326742187667ea8",
     "featured-product",
-    "collection-list",
-    "16532654360dee4f15",
-    "featured-collection"
+    "collection-list"
   ]
 }

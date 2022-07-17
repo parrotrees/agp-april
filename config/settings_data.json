@@ -143,12 +143,6 @@
               "menu": "our-products"
             }
           },
-          "59703cb8-d7b2-44d8-8b2e-fe9f56708ecd": {
-            "type": "links",
-            "settings": {
-              "menu": "our-products-1"
-            }
-          },
           "c4cf1ad9-3e09-4fd0-8602-e0c3348b5595": {
             "type": "links",
             "settings": {
@@ -167,7 +161,6 @@
         "block_order": [
           "footer-0",
           "footer-1",
-          "59703cb8-d7b2-44d8-8b2e-fe9f56708ecd",
           "c4cf1ad9-3e09-4fd0-8602-e0c3348b5595",
           "footer-2"
         ],
